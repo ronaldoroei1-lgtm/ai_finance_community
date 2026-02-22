@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Finance | Professional Prompt Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A962;
+            --gold-light: #E5D4A1;
+            --gold-dark: #8B7355;
+            --navy: #1A2A3A;
+            --navy-light: #2A3A4A;
+            --navy-dark: #0D1520;
+            --cream: #F8F6F1;
+            --cream-dark: #E8E4DB;
+            --text-dark: #1A1A1A;
+            --text-light: #F8F6F1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--navy-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(30deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+                linear-gradient(150deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+                linear-gradient(30deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+                linear-gradient(150deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+                linear-gradient(60deg, var(--gold-dark) 25%, transparent 25.5%, transparent 75%, var(--gold-dark) 75%, var(--gold-dark)),
+                linear-gradient(60deg, var(--gold-dark) 25%, transparent 25.5%, transparent 75%, var(--gold-dark) 75%, var(--gold-dark));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+            padding: 60px 20px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, transparent 100%);
+        }
+
+        .logo-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .logo-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            width: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .logo-line.top { top: -20px; }
+        .logo-line.bottom { bottom: -20px; }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--cream);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin-top: 40px;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--cream);
+            opacity: 0.7;
+            margin-top: 15px;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .header-credit {
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-top: 25px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 20px auto 0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--navy-light), var(--navy-dark));
+            border: 1px solid rgba(201, 169, 98, 0.2);
+            border-radius: 4px;
+            padding: 40px 35px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover::before { transform: scaleX(1); }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(201, 169, 98, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 169, 98, 0.1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            background: var(--gold);
+            color: var(--navy-dark);
+        }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--cream);
+            opacity: 0.7;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .card-stats {
+            display: flex;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(201, 169, 98, 0.2);
+        }
+
+        .stat { text-align: center; }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--cream);
+            opacity: 0.5;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 12px 28px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .card-button:hover {
+            background: var(--gold);
+            color: var(--navy-dark);
+        }
+
+        .card-button svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-button:hover svg { transform: translateX(-5px); }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 20px 60px;
+            border-top: 1px solid rgba(201, 169, 98, 0.1);
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--cream);
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+
+        .footer-credit {
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+        }
+
+        .footer-credit span {
+            color: var(--cream);
+            opacity: 0.7;
+        }
+
+        .footer-year {
+            font-size: 0.75rem;
+            color: var(--cream);
+            opacity: 0.3;
+            margin-top: 15px;
+            letter-spacing: 0.2em;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 21, 32, 0.98);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-overlay.active { display: block; }
+
+        .modal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(201, 169, 98, 0.3);
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--cream);
+        }
+
+        .modal-title span {
+            color: var(--gold);
+        }
+
+        .close-btn {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: var(--gold);
+            color: var(--navy-dark);
+        }
+
+        .prompt-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(201, 169, 98, 0.2);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .prompt-card:hover {
+            border-color: rgba(201, 169, 98, 0.5);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .prompt-number {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .prompt-title-he {
+            font-size: 1.4rem;
+            color: var(--cream);
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .prompt-explanation {
+            background: rgba(201, 169, 98, 0.1);
+            padding: 15px 20px;
+            border-right: 3px solid var(--gold);
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .prompt-explanation-label {
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .prompt-explanation-text {
+            color: var(--cream);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .prompt-english {
+            background: var(--navy-dark);
+            padding: 20px;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .prompt-english-label {
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .prompt-english-text {
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            text-align: left;
+            direction: ltr;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--gold);
+            color: var(--navy-dark);
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--gold-light);
+            transform: scale(1.05);
+        }
+
+        .copy-btn.copied {
+            background: #4CAF50;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+                letter-spacing: 0.2em;
+            }
+
+            .tagline {
+                font-size: 1rem;
+                letter-spacing: 0.2em;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 30px 25px;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <header>
+        <div class="logo-container">
+            <div class="logo-line top"></div>
+            <h1 class="logo">AI <span>Finance</span></h1>
+            <div class="logo-line bottom"></div>
+        </div>
+        <p class="tagline">Professional Prompt Library</p>
+        <p class="subtitle">Google Finance + Gemini Deep Search</p>
+        <p class="header-credit">Made by: CPA Tal Wallenstein</p>
+    </header>
+
+    <main>
+        <h2 class="section-title">Select Your Role</h2>
+        
+        <div class="cards-grid">
+            <!-- CFO Card -->
+            <div class="card" onclick="openModal('cfo')">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">CFO</h3>
+                <p class="card-subtitle">Macro, Interest Rates & Market Expectations</p>
+                <p class="card-description">
+                    Strategic prompts for understanding market pricing of interest rate trajectories, 
+                    recession probabilities, inflation expectations, and translating macro insights 
+                    for executive decision-making.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Prompts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Insights</div>
+                    </div>
+                </div>
+                <button class="card-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View Prompts
+                </button>
+            </div>
+
+            <!-- FP&A Card -->
+            <div class="card" onclick="openModal('fpa')">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">FP&A</h3>
+                <p class="card-subtitle">Budget Drivers, Forecasting & Scenario Planning</p>
+                <p class="card-description">
+                    Essential prompts for building forecasts based on market pricing, 
+                    validating budget assumptions, identifying breakpoints, and creating 
+                    realistic scenarios grounded in market data.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Prompts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Insights</div>
+                    </div>
+                </div>
+                <button class="card-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View Prompts
+                </button>
+            </div>
+
+            <!-- Analysts Card -->
+            <div class="card" onclick="openModal('analysts')">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 3v18h18"/>
+                        <path d="M18 9l-5 5-4-4-6 6"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Analysts & Investments</h3>
+                <p class="card-subtitle">Sector Intelligence, Valuation & Market Sentiment</p>
+                <p class="card-description">
+                    Analytical prompts for tracking capital flows, identifying valuation 
+                    disconnects, detecting narrative shifts, and building investment theses 
+                    backed by market evidence.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Prompts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Insights</div>
+                    </div>
+                </div>
+                <button class="card-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View Prompts
+                </button>
+            </div>
+
+            <!-- Company Analysis Card -->
+            <div class="card" onclick="openModal('company')">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/>
+                        <path d="M3 21h18"/>
+                        <path d="M9 7h1M9 11h1M9 15h1M14 7h1M14 11h1M14 15h1"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Company & Earnings</h3>
+                <p class="card-subtitle">Earnings, Cash Flow, Margins & Market Reaction</p>
+                <p class="card-description">
+                    Deep-dive prompts for analyzing earnings quality, margin sustainability, 
+                    cash flow authenticity, management credibility, and market interpretation 
+                    of company fundamentals.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Prompts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Insights</div>
+                    </div>
+                </div>
+                <button class="card-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View Prompts
+                </button>
+            </div>
+
+            <!-- Risk Card -->
+            <div class="card" onclick="openModal('risk')">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 9v4M12 17h.01"/>
+                        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Risk & Scenario Planning</h3>
+                <p class="card-subtitle">Uncertainty, Probabilities & Decision-Making</p>
+                <p class="card-description">
+                    Strategic prompts for mapping market-priced risks, building probability-based 
+                    scenarios, identifying tail risks, and translating uncertainty into 
+                    actionable executive decisions.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Prompts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Insights</div>
+                    </div>
+                </div>
+                <button class="card-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View Prompts
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-brand">AI Finance</p>
+        <p class="footer-credit"><span>Made by:</span> CPA Tal Wallenstein</p>
+        <p class="footer-year">© 2025</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        const promptsData = {
+            cfo: {
+                title: "CFO <span>Prompts</span>",
+                subtitle: "Macro, Interest Rates & Market Expectations",
+                prompts: [
+                    {
+                        titleHe: "תמונת ריבית לשנה הקרובה",
+                        explanationHe: "איך השוק באמת מתמחר את מסלול הריבית, לא מה כתוב בכותרות.",
+                        promptEn: "Analyze current market pricing for interest rate trajectories over the next 6 and 12 months. Compare central bank forward guidance with probabilities implied by prediction markets such as Kalshi or Polymarket. Highlight key risks and provide data sources."
+                    },
+                    {
+                        titleHe: "הסתברות למיתון והשלכות פיננסיות",
+                        explanationHe: "האם הסיכון כבר מתומחר, או שאנחנו עדיין לפני שינוי תודעתי בשוק.",
+                        promptEn: "Assess the market-implied probability of a recession over the next 12 months. Compare macro indicators, analyst forecasts, and prediction market probabilities. Explain potential impacts on corporate cash flows and financing conditions."
+                    },
+                    {
+                        titleHe: "אינפלציה – סיכון שקט או נרגע?",
+                        explanationHe: "האם האינפלציה באמת בשליטה או רק נראית כך בדאטה הרשמי.",
+                        promptEn: "Evaluate current market expectations for inflation over the next 4 to 8 quarters. Identify discrepancies between official CPI forecasts and market sentiment. Include implications for pricing power and margin sustainability."
+                    },
+                    {
+                        titleHe: "Yield Curve כסיגנל ניהולי",
+                        explanationHe: "מה העקומה מאותתת על העתיד, ולא רק אם היא הפוכה.",
+                        promptEn: "Analyze the current yield curve structure and recent shifts. Explain what the curve is signaling about future economic activity and monetary policy. Provide historical context and sources."
+                    },
+                    {
+                        titleHe: "ריבית והשפעה על מינוף",
+                        explanationHe: "איפה הסיכון האמיתי לחברות ממונפות מתחיל להצטבר.",
+                        promptEn: "Assess how current interest rate expectations impact leveraged companies. Identify sectors most exposed to refinancing risk and rising debt service costs. Support the analysis with data and sources."
+                    },
+                    {
+                        titleHe: "מאקרו כ-Driver לתקציב",
+                        explanationHe: "אילו הנחות תקציב כבר לא סבירות.",
+                        promptEn: "Identify key macroeconomic drivers currently influencing corporate forecasting assumptions. Highlight which assumptions may be overly optimistic or conservative based on market data. Provide evidence and sources."
+                    },
+                    {
+                        titleHe: "סיכון חיצוני לא צפוי",
+                        explanationHe: "מה השוק מתמחר בשוליים – אבל עלול להפוך לאירוע מרכזי.",
+                        promptEn: "Identify low-probability, high-impact macroeconomic risks currently priced by the market. Explain why these risks may be underappreciated and outline potential financial consequences."
+                    },
+                    {
+                        titleHe: "תרגום מאקרו להנהלה",
+                        explanationHe: "איך לסכם את כל זה בצורה ניהולית ולא אקדמית.",
+                        promptEn: "Summarize the current macroeconomic and interest rate environment in a concise, executive-level brief. Focus on implications for strategy, liquidity, and financial risk management. Include key data points and sources."
+                    }
+                ]
+            },
+            fpa: {
+                title: "FP&A <span>Prompts</span>",
+                subtitle: "Budget Drivers, Forecasting & Scenario Planning",
+                prompts: [
+                    {
+                        titleHe: "זיהוי Drivers מאקרו קריטיים לתקציב",
+                        explanationHe: "אילו משתני מאקרו משפיעים עכשיו על תחזיות הכנסות והוצאות, ולא רק באופן כללי.",
+                        promptEn: "Identify the key macroeconomic drivers currently influencing corporate revenue and cost forecasts. Explain how each driver impacts demand, pricing, and cost structures. Provide supporting data and sources."
+                    },
+                    {
+                        titleHe: "בדיקת הנחות תקציב – מי כבר לא ריאלית?",
+                        explanationHe: "אילו הנחות נראות בסדר על הנייר אבל לא מתיישבות עם תמחור השוק.",
+                        promptEn: "Analyze common corporate budgeting assumptions in the current macro environment. Identify which assumptions may be overly optimistic or conservative based on market data and sentiment. Support with evidence and sources."
+                    },
+                    {
+                        titleHe: "השפעת ריבית ואינפלציה על מבנה עלויות",
+                        explanationHe: "איפה עלויות צפויות לזחול למעלה גם בלי שינוי תפעולי.",
+                        promptEn: "Assess how current interest rate and inflation expectations are affecting corporate cost structures. Highlight impacts on financing costs, operating expenses, and supplier pricing. Include data sources."
+                    },
+                    {
+                        titleHe: "ביקוש עתידי – האטה, יציבות או האצה?",
+                        explanationHe: "האם השוק מתמחר ירידה בביקושים – ואם כן, באילו ענפים.",
+                        promptEn: "Evaluate market expectations for future demand across major sectors. Identify sectors expected to experience demand slowdown or acceleration. Provide market data and sources."
+                    },
+                    {
+                        titleHe: "זיהוי נקודות שבירה בתחזית",
+                        explanationHe: "איפה המודל הכי רגיש, גם אם זה לא נראה ככה באקסל.",
+                        promptEn: "Identify key variables where small changes could materially impact financial forecasts. Explain why these variables represent forecast risk points. Support the analysis with market data."
+                    },
+                    {
+                        titleHe: "בניית תרחישים ריאליים (לא תיאורטיים)",
+                        explanationHe: "אילו תרחישים השוק כבר מאמין בהם, ואילו פחות.",
+                        promptEn: "Outline the primary macroeconomic scenarios currently priced by the market. Assign relative probabilities to each scenario and explain their financial implications for companies. Provide sources."
+                    },
+                    {
+                        titleHe: "סטיות בין תחזית פנימית לסנטימנט שוק",
+                        explanationHe: "האם אנחנו אופטימיים מדי ביחס לשוק.",
+                        promptEn: "Compare typical internal corporate forecasts with current market sentiment. Identify areas of potential misalignment and explain the risks associated with them. Include supporting data."
+                    },
+                    {
+                        titleHe: "Rolling Forecast – מה צריך להתעדכן עכשיו?",
+                        explanationHe: "אילו הנחות דורשות עדכון מיידי ולא יכולות לחכות לרבעון הבא.",
+                        promptEn: "Identify which macroeconomic assumptions require immediate updates in rolling forecasts. Explain the potential financial impact of delaying these updates. Provide sources."
+                    },
+                    {
+                        titleHe: "תרגום מאקרו למספרים",
+                        explanationHe: "איך מאקרו הופך ל-Revenue, Margin ו-Cash.",
+                        promptEn: "Translate current macroeconomic trends into expected impacts on revenue growth, margins, and cash flow. Explain the transmission mechanisms clearly and support with data."
+                    },
+                    {
+                        titleHe: "סיכום ניהולי ל-FP&A Review",
+                        explanationHe: "איך להציג את כל זה בפגישה בלי להטביע את החדר בגרפים.",
+                        promptEn: "Summarize the key macroeconomic factors affecting financial planning in a concise FP&A-level brief. Focus on budget risks, forecast reliability, and scenario planning. Include data sources."
+                    }
+                ]
+            },
+            analysts: {
+                title: "Analysts & Investments <span>Prompts</span>",
+                subtitle: "Sector Intelligence, Valuation & Market Sentiment",
+                prompts: [
+                    {
+                        titleHe: "מפת סקטורים – לאן זורם הכסף?",
+                        explanationHe: "אילו סקטורים נהנים מזרימת הון ואילו מאבדים אמון.",
+                        promptEn: "Analyze current capital flows across major market sectors. Identify sectors experiencing increasing or decreasing investor interest. Support the analysis with market data and sources."
+                    },
+                    {
+                        titleHe: "ביצועים מול סנטימנט – יש דיסוננס?",
+                        explanationHe: "איפה הסיפור חזק מהמספרים – או להפך.",
+                        promptEn: "Identify sectors where market sentiment diverges from underlying financial performance. Explain potential reasons for this disconnect and associated risks. Include data sources."
+                    },
+                    {
+                        titleHe: "Valuation Stretch – מי יקר מדי?",
+                        explanationHe: "איפה התמחור מתחיל להקדים את המציאות.",
+                        promptEn: "Assess current valuation levels across key sectors. Identify sectors or industries where valuations appear stretched relative to fundamentals. Provide supporting metrics and sources."
+                    },
+                    {
+                        titleHe: "עמידות לתנודתיות",
+                        explanationHe: "מי שורד גם כשהשוק מתנדנד.",
+                        promptEn: "Identify sectors that have demonstrated resilience during recent periods of market volatility. Explain the financial and structural factors supporting this resilience. Include data and sources."
+                    },
+                    {
+                        titleHe: "השפעת ריבית על סקטורים",
+                        explanationHe: "מי נפגע ראשון משינוי מסלול הריבית.",
+                        promptEn: "Analyze the sensitivity of different sectors to changes in interest rate expectations. Identify sectors most exposed to rising or falling rates. Support with market data."
+                    },
+                    {
+                        titleHe: "תגובות שוק לדוחות",
+                        explanationHe: "האם השוק מתגמל תוצאות – או מעניש סיפור.",
+                        promptEn: "Analyze recent earnings releases across major sectors. Identify patterns where market reactions diverged from reported financial results. Provide explanations and sources."
+                    },
+                    {
+                        titleHe: "זיהוי שינויי נרטיב",
+                        explanationHe: "איפה השוק מתחיל לספר סיפור חדש.",
+                        promptEn: "Identify recent shifts in market narratives across sectors. Explain what triggered these shifts and how they are reflected in pricing and sentiment. Include sources."
+                    },
+                    {
+                        titleHe: "סקטורים עם Upside לא מתומחר",
+                        explanationHe: "איפה יש פער בין פוטנציאל לתמחור.",
+                        promptEn: "Identify sectors where future growth potential may not be fully priced by the market. Explain the drivers behind this potential mispricing. Support with data and sources."
+                    },
+                    {
+                        titleHe: "רגולציה כמשנה משחק",
+                        explanationHe: "מי חשוף לסיכון רגולטורי ומי עשוי להרוויח ממנו.",
+                        promptEn: "Assess how upcoming regulatory changes are expected to impact different sectors. Identify sectors facing heightened regulatory risk or opportunity. Include relevant sources."
+                    },
+                    {
+                        titleHe: "סיכום אנליטי להשקעה",
+                        explanationHe: "איך לחבר הכול לתמונה אחת.",
+                        promptEn: "Provide a concise sector-level investment outlook based on valuation, sentiment, macro drivers, and recent performance. Highlight key risks and opportunities with supporting sources."
+                    }
+                ]
+            },
+            company: {
+                title: "Company & Earnings <span>Prompts</span>",
+                subtitle: "Earnings, Cash Flow, Margins & Market Reaction",
+                prompts: [
+                    {
+                        titleHe: "תגובת שוק לדוחות – מוצדקת או רגשית?",
+                        explanationHe: "האם תנועת המניה משקפת שינוי אמיתי בפונדמנטלס או תגובת יתר.",
+                        promptEn: "Analyze the market reaction to the most recent earnings release of [Company]. Compare reported financial results with stock price movement and investor sentiment. Assess whether the reaction appears fundamentally justified. Provide sources."
+                    },
+                    {
+                        titleHe: "Revenue Quality – צמיחה או רעש?",
+                        explanationHe: "האם הצמיחה מבוססת ביקוש אמיתי או גורמים חד פעמיים.",
+                        promptEn: "Assess the quality of recent revenue growth for [Company]. Distinguish between organic growth, pricing effects, one-time items, and accounting-driven changes. Support the analysis with data and sources."
+                    },
+                    {
+                        titleHe: "שחיקת מרווחים – סיגנל מוקדם",
+                        explanationHe: "האם יש לחץ מבני על הרווחיות שהשוק כבר מזהה.",
+                        promptEn: "Analyze recent margin trends for [Company]. Identify whether margin changes are driven by cost inflation, pricing pressure, or strategic investment. Assess market perception and provide sources."
+                    },
+                    {
+                        titleHe: "תזרים מזומנים מול רווח",
+                        explanationHe: "האם הרווח אמיתי או תקוע במאזן.",
+                        promptEn: "Compare net income and operating cash flow trends for [Company]. Identify any growing discrepancies and explain potential underlying causes. Include data sources."
+                    },
+                    {
+                        titleHe: "CapEx, השקעות וציפיות שוק",
+                        explanationHe: "האם השוק רואה בהשקעות מנוע צמיחה או סיכון.",
+                        promptEn: "Evaluate recent capital expenditure and investment activity for [Company]. Assess how the market interprets these investments in terms of future growth and risk. Provide supporting data and sources."
+                    },
+                    {
+                        titleHe: "Guidance מול אמון שוק",
+                        explanationHe: "האם ההנהלה עדיין שולטת בנרטיב.",
+                        promptEn: "Analyze management guidance provided by [Company] in the latest earnings call. Assess whether the market views the guidance as credible based on pricing and sentiment. Include sources."
+                    },
+                    {
+                        titleHe: "סיכון תזרימי ומינוף",
+                        explanationHe: "איפה נקודת הלחץ הפיננסית.",
+                        promptEn: "Assess liquidity and leverage risk for [Company] in the current macro environment. Identify refinancing, debt service, or covenant-related concerns. Support with market data and sources."
+                    },
+                    {
+                        titleHe: "זיהוי Red Flags מוקדמים",
+                        explanationHe: "אילו סימנים השוק מתחיל להריח לפני שזה כתוב בדוחות.",
+                        promptEn: "Identify early warning signals related to [Company]'s financial performance or outlook. Analyze market behavior, analyst commentary, and sentiment shifts. Provide sources."
+                    },
+                    {
+                        titleHe: "Valuation מול סיפור",
+                        explanationHe: "האם המחיר משקף ביצוע או תקווה.",
+                        promptEn: "Evaluate [Company]'s current valuation relative to its financial performance and growth outlook. Assess whether the valuation reflects fundamentals or narrative-driven expectations. Support with data."
+                    },
+                    {
+                        titleHe: "סיכום אנליטי לחברה",
+                        explanationHe: "איך לחבר את הכול לתמונה אחת ברורה.",
+                        promptEn: "Provide a concise analytical summary of [Company]'s financial health, earnings quality, and market perception. Highlight key risks, strengths, and uncertainties. Include sources."
+                    }
+                ]
+            },
+            risk: {
+                title: "Risk & Scenario Planning <span>Prompts</span>",
+                subtitle: "Uncertainty, Probabilities & Decision-Making",
+                prompts: [
+                    {
+                        titleHe: "מפת הסיכונים האמיתית של השוק",
+                        explanationHe: "מהם הסיכונים שהשוק כבר מתמחר, גם אם הם לא בכותרות.",
+                        promptEn: "Identify the primary macroeconomic and financial risks currently priced by the market. Rank them by probability and potential impact. Support the analysis with market data and sources."
+                    },
+                    {
+                        titleHe: "תרחישי בסיס, קיצון ואופטימיות",
+                        explanationHe: "אילו תרחישים נחשבים היום ריאליים ולא תיאורטיים.",
+                        promptEn: "Outline the base, upside, and downside macroeconomic scenarios currently reflected in market pricing. Assign relative probabilities to each scenario and explain key drivers. Include sources."
+                    },
+                    {
+                        titleHe: "הסתברויות – לא תחושות",
+                        explanationHe: "מה ההבדל בין מה שאומרים בפרשנות למה שכסף אמיתי מתמחר.",
+                        promptEn: "Compare analyst forecasts with probabilities implied by prediction markets such as Kalshi or Polymarket. Identify areas of divergence and explain potential reasons. Provide sources."
+                    },
+                    {
+                        titleHe: "Tail Risks – מה בשוליים אבל מסוכן",
+                        explanationHe: "אילו אירועים נדירים עלולים לשבור את המודל.",
+                        promptEn: "Identify low-probability, high-impact risks currently priced at the margins of the market. Explain why these risks could have outsized financial consequences. Support with data and sources."
+                    },
+                    {
+                        titleHe: "רגישות עסקית לתרחישים",
+                        explanationHe: "איפה החברה באמת פגיעה.",
+                        promptEn: "Analyze how different macroeconomic scenarios would impact corporate revenue, margins, and cash flow. Identify the most sensitive financial variables. Provide supporting data."
+                    },
+                    {
+                        titleHe: "סיכונים שלא מתומחרים במלואם",
+                        explanationHe: "איפה השוק עוד שאנן.",
+                        promptEn: "Identify potential risks that may not yet be fully reflected in current market pricing. Explain why these risks could emerge and their potential financial impact. Include sources."
+                    },
+                    {
+                        titleHe: "נקודות טריגר למעבר תרחיש",
+                        explanationHe: "מתי צריך להחליף דיסקט.",
+                        promptEn: "Identify key economic or financial indicators that would signal a shift from the base scenario to an alternative scenario. Explain why these indicators matter. Provide sources."
+                    },
+                    {
+                        titleHe: "השלכות ניהוליות",
+                        explanationHe: "איך תרחיש הופך להחלטה.",
+                        promptEn: "Translate current market risks and scenarios into strategic and financial decision considerations for management. Focus on liquidity, investment timing, and risk mitigation. Include sources."
+                    },
+                    {
+                        titleHe: "סיכון מצטבר ולא נקודתי",
+                        explanationHe: "איך כמה סיכונים קטנים מצטברים לבעיה אחת גדולה.",
+                        promptEn: "Analyze how multiple macroeconomic and financial risks could interact and compound. Explain potential cumulative effects on corporate financial stability. Support with data."
+                    },
+                    {
+                        titleHe: "Executive Risk Brief",
+                        explanationHe: "איך להציג סיכון בלי לזרוע פאניקה.",
+                        promptEn: "Prepare a concise executive-level risk and scenario summary based on current market pricing and probabilities. Highlight key uncertainties, decision points, and mitigation considerations. Include data sources."
+                    }
+                ]
+            }
+        };
+
+        function openModal(role) {
+            const data = promptsData[role];
+            document.getElementById('modalTitle').innerHTML = data.title;
+            
+            let bodyHtml = `<p style="color: var(--gold-light); margin-bottom: 30px; font-size: 1.1rem;">${data.subtitle}</p>`;
+            
+            data.prompts.forEach((prompt, index) => {
+                bodyHtml += `
+                    <div class="prompt-card">
+                        <span class="prompt-number">🎯 Mission ${index + 1}</span>
+                        <h3 class="prompt-title-he">${prompt.titleHe}</h3>
+                        <div class="prompt-explanation">
+                            <div class="prompt-explanation-label">:מה אני רוצה להבין</div>
+                            <div class="prompt-explanation-text">${prompt.explanationHe}</div>
+                        </div>
+                        <div class="prompt-english">
+                            <button class="copy-btn" onclick="copyPrompt(this, '${prompt.promptEn.replace(/'/g, "\\'")}')">📋 Copy</button>
+                            <div class="prompt-english-label">Prompt for Copy & Paste</div>
+                            <div class="prompt-english-text">${prompt.promptEn}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('modalBody').innerHTML = bodyHtml;
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function copyPrompt(button, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = '✓ Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = '📋 Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Close modal on overlay click
+        document.getElementById('modalOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm build:*)",
+      "Bash(npx pnpm build:*)",
+      "Bash(npx pnpm install)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(pnpm install:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

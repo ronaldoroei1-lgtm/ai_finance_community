@@ -1,0 +1,12 @@
+{
+  "name": "ai-finance-seo-agent",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Claude-powered SEO agent for AI Finance Community website",
+  "scripts": {
+    "generate": "node generate-seo.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0"
+  }
+}
