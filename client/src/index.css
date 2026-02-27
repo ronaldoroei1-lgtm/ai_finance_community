@@ -43,88 +43,119 @@
 }
 
 :root {
-  --primary: #1e40af;
-  --primary-foreground: #f0f9ff;
-  --sidebar-primary: #1e3a8a;
-  --sidebar-primary-foreground: #f0f9ff;
+  /* ── Primary ──────────────────────────────────────────── */
+  --primary: #2563eb;
+  --primary-foreground: #eff6ff;
+
+  /* ── Accent (CTA green) ────────────────────────────────── */
+  --accent: #059669;
+  --accent-foreground: #ffffff;
+
+  /* ── Radius ───────────────────────────────────────────── */
+  --radius: 0.75rem;
+
+  /* ── Surface & background ─────────────────────────────── */
+  --background: #080e1c;
+  --foreground: #e2e8f0;
+
+  /* Card: very dark navy — NOT royal blue */
+  --card: #0d1526;
+  --card-foreground: #f1f5f9;
+
+  /* Popover */
+  --popover: #0d1526;
+  --popover-foreground: #f1f5f9;
+
+  /* ── Secondary ────────────────────────────────────────── */
+  --secondary: #162033;
+  --secondary-foreground: #bfdbfe;
+
+  /* ── Muted ────────────────────────────────────────────── */
+  --muted: #101828;
+  --muted-foreground: #94a3b8;
+
+  /* ── State colours ────────────────────────────────────── */
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+
+  /* ── Borders & inputs ─────────────────────────────────── */
+  --border: #1a2d4a;
+  --input: #1a2d4a;
+  --ring: #2563eb;
+
+  /* ── Charts ───────────────────────────────────────────── */
   --chart-1: #60a5fa;
   --chart-2: #3b82f6;
   --chart-3: #2563eb;
   --chart-4: #1d4ed8;
   --chart-5: #1e40af;
-  --radius: 0.65rem;
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-  --card: #1e3a8a;
-  --card-foreground: #f1f5f9;
-  --popover: #1e3a8a;
-  --popover-foreground: #f1f5f9;
-  --secondary: #1e40af;
-  --secondary-foreground: #e0f2fe;
-  --muted: #0f172a;
-  --muted-foreground: #cbd5e1;
-  --accent: #10b981;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --border: #1e40af;
-  --input: #1e40af;
-  --ring: #3b82f6;
-  --sidebar: #0f172a;
+
+  /* ── Sidebar ──────────────────────────────────────────── */
+  --sidebar: #080e1c;
   --sidebar-foreground: #f1f5f9;
-  --sidebar-accent: #1e40af;
+  --sidebar-primary: #1e3a8a;
+  --sidebar-primary-foreground: #f0f9ff;
+  --sidebar-accent: #1e3a8a;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1e40af;
-  --sidebar-ring: #3b82f6;
+  --sidebar-border: #1a2d4a;
+  --sidebar-ring: #2563eb;
 }
 
 .dark {
-  --primary: #1e40af;
-  --primary-foreground: #f0f9ff;
-  --sidebar-primary: #1e3a8a;
-  --sidebar-primary-foreground: #f0f9ff;
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-  --card: #1e3a8a;
+  --primary: #2563eb;
+  --primary-foreground: #eff6ff;
+  --background: #080e1c;
+  --foreground: #e2e8f0;
+  --card: #0d1526;
   --card-foreground: #f1f5f9;
-  --popover: #1e3a8a;
+  --popover: #0d1526;
   --popover-foreground: #f1f5f9;
-  --secondary: #1e40af;
-  --secondary-foreground: #e0f2fe;
-  --muted: #0f172a;
-  --muted-foreground: #cbd5e1;
-  --accent: #10b981;
+  --secondary: #162033;
+  --secondary-foreground: #bfdbfe;
+  --muted: #101828;
+  --muted-foreground: #94a3b8;
+  --accent: #059669;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #fafafa;
-  --border: #1e40af;
-  --input: #1e40af;
-  --ring: #3b82f6;
+  --border: #1a2d4a;
+  --input: #1a2d4a;
+  --ring: #2563eb;
   --chart-1: #60a5fa;
   --chart-2: #3b82f6;
   --chart-3: #2563eb;
   --chart-4: #1d4ed8;
   --chart-5: #1e40af;
-  --sidebar: #0f172a;
+  --sidebar: #080e1c;
   --sidebar-foreground: #f1f5f9;
-  --sidebar-accent: #1e40af;
+  --sidebar-accent: #1e3a8a;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1e40af;
-  --sidebar-ring: #3b82f6;
+  --sidebar-border: #1a2d4a;
+  --sidebar-ring: #2563eb;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor links below the fixed nav */
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-background text-foreground;
     direction: rtl;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    /* Looser line-height improves Hebrew readability */
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  html {
-    scroll-behavior: smooth;
-  }
+
+  /* Cursor helpers — scoped to interactive elements only */
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -136,20 +167,30 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+
+  /* Focus ring — keyboard-visible only */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /*
+   * IMPORTANT: We do NOT apply transition-all to every * selector —
+   * that causes layout recalculations on hover for all elements and
+   * conflicts with Framer Motion. Instead we apply transitions
+   * individually via Tailwind classes on each interactive element.
+   */
 }
 
 @layer components {
+  /* ── Layout ─────────────────────────────────────────────── */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
   }
 
   @media (min-width: 640px) {
@@ -167,64 +208,73 @@
     }
   }
 
-  /* Grid background pattern */
-  .grid-bg {
-    background-image: 
-      linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-    background-size: 40px 40px;
+  /* ── Section eyebrow label ───────────────────────────────── */
+  /* Small pill badge displayed above section headings */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.3rem 0.9rem;
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.22);
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #93c5fd;
+    text-transform: uppercase;
   }
 
-  /* Floating particles animation */
+  /* ── Gradient heading ────────────────────────────────────── */
+  .gradient-heading {
+    background: linear-gradient(140deg, #ffffff 20%, #bfdbfe 65%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ── Grid background pattern ─────────────────────────────── */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* ── Floating particles ──────────────────────────────────── */
   @keyframes float {
     0%, 100% {
       transform: translateY(0px) translateX(0px);
       opacity: 0.5;
     }
     50% {
-      transform: translateY(-20px) translateX(10px);
-      opacity: 0.8;
+      transform: translateY(-18px) translateX(8px);
+      opacity: 0.85;
     }
   }
 
   .particle {
-    animation: float 6s ease-in-out infinite;
+    animation: float 7s ease-in-out infinite;
+    will-change: transform, opacity;
   }
 
-  /* Smooth fade in */
+  /* ── Smooth fade in ──────────────────────────────────────── */
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .fade-in {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.55s ease-out both;
   }
 
-  /* Slide in from top */
+  /* ── Slide in from top ───────────────────────────────────── */
   @keyframes slideInFromTop {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .slide-in-from-top-2 {
-    animation: slideInFromTop 0.3s ease-out;
-  }
-
-  /* Smooth transitions */
-  * {
-    @apply transition-all duration-300;
+    animation: slideInFromTop 0.25s ease-out both;
   }
 }
