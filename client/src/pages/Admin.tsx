@@ -7,7 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import type { SiteContent } from "@/hooks/useContent";
-import { Eye, EyeOff, Save, LogOut, Lock, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
+import { Eye, EyeOff, Save, LogOut, Lock, ArrowRight, CheckCircle2, AlertCircle, Plus, Trash2, Upload, Image } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const PASSWORD_STORAGE_KEY = "aif_admin_pw";
 
@@ -44,6 +45,84 @@ function SectionCard({ title, children }: { title: string; children: React.React
 
 const inputClass =
   "bg-blue-900/40 border-blue-700/60 text-white placeholder:text-slate-600 focus:border-blue-400 focus:ring-blue-400/30 text-sm";
+
+// ─── Image Uploader Component ────────────────────────────────────────────────
+function ImageUploader({
+  currentImage,
+  onUpload,
+  password,
+  label = "תמונה",
+}: {
+  currentImage: string;
+  onUpload: (url: string) => void;
+  password: string;
+  label?: string;
+}) {
+  const [uploading, setUploading] = useState(false);
+
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("הקובץ גדול מדי (מקסימום 5MB)");
+      return;
+    }
+
+    setUploading(true);
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("password", password);
+
+    try {
+      const res = await fetch("/api/upload", { method: "POST", body: formData });
+      if (!res.ok) throw new Error("שגיאה בהעלאה");
+      const data = await res.json();
+      if (data.url) {
+        onUpload(data.url);
+        toast.success("התמונה הועלתה בהצלחה!");
+      }
+    } catch {
+      toast.error("שגיאה בהעלאת התמונה");
+    }
+    setUploading(false);
+  };
+
+  return (
+    <div className="space-y-3">
+      <Label className="text-slate-200 font-medium text-sm">{label}</Label>
+      {currentImage && (
+        <div className="relative w-24 h-24 bg-slate-900 rounded-lg overflow-hidden border border-blue-700/60">
+          <img src={currentImage} alt="preview" className="w-full h-full object-cover" />
+        </div>
+      )}
+      <div className="flex items-center gap-2">
+        <Input
+          type="file"
+          accept="image/*"
+          onChange={handleUpload}
+          disabled={uploading}
+          className={inputClass + " text-xs file:bg-blue-700 file:text-white file:border-0 file:rounded file:px-2 file:py-1 file:mr-2"}
+        />
+        {uploading && (
+          <span className="flex items-center gap-1 text-xs text-blue-300">
+            <span className="w-3 h-3 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+            מעלה...
+          </span>
+        )}
+      </div>
+      {currentImage && (
+        <Input
+          value={currentImage}
+          onChange={(e) => onUpload(e.target.value)}
+          className={inputClass + " text-xs"}
+          dir="ltr"
+          placeholder="/images/..."
+        />
+      )}
+    </div>
+  );
+}
 
 // ─── Deep clone helper ───────────────────────────────────────────────────────
 function clone<T>(val: T): T {
@@ -184,6 +263,55 @@ export default function Admin() {
       if (!prev) return prev;
       const next = clone(prev);
       next.team[memberIdx].expertise[expIdx] = value;
+      return next;
+    });
+  };
+
+  // Add new expertise item
+  const addExpertise = (memberIdx: number) => {
+    setContent((prev) => {
+      if (!prev) return prev;
+      const next = clone(prev);
+      next.team[memberIdx].expertise.push("");
+      return next;
+    });
+  };
+
+  // Remove expertise item
+  const removeExpertise = (memberIdx: number, expIdx: number) => {
+    setContent((prev) => {
+      if (!prev) return prev;
+      const next = clone(prev);
+      next.team[memberIdx].expertise.splice(expIdx, 1);
+      return next;
+    });
+  };
+
+  // Add new item to array
+  const addItem = (arrayKey: "team" | "services" | "clients" | "faq" | "gallery") => {
+    setContent((prev) => {
+      if (!prev) return prev;
+      const next = clone(prev);
+      const templates = {
+        team: { name: "", title: "", bio: "", image: "", expertise: [""] },
+        services: { iconKey: "trending", title: "", description: "" },
+        clients: { name: "", description: "", logoUrl: "" },
+        faq: { question: "", answer: "" },
+        gallery: { src: "", alt: "" },
+      };
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (next[arrayKey] as any[]).push(templates[arrayKey]);
+      return next;
+    });
+  };
+
+  // Remove item from array
+  const removeItem = (arrayKey: "team" | "services" | "clients" | "faq" | "gallery", index: number) => {
+    setContent((prev) => {
+      if (!prev) return prev;
+      const next = clone(prev);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (next[arrayKey] as any[]).splice(index, 1);
       return next;
     });
   };
@@ -373,6 +501,9 @@ export default function Admin() {
             <TabsTrigger value="faq" className="data-[state=active]:bg-blue-700 data-[state=active]:text-white text-slate-400 rounded-lg text-xs font-medium px-3 py-2">
               שאלות נפוצות
             </TabsTrigger>
+            <TabsTrigger value="gallery" className="data-[state=active]:bg-blue-700 data-[state=active]:text-white text-slate-400 rounded-lg text-xs font-medium px-3 py-2">
+              גלריה
+            </TabsTrigger>
             <TabsTrigger value="contact" className="data-[state=active]:bg-blue-700 data-[state=active]:text-white text-slate-400 rounded-lg text-xs font-medium px-3 py-2">
               יצירת קשר
             </TabsTrigger>
@@ -444,7 +575,7 @@ export default function Admin() {
           {/* ── Team Tab ──────────────────────────────────────────────── */}
           <TabsContent value="team" className="focus-visible:outline-none">
             {content.team.map((member, idx) => (
-              <SectionCard key={idx} title={`חבר צוות ${idx + 1}: ${member.name}`}>
+              <SectionCard key={idx} title={`חבר צוות ${idx + 1}: ${member.name || "(חדש)"}`}>
                 <Field label="שם מלא">
                   <Input
                     value={member.name}
@@ -467,35 +598,67 @@ export default function Admin() {
                     rows={3}
                   />
                 </Field>
-                <Field label="תמונת פרופיל (נתיב)" hint="הנתיב לתמונה, לדוגמה: /images/tal-profile.jpg">
-                  <Input
-                    value={member.image}
-                    onChange={(e) => setArr("team", idx, "image", e.target.value)}
-                    className={inputClass}
-                    dir="ltr"
-                    placeholder="/images/..."
-                  />
-                </Field>
+                <ImageUploader
+                  currentImage={member.image}
+                  onUpload={(url) => setArr("team", idx, "image", url)}
+                  password={password}
+                  label="תמונת פרופיל"
+                />
                 <div className="space-y-3">
                   <Label className="text-slate-200 font-medium text-sm">תחומי התמחות</Label>
                   {member.expertise.map((exp, expIdx) => (
-                    <Input
-                      key={expIdx}
-                      value={exp}
-                      onChange={(e) => setExpertise(idx, expIdx, e.target.value)}
-                      className={inputClass}
-                      placeholder={`התמחות ${expIdx + 1}`}
-                    />
+                    <div key={expIdx} className="flex gap-2">
+                      <Input
+                        value={exp}
+                        onChange={(e) => setExpertise(idx, expIdx, e.target.value)}
+                        className={inputClass + " flex-1"}
+                        placeholder={`התמחות ${expIdx + 1}`}
+                      />
+                      {member.expertise.length > 1 && (
+                        <Button
+                          onClick={() => removeExpertise(idx, expIdx)}
+                          variant="ghost"
+                          size="sm"
+                          className="text-red-400 hover:text-red-300 hover:bg-red-900/20 px-2"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </Button>
+                      )}
+                    </div>
                   ))}
+                  <Button
+                    onClick={() => addExpertise(idx)}
+                    variant="outline"
+                    size="sm"
+                    className="border-blue-700 text-blue-300 hover:bg-blue-900/40"
+                  >
+                    <Plus className="w-4 h-4 ml-1" /> הוסף התמחות
+                  </Button>
+                </div>
+                <div className="pt-4 border-t border-blue-800/50">
+                  <Button
+                    onClick={() => removeItem("team", idx)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+                  >
+                    <Trash2 className="w-4 h-4 ml-1" /> מחק חבר צוות
+                  </Button>
                 </div>
               </SectionCard>
             ))}
+            <Button
+              onClick={() => addItem("team")}
+              className="w-full bg-blue-800/50 hover:bg-blue-700/50 text-blue-200 border border-blue-700/60 rounded-xl py-6"
+            >
+              <Plus className="w-5 h-5 ml-2" /> הוסף חבר צוות חדש
+            </Button>
           </TabsContent>
 
           {/* ── Services Tab ──────────────────────────────────────────── */}
           <TabsContent value="services" className="focus-visible:outline-none">
             {content.services.map((service, idx) => (
-              <SectionCard key={idx} title={`שירות ${idx + 1}: ${service.title}`}>
+              <SectionCard key={idx} title={`שירות ${idx + 1}: ${service.title || "(חדש)"}`}>
                 <Field label="כותרת השירות">
                   <Input
                     value={service.title}
@@ -511,14 +674,45 @@ export default function Admin() {
                     rows={3}
                   />
                 </Field>
+                <Field label="אייקון" hint="בחר אייקון שמתאים לשירות">
+                  <Select
+                    value={service.iconKey}
+                    onValueChange={(value) => setArr("services", idx, "iconKey", value)}
+                  >
+                    <SelectTrigger className={inputClass}>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="trending">מגמות (Trending)</SelectItem>
+                      <SelectItem value="users">משתמשים (Users)</SelectItem>
+                      <SelectItem value="message">הודעות (Message)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </Field>
+                <div className="pt-4 border-t border-blue-800/50">
+                  <Button
+                    onClick={() => removeItem("services", idx)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+                  >
+                    <Trash2 className="w-4 h-4 ml-1" /> מחק שירות
+                  </Button>
+                </div>
               </SectionCard>
             ))}
+            <Button
+              onClick={() => addItem("services")}
+              className="w-full bg-blue-800/50 hover:bg-blue-700/50 text-blue-200 border border-blue-700/60 rounded-xl py-6"
+            >
+              <Plus className="w-5 h-5 ml-2" /> הוסף שירות חדש
+            </Button>
           </TabsContent>
 
           {/* ── Clients Tab ───────────────────────────────────────────── */}
           <TabsContent value="clients" className="focus-visible:outline-none">
             {content.clients.map((client, idx) => (
-              <SectionCard key={idx} title={`לקוח ${idx + 1}: ${client.name}`}>
+              <SectionCard key={idx} title={`לקוח ${idx + 1}: ${client.name || "(חדש)"}`}>
                 <Field label="שם הלקוח / ארגון">
                   <Input
                     value={client.name}
@@ -534,14 +728,36 @@ export default function Admin() {
                     rows={3}
                   />
                 </Field>
+                <ImageUploader
+                  currentImage={client.logoUrl}
+                  onUpload={(url) => setArr("clients", idx, "logoUrl", url)}
+                  password={password}
+                  label="לוגו (אופציונלי)"
+                />
+                <div className="pt-4 border-t border-blue-800/50">
+                  <Button
+                    onClick={() => removeItem("clients", idx)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+                  >
+                    <Trash2 className="w-4 h-4 ml-1" /> מחק לקוח
+                  </Button>
+                </div>
               </SectionCard>
             ))}
+            <Button
+              onClick={() => addItem("clients")}
+              className="w-full bg-blue-800/50 hover:bg-blue-700/50 text-blue-200 border border-blue-700/60 rounded-xl py-6"
+            >
+              <Plus className="w-5 h-5 ml-2" /> הוסף לקוח חדש
+            </Button>
           </TabsContent>
 
           {/* ── FAQ Tab ───────────────────────────────────────────────── */}
           <TabsContent value="faq" className="focus-visible:outline-none">
             {content.faq.map((item, idx) => (
-              <SectionCard key={idx} title={`שאלה ${idx + 1}`}>
+              <SectionCard key={idx} title={`שאלה ${idx + 1}: ${item.question.slice(0, 30) || "(חדשה)"}${item.question.length > 30 ? "..." : ""}`}>
                 <Field label="שאלה">
                   <Input
                     value={item.question}
@@ -557,8 +773,79 @@ export default function Admin() {
                     rows={3}
                   />
                 </Field>
+                <div className="pt-4 border-t border-blue-800/50">
+                  <Button
+                    onClick={() => removeItem("faq", idx)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+                  >
+                    <Trash2 className="w-4 h-4 ml-1" /> מחק שאלה
+                  </Button>
+                </div>
               </SectionCard>
             ))}
+            <Button
+              onClick={() => addItem("faq")}
+              className="w-full bg-blue-800/50 hover:bg-blue-700/50 text-blue-200 border border-blue-700/60 rounded-xl py-6"
+            >
+              <Plus className="w-5 h-5 ml-2" /> הוסף שאלה חדשה
+            </Button>
+          </TabsContent>
+
+          {/* ── Gallery Tab ────────────────────────────────────────────── */}
+          <TabsContent value="gallery" className="focus-visible:outline-none">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {content.gallery.map((image, idx) => (
+                <Card key={idx} className="bg-blue-950/60 border-blue-800/70">
+                  <CardContent className="p-4 space-y-3">
+                    <div className="flex items-start gap-3">
+                      {image.src ? (
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-24 h-24 object-cover rounded-lg border border-blue-700/60"
+                        />
+                      ) : (
+                        <div className="w-24 h-24 bg-blue-900/50 rounded-lg border border-blue-700/60 flex items-center justify-center">
+                          <Image className="w-8 h-8 text-blue-600" />
+                        </div>
+                      )}
+                      <div className="flex-1 space-y-2">
+                        <Field label="תיאור התמונה">
+                          <Input
+                            value={image.alt}
+                            onChange={(e) => setArr("gallery", idx, "alt", e.target.value)}
+                            className={inputClass}
+                            placeholder="תיאור התמונה לנגישות"
+                          />
+                        </Field>
+                      </div>
+                    </div>
+                    <ImageUploader
+                      currentImage={image.src}
+                      onUpload={(url) => setArr("gallery", idx, "src", url)}
+                      password={password}
+                      label="תמונה"
+                    />
+                    <Button
+                      onClick={() => removeItem("gallery", idx)}
+                      variant="ghost"
+                      size="sm"
+                      className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+                    >
+                      <Trash2 className="w-4 h-4 ml-1" /> מחק תמונה
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <Button
+              onClick={() => addItem("gallery")}
+              className="w-full mt-4 bg-blue-800/50 hover:bg-blue-700/50 text-blue-200 border border-blue-700/60 rounded-xl py-6"
+            >
+              <Plus className="w-5 h-5 ml-2" /> הוסף תמונה לגלריה
+            </Button>
           </TabsContent>
 
           {/* ── Contact Tab ───────────────────────────────────────────── */}

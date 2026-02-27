@@ -3,6 +3,7 @@ import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
 import { promises as fs } from "fs";
+import multer from "multer";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,6 +27,48 @@ async function startServer() {
   const contentPath = isProduction
     ? path.resolve(staticPath, "content.json")
     : path.resolve(__dirname, "..", "client", "public", "content.json");
+
+  // Create uploads directory
+  const uploadsPath = path.join(staticPath, "images", "uploads");
+  await fs.mkdir(uploadsPath, { recursive: true });
+
+  // Configure multer for image uploads
+  const storage = multer.diskStorage({
+    destination: (_req, _file, cb) => {
+      cb(null, uploadsPath);
+    },
+    filename: (_req, file, cb) => {
+      const timestamp = Date.now();
+      const ext = path.extname(file.originalname);
+      cb(null, `${timestamp}${ext}`);
+    },
+  });
+
+  const upload = multer({
+    storage,
+    limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
+    fileFilter: (_req, file, cb) => {
+      const allowed = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+      cb(null, allowed.includes(file.mimetype));
+    },
+  });
+
+  // POST /api/upload - upload image (requires admin password)
+  app.post("/api/upload", upload.single("image"), (req, res) => {
+    const { password } = req.body;
+
+    if (!password || password !== ADMIN_PASSWORD) {
+      res.status(401).json({ error: "סיסמה שגויה" });
+      return;
+    }
+
+    if (!req.file) {
+      res.status(400).json({ error: "לא נבחר קובץ" });
+      return;
+    }
+
+    res.json({ url: `/images/uploads/${req.file.filename}` });
+  });
 
   // GET /api/content - read current content
   app.get("/api/content", async (_req, res) => {
