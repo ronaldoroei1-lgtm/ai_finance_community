@@ -123,12 +123,12 @@ export default function Home() {
           {/* Desktop CTA + Mobile hamburger */}
           <div className="flex items-center gap-3">
             <a
-              href={hero.whatsappUrl}
+              href={hero.businessWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/25"
             >
-              הצטרפו לקהילה
+              דברו איתנו בוואטסאפ
             </a>
             <button
               className="md:hidden p-2 text-slate-400 hover:text-white transition-colors duration-200"
@@ -162,13 +162,13 @@ export default function Home() {
                 </a>
               ))}
               <a
-                href={hero.whatsappUrl}
+                href={hero.businessWhatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-3 flex items-center justify-center gap-2 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200"
               >
-                הצטרפו לקהילה
+                דברו איתנו בוואטסאפ
               </a>
             </div>
           </motion.div>
@@ -217,7 +217,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                קהילה פעילה עם 1,700+ אנשי כספים
+                מאחורינו קהילה של 1,800+ אנשי כספים
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight gradient-heading">
@@ -230,21 +230,21 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
                   >
-                    הצטרפו לקהילה
+                    דברו איתנו בוואטסאפ
                   </Button>
                 </a>
-                <a href={`mailto:${contact.email}`}>
+                <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border border-white/15 text-white bg-white/5 hover:bg-white/10 hover:border-white/25 px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200"
                   >
-                    פנו אלינו
+                    הצטרפו לקהילה
                   </Button>
                 </a>
               </div>
@@ -390,9 +390,9 @@ export default function Home() {
                 </span>
               </div>
               <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
-                המוצרים והשירותים שלנו
+                מה אנחנו עושים
               </h2>
-              <p className="text-slate-400 text-lg">מה אנחנו מציעים</p>
+              <p className="text-slate-400 text-lg">סדנאות, הרצאות וליווי למחלקות כספים</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -422,12 +422,12 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                   <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">{service.description}</p>
-                  <a href={`mailto:${contact.email}`}>
+                  <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
                     <Button
                       variant="outline"
                       className="border border-blue-500/30 text-blue-300 bg-blue-900/20 hover:bg-blue-900/50 hover:border-blue-400/60 w-full font-semibold transition-all duration-200"
                     >
-                      פנו אלינו לפרטים
+                      דברו איתנו לפרטים
                     </Button>
                   </a>
                 </motion.div>
@@ -781,7 +781,7 @@ export default function Home() {
               <p className="text-lg text-slate-300 mb-10 leading-relaxed">
                 {cta.subtext}
               </p>
-              <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="bg-emerald-600 hover:bg-emerald-500 text-white px-14 py-7 text-lg font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/35 hover:-translate-y-0.5"
@@ -791,7 +791,7 @@ export default function Home() {
               </a>
               <div className="mt-5">
                 <a
-                  href={contact.whatsappUrl}
+                  href={hero.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700/60 hover:bg-emerald-600/80 border border-emerald-500/30 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/20"
@@ -826,7 +826,7 @@ export default function Home() {
             <div className="md:col-span-2">
               <h3 className="font-bold mb-3 text-lg text-white">AI Finance Community</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-xs">
-                גשר בין עולם הפיננסים לעולם הבינה המלאכותית — קהילה של מעל 1,700 אנשי כספים ישראלים.
+                AI מעשי למחלקות כספים — סדנאות, הרצאות וליווי, מאחורינו קהילה של מעל 1,800 אנשי כספים ישראלים.
               </p>
               <div className="flex gap-3">
                 <a

@@ -36,6 +36,7 @@ export interface SiteContent {
     subtext: string;
     subtagline: string;
     whatsappUrl: string;
+    businessWhatsappUrl: string;
     linkedinUrl: string;
   };
   about: {

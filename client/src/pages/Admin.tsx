@@ -546,6 +546,15 @@ export default function Admin() {
                   placeholder="https://chat.whatsapp.com/..."
                 />
               </Field>
+              <Field label="קישור WhatsApp לשיחה עסקית" hint="קישור wa.me לשיחה ישירה (הכפתור הראשי באתר), אפשר לכלול הודעה מוכנה מראש">
+                <Input
+                  value={content.hero.businessWhatsappUrl}
+                  onChange={(e) => set("hero.businessWhatsappUrl", e.target.value)}
+                  className={inputClass}
+                  dir="ltr"
+                  placeholder="https://wa.me/9725...?text=..."
+                />
+              </Field>
               <Field label="קישור LinkedIn" hint="קישור לפרופיל הלינקדאין">
                 <Input
                   value={content.hero.linkedinUrl}
