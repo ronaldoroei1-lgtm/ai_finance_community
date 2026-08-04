@@ -103,12 +103,33 @@ async function startServer() {
     }
   });
 
-  // Serve static files from dist/public in production
+  // TEMPORARY: the blog articles link to /services/ai-workshops-for-finance/
+  // (see blog-source/articles/CONTENT-SPECS.md), a dedicated service page
+  // that doesn't exist yet. Redirect to the workshops section on the home
+  // page instead of letting those links 404. Remove this once a real
+  // /services/ai-workshops-for-finance/ page is built and replace with a
+  // static route.
+  app.get(["/services/ai-workshops-for-finance", "/services/ai-workshops-for-finance/"], (_req, res) => {
+    res.redirect(302, "/#services");
+  });
+
+  // Serve static files from dist/public in production. /blog/ and
+  // /blog/{slug}/ are prerendered directories with their own index.html
+  // (see scripts/blog/prerender.mjs) - express.static serves those
+  // automatically for exact matches, including the directory-index +
+  // trailing-slash redirect behaviour, before ever reaching the catch-all
+  // below.
   app.use(express.static(staticPath));
 
-  // Handle client-side routing - serve index.html for all routes
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(staticPath, "index.html"));
+  // Anything that reaches here didn't match a static file or a
+  // prerendered blog route. Known client-rendered app routes still get
+  // the SPA shell with a 200; everything else (including bad /blog/:slug
+  // URLs) gets the SPA shell too - so the client-side NotFound component
+  // renders - but with a real HTTP 404 status, not a silent 200.
+  const KNOWN_APP_ROUTES = new Set(["/", "/admin", "/404"]);
+  app.get("*", (req, res) => {
+    const status = KNOWN_APP_ROUTES.has(req.path) ? 200 : 404;
+    res.status(status).sendFile(path.join(staticPath, "index.html"));
   });
 
   const port = process.env.PORT || 3000;

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Forum | The Living Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "tertiary-container": "#787467",
+              "tertiary-fixed": "#e8e2d2",
+              "tertiary": "#5f5c4f",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#78351b",
+              "on-secondary-fixed": "#380d00",
+              "on-surface-variant": "#45483e",
+              "surface-container-low": "#f5f3f1",
+              "secondary-container": "#ffa17f",
+              "background": "#faf9f7",
+              "on-primary-fixed-variant": "#3c4c25",
+              "secondary-fixed": "#ffdbcf",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e3e2e0",
+              "surface-tint": "#53643a",
+              "tertiary-fixed-dim": "#ccc6b7",
+              "secondary-fixed-dim": "#ffb59b",
+              "primary-fixed": "#d6eab5",
+              "primary": "#516138",
+              "outline": "#75786d",
+              "outline-variant": "#c5c8bb",
+              "on-primary-container": "#faffe9",
+              "secondary": "#934a2e",
+              "inverse-on-surface": "#f2f0ef",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#faf9f7",
+              "inverse-surface": "#303130",
+              "inverse-primary": "#bacd9b",
+              "surface-container": "#efeeec",
+              "surface-dim": "#dbdad8",
+              "on-secondary-fixed-variant": "#753319",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#1e1c12",
+              "surface-container-highest": "#e3e2e0",
+              "on-tertiary-fixed-variant": "#4a473b",
+              "primary-fixed-dim": "#bacd9b",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e9e8e6",
+              "on-surface": "#1b1c1b",
+              "surface": "#faf9f7",
+              "primary-container": "#697a4f",
+              "on-primary-fixed": "#121f01",
+              "on-background": "#1b1c1b",
+              "on-tertiary-container": "#fffbff",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .serif { font-family: 'Newsreader', serif; }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<header class="bg-[#faf9f7] dark:bg-stone-900 sticky top-0 z-50 transition-colors duration-300">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="font-['Newsreader'] text-2xl italic font-semibold text-[#516138] dark:text-[#8ea373]">
+                The Living Ledger
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-stone-500 dark:text-stone-400 font-medium font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] dark:hover:text-[#ffb59b] transition-colors duration-300" href="#">Journal</a>
+<a class="text-[#516138] dark:text-[#8ea373] border-b-2 border-[#934a2e] pb-1 font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] transition-colors duration-300" href="#">Gardens</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] dark:hover:text-[#ffb59b] transition-colors duration-300" href="#">Vault</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] dark:hover:text-[#ffb59b] transition-colors duration-300" href="#">Advisory</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary" data-icon="notifications">notifications</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="User profile avatar in a soft circular frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChtOlbZVNsAt8g5MvpYFkSBouEsT6IMkM8Ru4QvTR22OLWClluv4iapvPNdCT31a_ctG4uQAHgjEjdYZVdNHL08_c07P49oaOsWwSemrfIjZor5ubDKtgqyexZzWlc8l5P7cT8kWYzO8bqielqAmVuyutM1RHQfY-bcMkqbH0WJpD0Et8k9XXX8GHDu3ib4swZ8kcrDE477gXddqFEYG-8Yqpj9LLbcsiQ-uF7WQSywsUlAqS7TQtk7vKNn194jj_OA3zrANPRqw8"/>
+</div>
+</div>
+</div>
+<div class="bg-[#f5f3f1] dark:bg-stone-800 h-[1px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+<!-- Hero Section -->
+<section class="mb-20 text-center max-w-3xl mx-auto">
+<h1 class="text-5xl md:text-7xl mb-6 text-on-surface tracking-tight leading-tight">
+                Cultivate <span class="italic text-primary">Collective</span> Wisdom.
+            </h1>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-10">
+                A sanctuary for intentional financial dialogue. Share your journey, nurture your growth, and find resonance within our community gardens.
+            </p>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-xl font-semibold text-lg shadow-sm hover:opacity-90 transition-all active:scale-[0.98]">
+                Share Your Voice
+            </button>
+</section>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Sidebar / Categories -->
+<aside class="lg:w-1/4 space-y-12">
+<div>
+<h3 class="text-xs font-bold tracking-[0.2em] text-outline uppercase mb-8">Gardens of Thought</h3>
+<nav class="space-y-3">
+<a class="flex items-center gap-4 p-4 rounded-xl bg-secondary-fixed text-on-secondary-fixed transition-all group" href="#">
+<span class="material-symbols-outlined text-secondary" data-icon="balance">balance</span>
+<span class="font-semibold">Ethics &amp; Equity</span>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all group" href="#">
+<span class="material-symbols-outlined text-primary opacity-60 group-hover:opacity-100" data-icon="insights">insights</span>
+<span class="font-medium">Community Insight</span>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all group" href="#">
+<span class="material-symbols-outlined text-primary opacity-60 group-hover:opacity-100" data-icon="park">park</span>
+<span class="font-medium">Collaborative Growth</span>
+</a>
+<a class="flex items-center gap-4 p-4 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all group" href="#">
+<span class="material-symbols-outlined text-primary opacity-60 group-hover:opacity-100" data-icon="auto_stories">auto_stories</span>
+<span class="font-medium">Shared Narratives</span>
+</a>
+</nav>
+</div>
+<div class="p-8 rounded-2xl bg-secondary-fixed-dim/30 relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="serif text-2xl mb-3 text-on-secondary-container">Relationship Insight</h4>
+<p class="text-sm leading-relaxed text-on-secondary-fixed-variant mb-6">"True wealth is measured by the quality of the connections we nurture, not just the numbers we ledger."</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="Guide" class="w-full h-full object-cover" data-alt="Candid portrait of a financial guide" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVlz26jL_BCtTakN8M7W7rqbk3Ka7a4Nzf5tO-VE1owZtTL2wSsCq1f6GxMoLp1_--_vO73OvgcNpft9KEHsNOWUBSq2fX7rI49AOk-e0sWAoV36piRy0a3E8ZWA7Hhp3EiogyTLXVvA6wbfUzl7waimOI8bmjo3nRtaOfbmADKxPFoJGyfetNyl-6If8AuYLJkX5RYb7BNXSW_s4n4gtYRGXBGu-LYJR1kc7O1Wx1xXvBdDOZAQb9WWvU-i6MhgLNXrzG3Y4BQCU"/>
+</div>
+<span class="text-xs font-bold text-on-secondary-container">Marcus V. • Guide</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Discussion Feed -->
+<div class="lg:w-3/4">
+<div class="flex items-center justify-between mb-10 pb-4 border-b border-outline-variant/20">
+<h2 class="serif text-3xl">Active Dialogues</h2>
+<div class="flex gap-4">
+<button class="text-sm font-semibold text-primary underline decoration-secondary decoration-2 underline-offset-4">Recent</button>
+<button class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Blooming</button>
+</div>
+</div>
+<div class="space-y-12">
+<!-- Discussion Item 1 -->
+<article class="flex flex-col md:flex-row gap-8 group">
+<div class="md:w-16 shrink-0">
+<img alt="Author" class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="Large soft-circular profile photo of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM090FoOcYBB5g69NdxWMf-PBstK3QEEXdOHjdl3yD3tt4tRq0re7OIcaOcgrIZNjPKMPCLhetuRFSg4IxwD4I3Ztt_1rSOlWdRrKBycAsJpaFapTkwWgFDI08C-1eP4I31OuBnvV9BwV0S1_wD8xjY5teO1SZdhPrb2Gf7fnie0mEX_zgwvvt46JPmPblWtJHgwRbbscVKEpwyodaW9Mon1bcTA1fYKm5QEl6C_wGRbWUaOwiskWU7XuxXowJhOsh7he2Aw73LM4"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-3">
+<span class="font-bold text-sm text-primary">Elena Rodriguez</span>
+<span class="text-xs text-outline">• 2 hours ago in Ethics &amp; Equity</span>
+</div>
+<h3 class="serif text-3xl mb-4 group-hover:text-secondary transition-colors cursor-pointer leading-tight">
+                                How can we rebuild local economies through communal lending circles?
+                            </h3>
+<p class="text-on-surface-variant leading-relaxed mb-6 line-clamp-2">
+                                I've been researching the impact of trust-based financial networks in rural communities. The data suggests that social capital often outweighs collateral...
+                            </p>
+<div class="flex items-center gap-6 text-sm text-outline">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span> 24 Responses</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span> 156 Seedlings</span>
+<button class="ml-auto text-primary font-semibold flex items-center gap-1 group/btn">
+                                    Join Dialogue <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Discussion Item 2 -->
+<article class="flex flex-col md:flex-row gap-8 group">
+<div class="md:w-16 shrink-0">
+<img alt="Author" class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="Large soft-circular profile photo of a man in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACEHlpzkUBpcN5HFWZrH6p6E8LuuM6hTJ9iw4cf1efRfU0bbptPmIu1QKKaLPtCL5mfQRRJVhfx_8XbDOX3Oitk13E1bPp4y9i9tIrStI90uQwjKlYItaib4uAFyiTsCoMX5guVKIPftU0HTLk-OLlnGvAPsL15tQy5FxMrAbZx_HoYIBVogOirxV6IrGBkVVBxnY9unGi0ciGIv7M3QfVbKXwlKtN0ZXkjTEoqU63WsNiM2QhXp10FzEQc-vxe5vHcG25ljd4BI4"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-3">
+<span class="font-bold text-sm text-primary">Julian Thorne</span>
+<span class="text-xs text-outline">• 5 hours ago in Community Insight</span>
+</div>
+<h3 class="serif text-3xl mb-4 group-hover:text-secondary transition-colors cursor-pointer leading-tight">
+                                The psychological shift from scarcity to stewardship.
+                            </h3>
+<p class="text-on-surface-variant leading-relaxed mb-6 line-clamp-2">
+                                When we stop viewing money as a resource to be hoarded and start seeing it as a seed to be planted, our entire relationship with debt changes...
+                            </p>
+<div class="flex items-center gap-6 text-sm text-outline">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span> 18 Responses</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span> 92 Seedlings</span>
+<button class="ml-auto text-primary font-semibold flex items-center gap-1 group/btn">
+                                    Join Dialogue <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Discussion Item 3 -->
+<article class="flex flex-col md:flex-row gap-8 group">
+<div class="md:w-16 shrink-0">
+<img alt="Author" class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="Large soft-circular profile photo of a woman in a garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDqWNoWkk5zy-gkzUxGClRuijC47L4x_tc-p5hI3KXL9APinYTXpQ5Yy_rODGo0E6zVbmZNVOYP9HJ2wRzL2K9pH4oBTUrxpgIlsyQDsMikJ5MFCNP-a3gcC7M-TXTiaR2m1Wvi8cQ2QXl53AWfj1sIxxszPYl5pKHJUNooFc9Vg-bWNdu6AgC3ECOWc_ouXqScn6feDmREzeWXjWUrC7JqVbtDxJaqJE2vFgWmtqlKMOp5hITabytTSVFblf8eSPDA1lQrUYQ8Q0"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-3">
+<span class="font-bold text-sm text-primary">Sarah Chen</span>
+<span class="text-xs text-outline">• 1 day ago in Collaborative Growth</span>
+</div>
+<h3 class="serif text-3xl mb-4 group-hover:text-secondary transition-colors cursor-pointer leading-tight">
+                                Collaborative budgeting for modern family ecosystems.
+                            </h3>
+<p class="text-on-surface-variant leading-relaxed mb-6 line-clamp-2">
+                                We've moved beyond the "joint account" model. How are others managing shared resources across multi-generational households?
+                            </p>
+<div class="flex items-center gap-6 text-sm text-outline">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg" data-icon="chat_bubble">chat_bubble</span> 42 Responses</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span> 210 Seedlings</span>
+<button class="ml-auto text-primary font-semibold flex items-center gap-1 group/btn">
+                                    Join Dialogue <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More Asymmetric Button -->
+<div class="mt-20 flex justify-center">
+<button class="bg-surface-container-high text-primary px-12 py-4 rounded-xl font-semibold hover:bg-surface-container-highest transition-colors">
+                        Discover More Stories
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f3f1] dark:bg-stone-800 full-width rounded-t-[2rem] mt-12 transition-colors duration-300">
+<div class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-['Newsreader'] text-xl font-bold text-[#516138] dark:text-[#8ea373]">
+                    The Living Ledger
+                </div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-stone-600 dark:text-stone-400 max-w-xs text-center md:text-left">
+                    Nurturing your financial growth with empathy and intention. © 2024 The Living Ledger.
+                </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4" href="#">Our Philosophy</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4" href="#">Privacy as Respect</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4" href="#">Terms of Growth</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4" href="#">Contact a Guide</a>
+</nav>
+</div>
+</footer>
+</body></html>

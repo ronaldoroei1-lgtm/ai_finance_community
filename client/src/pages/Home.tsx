@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ChevronDown,
   Users,
@@ -17,6 +17,8 @@ import {
 import { Button } from "@/components/ui/button";
 import Lightbox from "@/components/Lightbox";
 import { useContent } from "@/hooks/useContent";
+import { posts as blogPosts, authors as blogAuthors, categories as blogCategories } from "@/generated/blog";
+import ArticleCard from "@/components/blog/ArticleCard";
 
 const iconMap: Record<string, React.ReactNode> = {
   trending: <TrendingUp className="w-10 h-10" />,
@@ -30,10 +32,11 @@ const navLinks = [
   { label: "שירותים", href: "#services" },
   { label: "לקוחות", href: "#clients" },
   { label: "מדריכים", href: "#guides" },
+  { label: "בלוג", href: "/blog/" },
   { label: "שאלות נפוצות", href: "#faq" },
 ];
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 32 },
   visible: {
     opacity: 1,
@@ -42,7 +45,7 @@ const sectionVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
     opacity: 1,
@@ -675,6 +678,55 @@ export default function Home() {
           </div>
         </motion.section>
 
+        {/* ─── From the Blog Section ─────────────────────────────────── */}
+        {/* Renders only once there are published posts - stays invisible
+            until content/blog/*.md has real content, so it never ships an
+            empty "coming soon" section. */}
+        {blogPosts.length > 0 && (
+          <motion.section
+            className="py-28 relative"
+            id="blog"
+            aria-labelledby="blog-heading"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+          >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+
+            <div className="container relative z-10">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+                <div>
+                  <span className="section-label mb-5 inline-flex">
+                    <BookOpen className="w-3 h-3" aria-hidden="true" />
+                    מהבלוג
+                  </span>
+                  <h2 id="blog-heading" className="text-4xl md:text-5xl font-bold gradient-heading">
+                    מדריכים אחרונים
+                  </h2>
+                </div>
+                <a
+                  href="/blog/"
+                  className="text-sm font-semibold text-blue-300 hover:text-blue-200 transition-colors duration-200"
+                >
+                  כל המדריכים ←
+                </a>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {blogPosts.slice(0, 3).map((post) => (
+                  <ArticleCard
+                    key={post.slug}
+                    post={post}
+                    author={blogAuthors[post.author]}
+                    category={blogCategories.find((c) => c.id === post.category)}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.section>
+        )}
+
         {/* ─── FAQ Section ──────────────────────────────────────────── */}
         <motion.section
           className="py-28 relative"
@@ -858,6 +910,7 @@ export default function Home() {
                 <li><a href="#team" className="hover:text-blue-300 transition-colors duration-200">הצוות</a></li>
                 <li><a href="#services" className="hover:text-blue-300 transition-colors duration-200">שירותים</a></li>
                 <li><a href="#guides" className="hover:text-blue-300 transition-colors duration-200">מדריכים</a></li>
+                <li><a href="/blog/" className="hover:text-blue-300 transition-colors duration-200">בלוג</a></li>
                 <li><a href="#faq" className="hover:text-blue-300 transition-colors duration-200">שאלות נפוצות</a></li>
               </ul>
             </div>
