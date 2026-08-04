@@ -486,6 +486,15 @@ export default function Home() {
                     "
                   </div>
 
+                  {client.logoUrl && (
+                    <div className="h-10 mb-4 flex items-center">
+                      <img
+                        src={client.logoUrl}
+                        alt={`לוגו ${client.name}`}
+                        className="h-full max-w-[140px] object-contain object-right"
+                      />
+                    </div>
+                  )}
                   <h3 className="text-xl font-bold mb-3 text-white">{client.name}</h3>
                   <p className="text-slate-300 text-sm leading-relaxed">{client.description}</p>
                 </motion.div>
