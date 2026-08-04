@@ -45,6 +45,7 @@ export default function BlogFooter() {
               <li><Link href="/" className="hover:text-blue-300 transition-colors duration-200">עמוד הבית</Link></li>
               <li><Link href="/blog" className="hover:text-blue-300 transition-colors duration-200">בלוג</Link></li>
               <li><Link href="/#services" className="hover:text-blue-300 transition-colors duration-200">שירותים</Link></li>
+              <li><Link href="/services/ai-workshops-for-finance/" className="hover:text-blue-300 transition-colors duration-200">קורסים</Link></li>
               <li><Link href="/#faq" className="hover:text-blue-300 transition-colors duration-200">שאלות נפוצות</Link></li>
             </ul>
           </div>

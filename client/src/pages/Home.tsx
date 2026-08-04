@@ -30,6 +30,7 @@ const navLinks = [
   { label: "על הקהילה", href: "#about" },
   { label: "הצוות", href: "#team" },
   { label: "שירותים", href: "#services" },
+  { label: "קורסים", href: "/services/ai-workshops-for-finance/" },
   { label: "לקוחות", href: "#clients" },
   { label: "מדריכים", href: "#guides" },
   { label: "בלוג", href: "/blog/" },
@@ -909,6 +910,7 @@ export default function Home() {
                 <li><a href="#about" className="hover:text-blue-300 transition-colors duration-200">על הקהילה</a></li>
                 <li><a href="#team" className="hover:text-blue-300 transition-colors duration-200">הצוות</a></li>
                 <li><a href="#services" className="hover:text-blue-300 transition-colors duration-200">שירותים</a></li>
+                <li><a href="/services/ai-workshops-for-finance/" className="hover:text-blue-300 transition-colors duration-200">קורסים</a></li>
                 <li><a href="#guides" className="hover:text-blue-300 transition-colors duration-200">מדריכים</a></li>
                 <li><a href="/blog/" className="hover:text-blue-300 transition-colors duration-200">בלוג</a></li>
                 <li><a href="#faq" className="hover:text-blue-300 transition-colors duration-200">שאלות נפוצות</a></li>
