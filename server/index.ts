@@ -103,16 +103,6 @@ async function startServer() {
     }
   });
 
-  // TEMPORARY: the blog articles link to /services/ai-workshops-for-finance/
-  // (see blog-source/articles/CONTENT-SPECS.md), a dedicated service page
-  // that doesn't exist yet. Redirect to the workshops section on the home
-  // page instead of letting those links 404. Remove this once a real
-  // /services/ai-workshops-for-finance/ page is built and replace with a
-  // static route.
-  app.get(["/services/ai-workshops-for-finance", "/services/ai-workshops-for-finance/"], (_req, res) => {
-    res.redirect(302, "/#services");
-  });
-
   // Serve static files from dist/public in production. /blog/ and
   // /blog/{slug}/ are prerendered directories with their own index.html
   // (see scripts/blog/prerender.mjs) - express.static serves those
@@ -126,7 +116,13 @@ async function startServer() {
   // the SPA shell with a 200; everything else (including bad /blog/:slug
   // URLs) gets the SPA shell too - so the client-side NotFound component
   // renders - but with a real HTTP 404 status, not a silent 200.
-  const KNOWN_APP_ROUTES = new Set(["/", "/admin", "/404"]);
+  const KNOWN_APP_ROUTES = new Set([
+    "/",
+    "/admin",
+    "/404",
+    "/services/ai-workshops-for-finance",
+    "/services/ai-workshops-for-finance/",
+  ]);
   app.get("*", (req, res) => {
     const status = KNOWN_APP_ROUTES.has(req.path) ? 200 : 404;
     res.status(status).sendFile(path.join(staticPath, "index.html"));
