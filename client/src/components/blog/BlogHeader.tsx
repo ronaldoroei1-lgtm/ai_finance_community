@@ -33,6 +33,9 @@ export default function BlogHeader() {
           <Link href="/blog" className="text-sm text-white font-semibold">
             בלוג
           </Link>
+          <Link href="/services/ai-workshops-for-finance/" className="text-sm text-slate-400 hover:text-white transition-colors duration-200 font-medium">
+            קורסים
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
@@ -65,6 +68,9 @@ export default function BlogHeader() {
             </Link>
             <Link href="/blog" className="text-sm text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
               בלוג
+            </Link>
+            <Link href="/services/ai-workshops-for-finance/" className="text-sm text-slate-300" onClick={() => setMobileMenuOpen(false)}>
+              קורסים
             </Link>
           </div>
         </div>
