@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -276,5 +277,48 @@
 
   .slide-in-from-top-2 {
     animation: slideInFromTop 0.25s ease-out both;
+  }
+
+  /* ── Blog article body (rendered from generated Markdown HTML) ──── */
+  .prose-blog {
+    --tw-prose-body: var(--foreground);
+    --tw-prose-headings: #ffffff;
+    --tw-prose-links: #93c5fd;
+    --tw-prose-bold: #ffffff;
+    --tw-prose-counters: #94a3b8;
+    --tw-prose-bullets: #2563eb;
+    --tw-prose-hr: var(--border);
+    --tw-prose-quotes: #bfdbfe;
+    --tw-prose-quote-borders: #2563eb;
+    --tw-prose-code: #93c5fd;
+    --tw-prose-pre-bg: #0d1526;
+    --tw-prose-pre-code: #e2e8f0;
+    --tw-prose-th-borders: var(--border);
+    --tw-prose-td-borders: var(--border);
+    max-width: none;
+  }
+
+  .prose-blog h2,
+  .prose-blog h3 {
+    scroll-margin-top: 6rem;
+  }
+
+  .prose-blog h2 a,
+  .prose-blog h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .prose-blog a {
+    text-decoration-color: rgba(147, 197, 253, 0.35);
+  }
+
+  /* Wide comparison tables (common in these articles) would otherwise
+     overflow narrow viewports - make the table itself horizontally
+     scrollable instead of breaking mobile layout. */
+  .prose-blog table {
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
   }
 }

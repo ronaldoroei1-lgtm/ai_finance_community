@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ChevronDown,
   Users,
@@ -17,6 +17,8 @@ import {
 import { Button } from "@/components/ui/button";
 import Lightbox from "@/components/Lightbox";
 import { useContent } from "@/hooks/useContent";
+import { posts as blogPosts, authors as blogAuthors, categories as blogCategories } from "@/generated/blog";
+import ArticleCard from "@/components/blog/ArticleCard";
 
 const iconMap: Record<string, React.ReactNode> = {
   trending: <TrendingUp className="w-10 h-10" />,
@@ -30,10 +32,11 @@ const navLinks = [
   { label: "שירותים", href: "#services" },
   { label: "לקוחות", href: "#clients" },
   { label: "מדריכים", href: "#guides" },
+  { label: "בלוג", href: "/blog/" },
   { label: "שאלות נפוצות", href: "#faq" },
 ];
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 32 },
   visible: {
     opacity: 1,
@@ -42,7 +45,7 @@ const sectionVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
     opacity: 1,
@@ -123,12 +126,12 @@ export default function Home() {
           {/* Desktop CTA + Mobile hamburger */}
           <div className="flex items-center gap-3">
             <a
-              href={hero.whatsappUrl}
+              href={hero.businessWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/25"
             >
-              הצטרפו לקהילה
+              דברו איתנו בוואטסאפ
             </a>
             <button
               className="md:hidden p-2 text-slate-400 hover:text-white transition-colors duration-200"
@@ -162,13 +165,13 @@ export default function Home() {
                 </a>
               ))}
               <a
-                href={hero.whatsappUrl}
+                href={hero.businessWhatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-3 flex items-center justify-center gap-2 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200"
               >
-                הצטרפו לקהילה
+                דברו איתנו בוואטסאפ
               </a>
             </div>
           </motion.div>
@@ -217,7 +220,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                קהילה פעילה עם 1,700+ אנשי כספים
+                מאחורינו קהילה של 1,800+ אנשי כספים
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight gradient-heading">
@@ -230,21 +233,21 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
                   >
-                    הצטרפו לקהילה
+                    דברו איתנו בוואטסאפ
                   </Button>
                 </a>
-                <a href={`mailto:${contact.email}`}>
+                <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border border-white/15 text-white bg-white/5 hover:bg-white/10 hover:border-white/25 px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200"
                   >
-                    פנו אלינו
+                    הצטרפו לקהילה
                   </Button>
                 </a>
               </div>
@@ -390,9 +393,9 @@ export default function Home() {
                 </span>
               </div>
               <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
-                המוצרים והשירותים שלנו
+                מה אנחנו עושים
               </h2>
-              <p className="text-slate-400 text-lg">מה אנחנו מציעים</p>
+              <p className="text-slate-400 text-lg">סדנאות, הרצאות וליווי למחלקות כספים</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -422,12 +425,12 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                   <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">{service.description}</p>
-                  <a href={`mailto:${contact.email}`}>
+                  <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
                     <Button
                       variant="outline"
                       className="border border-blue-500/30 text-blue-300 bg-blue-900/20 hover:bg-blue-900/50 hover:border-blue-400/60 w-full font-semibold transition-all duration-200"
                     >
-                      פנו אלינו לפרטים
+                      דברו איתנו לפרטים
                     </Button>
                   </a>
                 </motion.div>
@@ -675,6 +678,55 @@ export default function Home() {
           </div>
         </motion.section>
 
+        {/* ─── From the Blog Section ─────────────────────────────────── */}
+        {/* Renders only once there are published posts - stays invisible
+            until content/blog/*.md has real content, so it never ships an
+            empty "coming soon" section. */}
+        {blogPosts.length > 0 && (
+          <motion.section
+            className="py-28 relative"
+            id="blog"
+            aria-labelledby="blog-heading"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+          >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+
+            <div className="container relative z-10">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+                <div>
+                  <span className="section-label mb-5 inline-flex">
+                    <BookOpen className="w-3 h-3" aria-hidden="true" />
+                    מהבלוג
+                  </span>
+                  <h2 id="blog-heading" className="text-4xl md:text-5xl font-bold gradient-heading">
+                    מדריכים אחרונים
+                  </h2>
+                </div>
+                <a
+                  href="/blog/"
+                  className="text-sm font-semibold text-blue-300 hover:text-blue-200 transition-colors duration-200"
+                >
+                  כל המדריכים ←
+                </a>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {blogPosts.slice(0, 3).map((post) => (
+                  <ArticleCard
+                    key={post.slug}
+                    post={post}
+                    author={blogAuthors[post.author]}
+                    category={blogCategories.find((c) => c.id === post.category)}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.section>
+        )}
+
         {/* ─── FAQ Section ──────────────────────────────────────────── */}
         <motion.section
           className="py-28 relative"
@@ -781,7 +833,7 @@ export default function Home() {
               <p className="text-lg text-slate-300 mb-10 leading-relaxed">
                 {cta.subtext}
               </p>
-              <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="bg-emerald-600 hover:bg-emerald-500 text-white px-14 py-7 text-lg font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/35 hover:-translate-y-0.5"
@@ -791,7 +843,7 @@ export default function Home() {
               </a>
               <div className="mt-5">
                 <a
-                  href={contact.whatsappUrl}
+                  href={hero.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700/60 hover:bg-emerald-600/80 border border-emerald-500/30 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/20"
@@ -826,7 +878,7 @@ export default function Home() {
             <div className="md:col-span-2">
               <h3 className="font-bold mb-3 text-lg text-white">AI Finance Community</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-xs">
-                גשר בין עולם הפיננסים לעולם הבינה המלאכותית — קהילה של מעל 1,700 אנשי כספים ישראלים.
+                AI מעשי למחלקות כספים — סדנאות, הרצאות וליווי, מאחורינו קהילה של מעל 1,800 אנשי כספים ישראלים.
               </p>
               <div className="flex gap-3">
                 <a
@@ -858,6 +910,7 @@ export default function Home() {
                 <li><a href="#team" className="hover:text-blue-300 transition-colors duration-200">הצוות</a></li>
                 <li><a href="#services" className="hover:text-blue-300 transition-colors duration-200">שירותים</a></li>
                 <li><a href="#guides" className="hover:text-blue-300 transition-colors duration-200">מדריכים</a></li>
+                <li><a href="/blog/" className="hover:text-blue-300 transition-colors duration-200">בלוג</a></li>
                 <li><a href="#faq" className="hover:text-blue-300 transition-colors duration-200">שאלות נפוצות</a></li>
               </ul>
             </div>

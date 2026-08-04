@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "tertiary-container": "#787467",
+              "tertiary-fixed": "#e8e2d2",
+              "tertiary": "#5f5c4f",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#78351b",
+              "on-secondary-fixed": "#380d00",
+              "on-surface-variant": "#45483e",
+              "surface-container-low": "#f5f3f1",
+              "secondary-container": "#ffa17f",
+              "background": "#faf9f7",
+              "on-primary-fixed-variant": "#3c4c25",
+              "secondary-fixed": "#ffdbcf",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e3e2e0",
+              "surface-tint": "#53643a",
+              "tertiary-fixed-dim": "#ccc6b7",
+              "secondary-fixed-dim": "#ffb59b",
+              "primary-fixed": "#d6eab5",
+              "primary": "#516138",
+              "outline": "#75786d",
+              "outline-variant": "#c5c8bb",
+              "on-primary-container": "#faffe9",
+              "secondary": "#934a2e",
+              "inverse-on-surface": "#f2f0ef",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#faf9f7",
+              "inverse-surface": "#303130",
+              "inverse-primary": "#bacd9b",
+              "surface-container": "#efeeec",
+              "surface-dim": "#dbdad8",
+              "on-secondary-fixed-variant": "#753319",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#1e1c12",
+              "surface-container-highest": "#e3e2e0",
+              "on-tertiary-fixed-variant": "#4a473b",
+              "primary-fixed-dim": "#bacd9b",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e9e8e6",
+              "on-surface": "#1b1c1b",
+              "surface": "#faf9f7",
+              "primary-container": "#697a4f",
+              "on-primary-fixed": "#121f01",
+              "on-background": "#1b1c1b",
+              "on-tertiary-container": "#fffbff",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #faf9f7; color: #1b1c1b; }
+        .serif-text { font-family: 'Newsreader', serif; }
+        .glass-header { backdrop-filter: blur(12px); background-color: rgba(250, 249, 247, 0.7); }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-header">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="font-['Newsreader'] text-2xl italic font-semibold text-[#516138] dark:text-[#8ea373]">
+                The Living Ledger
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#516138] dark:text-[#8ea373] border-b-2 border-[#934a2e] pb-1 font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] transition-colors duration-300" href="#">Journal</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] transition-colors duration-300" href="#">Gardens</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] transition-colors duration-300" href="#">Vault</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium font-['Newsreader'] text-lg tracking-tight hover:text-[#934a2e] transition-colors duration-300" href="#">Advisory</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-stone-500 hover:text-primary transition-colors">notifications</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-surface-container-high">
+<img alt="User profile avatar in a soft circular frame" data-alt="Close-up portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHNg7Nao38DwvOEhsHI7hsOiW8cCp-OsqRmfL6522cIUwv893_vdLFKqmvmu8NUjPr-IrUupy0WbnSaiJDhj3ee_859i6Jc3ho0J0Qc7skuBYowzO76TLmDsixsr1kxRYu2Djno-CIeOFgI7IjdDRIkcdNEmYCGk9KsmxLpXBiq0cXTbgK5LBELOeSnSsE7n9nG9gOWiomHmsZup55EBMX3g0FBRb8Nt1w5LYm1d06bB-OO8BGAMDWCuU-Z1dE0LvDgy8MpEfj8m0"/>
+</div>
+</div>
+</div>
+<div class="bg-[#f5f3f1] dark:bg-stone-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-12">
+<div class="grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-6 space-y-8">
+<h1 class="serif-text text-5xl md:text-7xl text-primary leading-tight font-light">
+                        Nurturing <span class="italic font-semibold">Financial Wisdom</span> through Shared Intelligence.
+                    </h1>
+<p class="text-lg text-stone-600 leading-relaxed max-w-lg">
+                        Join a global community where expertise meets empathy to shape the future of finance. We treat wealth as a living ecosystem, not just a spreadsheet.
+                    </p>
+<div class="flex gap-4 pt-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition-all flex items-center gap-2">
+                            Join the Community
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-semibold hover:bg-surface-container-high transition-all">
+                            Our Philosophy
+                        </button>
+</div>
+</div>
+<div class="md:col-span-6 relative">
+<div class="rounded-2xl overflow-hidden shadow-2xl relative aspect-[4/5] md:aspect-square">
+<img class="w-full h-full object-cover" data-alt="Diverse group of professionals collaborating in bright workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfVdEwWblIoBffhzLTcgQXb38DQvmsou2v5ChTMJ2oSFdtuz0rnqbLlzMqeoZ8V8RicaougQYAazxALhiJSdUVv2nPtN4wDbqZ_synCYWqwKj3oQ4ydebLZPkaCYPpDTlumNg8vRYF0bCAgHfj5jobDYp2PsUz6s-yIeFgtR_JM4EXio4gluYgE6DPl0bpXApSVp7-AIaxMWwPl5mC1GalFDdTk7McBJwFx1URvRTXG_gGakk_3Iyed-7ocPHacRjcyt6mZV2VBQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+<!-- Overlapping Insight Card -->
+<div class="absolute -bottom-8 -left-8 bg-secondary-fixed-dim p-6 rounded-xl shadow-xl max-w-xs hidden lg:block">
+<p class="serif-text text-xl text-on-secondary-fixed-variant leading-snug">
+                            "The best investment is one that grows alongside your values."
+                        </p>
+<p class="text-xs mt-4 font-bold text-on-secondary-fixed uppercase tracking-wider">Relationship Insight #42</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Market Intelligence Section -->
+<section class="bg-surface-container-low py-24 mt-12">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="serif-text text-4xl text-primary mb-4">Pulse of the Market</h2>
+<p class="text-stone-600">Our market intelligence prioritizes long-term resilience over short-term noise, interpreted by human minds, supported by data.</p>
+</div>
+<button class="text-secondary font-semibold border-b-2 border-secondary-container hover:border-secondary transition-all pb-1">Explore Data Gardens</button>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Feature Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="text-secondary mb-6">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">eco</span>
+</div>
+<h3 class="serif-text text-2xl text-on-surface mb-3">Organic Growth Cycles</h3>
+<p class="text-stone-600 leading-relaxed mb-6">Understanding market seasonality through the lens of ecological sustainability and human behavior.</p>
+<div class="h-[2px] w-12 bg-secondary-container group-hover:w-full transition-all duration-500"></div>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="text-secondary mb-6">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">diversity_3</span>
+</div>
+<h3 class="serif-text text-2xl text-on-surface mb-3">Collective Sentiment</h3>
+<p class="text-stone-600 leading-relaxed mb-6">Real-time mapping of global community confidence, moving beyond traditional fear and greed indices.</p>
+<div class="h-[2px] w-12 bg-secondary-container group-hover:w-full transition-all duration-500"></div>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="text-secondary mb-6">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">shield_with_heart</span>
+</div>
+<h3 class="serif-text text-2xl text-on-surface mb-3">The Integrity Vault</h3>
+<p class="text-stone-600 leading-relaxed mb-6">Securing your financial history with the same care and respect you'd give a family heirloom.</p>
+<div class="h-[2px] w-12 bg-secondary-container group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Human Voice / Insights Section -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+<div class="text-center mb-16">
+<span class="text-secondary font-bold tracking-widest uppercase text-xs">Voice of the Ledger</span>
+<h2 class="serif-text text-4xl md:text-5xl text-primary mt-4">Voices of Insight</h2>
+</div>
+<div class="columns-1 md:columns-2 gap-12 space-y-12">
+<!-- Discussion Card 1 -->
+<div class="break-inside-avoid bg-white p-10 rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -mr-16 -mt-16"></div>
+<span class="material-symbols-outlined text-secondary/20 text-6xl absolute top-6 right-8">format_quote</span>
+<p class="serif-text text-2xl text-primary leading-relaxed mb-8 relative z-10">
+                        "We are entering an era where AI doesn't replace the advisor, but acts as the fertile soil for the advisor's intuition to grow."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Author profile" data-alt="Portrait of a distinguished man with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8IXD0TQ4owX2XNSTxPVvlqay7y0tYpCe-vA4tLvpAofGf3kgzS8KrYt8c2jaAEKb9KWEhelAwfnPVSWE-6qMtr14h7__Hpp8hoQ_wZt5ahbTH4vwMLfeF8I22IdtmK2yvLh9Wzi3CqiRzmU8pNW7pYyt72pABrtqfFYwc9pHNm4f0PuOfXdt2oB-EjaFKhwr0Wg8lGPCT_4n4O893rvlJz_evtZE_EOt-i4QVQLYdKMaGNQ_SJHiBaNCmEyBTETl8tWxehqHj2gs"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Marcus Thorne</p>
+<p class="text-stone-500 text-sm">Lead Strategist, London Garden</p>
+</div>
+</div>
+</div>
+<!-- Discussion Card 2 -->
+<div class="break-inside-avoid bg-surface-container-high p-10 rounded-xl shadow-sm border-l-4 border-secondary">
+<p class="serif-text text-xl text-primary leading-relaxed mb-8 italic">
+                        "Wealth is not a static number; it's a dynamic relationship with our future selves and our community."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Author profile" data-alt="Professional woman looking thoughtfully at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSQtb7I3DeIONj8mgpRfed-cOZlNqZ3uFLKjBDpUVt5ySMrW5G5jYhD1QP7cx78obgEP4aYrzfbck6HMTvCa_gJj0Wf_i4iCQpyzkkQ_MivpqMb_PBXoS-Fwlq1782BYXwCOoMii2TLhupxMf9W-vfPqus6p-Cqh1--8ZYC8WZCHj2KAKyLqnPSnjKX4YUuNhgX_OY9mhDiaaqJAWnbYgWb_YkVh3E194CStgL_NPFE3aZ2l5hnJ_0de_Y1UbjvLSf2rEw4Ey8A70"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Dr. Elena Rossi</p>
+<p class="text-stone-500 text-sm">Behavioral Economist</p>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="text-xs font-bold uppercase tracking-widest text-secondary hover:underline">Read the Thread</button>
+<span class="text-stone-300">|</span>
+<span class="text-xs font-bold text-stone-500">124 Contributors</span>
+</div>
+</div>
+<!-- Discussion Card 3 -->
+<div class="break-inside-avoid bg-secondary-fixed p-10 rounded-xl shadow-sm relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-white"></div>
+<h3 class="serif-text text-2xl text-on-secondary-fixed mb-4">The Ethics of Automated Empathy</h3>
+<p class="text-on-secondary-fixed-variant leading-relaxed mb-6">Can an algorithm truly understand the anxiety of a first-time homebuyer? We explore the boundary between calculation and compassion.</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden -space-x-4 flex">
+<img class="w-10 h-10 object-cover" data-alt="Male headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoXfWJxZk0tlafFuDcMeuJX-ZRKMSHPntNycihtRueZUjKguKpd9JEXMaRw5xFcGlVJ4P5HIdBzI0SkovBkcDfgpIdkFMMEFl80LyqJkrzD8TCy_rALzNoTHYg6uPxOAU3UhteyHJOU7JGI5e0kQEATHxk56CZ1GmYSeIQJPBci8zVzW0x233jPHfh3NHCE4YFn5REcafysMVB9L2977hueACB9nMyxx6bYi-QF4Hby6wO6TLFtX9151K88PQPlwXS69mfWH-T6_c"/>
+<img class="w-10 h-10 object-cover -ml-4" data-alt="Female headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvInxIPvJlgFvR7GTVAfDQqTtzaTXbXj6ecfBRO1fcMCw6m7QBGIZUHBpKjI5y4D2iVxrccDsC3gfpoOdY-ikN8vKXjTcoGoTewG2EKb19jtjV8l-Hxh9uCK9DHk8vpW_IPMql2nkVN-kfp69N_bWhIHfIJ4zMJtfGbJ3q5oif1uVuxGlRmGKcV_5ge_zOJqKh6bCu0u4cx5rL9Gpaa-CLKZAzKoCP222V30bR-1enZKfY4mnexNQE59IsGAA0PAA3qwu6ltjnBCg"/>
+</div>
+<p class="text-xs font-bold text-on-secondary-fixed">+15 more joining the discussion</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f3f1] dark:bg-stone-800 rounded-t-[2rem] mt-12 w-full">
+<div class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 max-w-7xl mx-auto">
+<div class="space-y-4 max-w-sm">
+<div class="font-['Newsreader'] text-xl font-bold text-[#516138] dark:text-[#8ea373]">
+                    The Living Ledger
+                </div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+                    Nurturing your financial growth with empathy and intention. © 2024 The Living Ledger.
+                </p>
+</div>
+<nav class="flex flex-wrap gap-8">
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4 transition-all" href="#">Our Philosophy</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4 transition-all" href="#">Privacy as Respect</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4 transition-all" href="#">Terms of Growth</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm hover:text-[#516138] dark:hover:text-[#8ea373] underline decoration-[#ffb59b] decoration-2 underline-offset-4 transition-all" href="#">Contact a Guide</a>
+</nav>
+</div>
+</footer>
+<!-- Bottom Nav for Mobile -->
+<div class="md:hidden fixed bottom-6 left-6 right-6 z-50">
+<div class="bg-primary text-white p-4 rounded-full flex justify-around items-center shadow-2xl glass-header border-0">
+<button class="material-symbols-outlined text-on-primary-container bg-primary-container p-2 rounded-full">home</button>
+<button class="material-symbols-outlined text-white/70">local_library</button>
+<button class="material-symbols-outlined text-white/70">diversity_1</button>
+<button class="material-symbols-outlined text-white/70">account_balance_wallet</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "tertiary-container": "#787467",
+              "tertiary-fixed": "#e8e2d2",
+              "tertiary": "#5f5c4f",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#78351b",
+              "on-secondary-fixed": "#380d00",
+              "on-surface-variant": "#45483e",
+              "surface-container-low": "#f5f3f1",
+              "secondary-container": "#ffa17f",
+              "background": "#faf9f7",
+              "on-primary-fixed-variant": "#3c4c25",
+              "secondary-fixed": "#ffdbcf",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e3e2e0",
+              "surface-tint": "#53643a",
+              "tertiary-fixed-dim": "#ccc6b7",
+              "secondary-fixed-dim": "#ffb59b",
+              "primary-fixed": "#d6eab5",
+              "primary": "#516138",
+              "outline": "#75786d",
+              "outline-variant": "#c5c8bb",
+              "on-primary-container": "#faffe9",
+              "secondary": "#934a2e",
+              "inverse-on-surface": "#f2f0ef",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#faf9f7",
+              "inverse-surface": "#303130",
+              "inverse-primary": "#bacd9b",
+              "surface-container": "#efeeec",
+              "surface-dim": "#dbdad8",
+              "on-secondary-fixed-variant": "#753319",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#1e1c12",
+              "surface-container-highest": "#e3e2e0",
+              "on-tertiary-fixed-variant": "#4a473b",
+              "primary-fixed-dim": "#bacd9b",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e9e8e6",
+              "on-surface": "#1b1c1b",
+              "surface": "#faf9f7",
+              "primary-container": "#697a4f",
+              "on-primary-fixed": "#121f01",
+              "on-background": "#1b1c1b",
+              "on-tertiary-container": "#fffbff",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(27, 28, 27, 0.06);
+        }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            background-color: rgba(250, 249, 247, 0.85);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 z-50 w-full glass-nav">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="font-headline text-2xl italic font-semibold text-primary">The Living Ledger</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-headline text-lg tracking-tight transition-colors duration-300 text-stone-500 hover:text-secondary" href="#">Journal</a>
+<a class="font-headline text-lg tracking-tight transition-colors duration-300 text-stone-500 hover:text-secondary" href="#">Gardens</a>
+<a class="font-headline text-lg tracking-tight transition-colors duration-300 text-stone-500 hover:text-secondary" href="#">Vault</a>
+<a class="font-headline text-lg tracking-tight transition-colors duration-300 text-stone-500 hover:text-secondary" href="#">Advisory</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary/10">
+<img alt="User profile avatar in a soft circular frame" data-alt="Portrait of Alexander Vance in professional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfNr8660wL5gZDj51kyzx38kbLzzn2rAy_myuc_QY17oHObByraghtSP_uFaYREZqBJKsHstGT8Rh1xux2RPlBj-4iTawbJs4fiTJZZSogl1mgpif5RaCFlNP0xG8lvagFGOBbtMR2AQDiLit6RLdnXtMUjLnuezHaCv29PsL3FfpsYSHbgMFt5adVOycvpoYNkvj1GFTemS-dBbJDv7_GOSuG1ohGBq_iafmZjJwWgprPeEiq2-C-_I0SpgGJvaNzWPpVjl1SFq8"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low h-[1px] w-full"></div>
+</nav>
+<main class="pt-28 pb-20 max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Profile Header Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-20">
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow bg-surface-container-highest">
+<img alt="Portrait of Alexander Vance" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" data-alt="Warm authentic portrait of Alexander Vance in sunlit studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbXUoTHMSjIApc_jxThYrFYlKjeD6NRFbs-HwTqu_1HufieLdXal5Kty3OUeEHk7oC_E_Voyj5sbuG-Q-rLD5AQicaw7mU30OQmxjByZOcPDpTcuqqJaBFxkTWxFOV9kkHW2sev_sLuVd-nozrwJ_Hhbr585YBD5gI85PzxI6WBdF8Z4stdCk1QCwwELW0nSkSrQ9cOlGkTtXQ4x2n56oTj_VXkGt2YM5SAdWglZRYIFU2C7dj4jUp0hdl4ge50PPTeOjwmIIgnPw"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-secondary-fixed-dim p-8 rounded-xl editorial-shadow hidden md:block">
+<p class="font-headline text-xl italic text-on-secondary-fixed-variant">"Nurturing wealth is an act of communal patience."</p>
+</div>
+</div>
+<div class="lg:col-span-7 lg:pl-12">
+<span class="text-secondary font-semibold tracking-widest text-xs uppercase mb-4 block">Professional Profile</span>
+<h1 class="font-headline text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">Alexander Vance, <span class="italic font-normal">Expert Analyst</span></h1>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl font-body">
+                    Alexander has spent two decades bridging the gap between clinical data and human stories. His journey began in the gardens of sustainable micro-finance and has evolved into a leadership role within The Living Ledger community, where he mentors over 500 members in intentional asset growth and ethical vaulting.
+                </p>
+<div class="mt-8 flex gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-3 rounded-xl font-medium editorial-shadow hover:opacity-90 transition-all active:scale-95">
+                        Follow Journal
+                    </button>
+<button class="bg-surface-container-highest text-primary px-8 py-3 rounded-xl font-medium hover:bg-surface-container-high transition-all">
+                        Request Advisory
+                    </button>
+</div>
+</div>
+</section>
+<!-- Metrics Section: The Growth Garden -->
+<section class="mb-20">
+<div class="flex items-baseline gap-4 mb-10">
+<h2 class="font-headline text-3xl font-bold text-primary">Equity &amp; Growth</h2>
+<div class="h-px flex-grow bg-surface-container-highest"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow border-b-4 border-primary/20">
+<span class="text-stone-500 text-sm font-medium">Total Managed Equity</span>
+<div class="font-headline text-4xl text-primary mt-2 mb-6 tracking-tight">$2.4M</div>
+<div class="w-full h-24 flex items-end gap-1">
+<!-- Custom Organic "Chart" -->
+<div class="w-full bg-primary/10 rounded-t-lg h-[40%]"></div>
+<div class="w-full bg-primary/20 rounded-t-lg h-[60%]"></div>
+<div class="w-full bg-primary/15 rounded-t-lg h-[50%]"></div>
+<div class="w-full bg-primary/30 rounded-t-lg h-[80%]"></div>
+<div class="w-full bg-primary/40 rounded-t-lg h-[70%]"></div>
+<div class="w-full bg-primary/25 rounded-t-lg h-[90%]"></div>
+<div class="w-full bg-primary rounded-t-lg h-[100%]"></div>
+</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow border-b-4 border-secondary/20">
+<span class="text-stone-500 text-sm font-medium">Annualized Performance</span>
+<div class="font-headline text-4xl text-secondary mt-2 mb-6 tracking-tight">+12.4%</div>
+<div class="relative w-full h-24 flex items-center justify-center">
+<svg class="w-full h-full" viewbox="0 0 100 40">
+<path d="M0,35 Q25,35 40,20 T80,5 T100,15" fill="none" stroke="#934a2e" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="100" cy="15" fill="#934a2e" r="3"></circle>
+</svg>
+</div>
+</div>
+<!-- Relationship Insight Card (Design System Custom) -->
+<div class="bg-secondary-fixed-dim p-8 rounded-xl flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-headline text-2xl font-bold text-on-secondary-fixed">Mentorship Reach</h3>
+<p class="text-on-secondary-fixed-variant text-sm mt-2">Active guidance provided to the growing community.</p>
+</div>
+<div class="relative z-10 font-headline text-5xl font-bold text-secondary mt-4">524 <span class="text-xl font-normal">Souls</span></div>
+<!-- Background texture/decoration -->
+<div class="absolute -bottom-8 -right-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Section: Journal of Contributions -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-8">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-3xl font-bold text-primary italic">Journal of Contributions</h2>
+<a class="text-secondary font-medium text-sm flex items-center gap-1 group" href="#">
+                        View all entries 
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="space-y-6">
+<!-- Journal Item 1 -->
+<div class="bg-surface-container-low hover:bg-surface-container-lowest transition-all p-8 rounded-xl group">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Insight</span>
+<span class="text-stone-400 text-xs">November 12, 2023</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-secondary transition-colors">The Slow-Yield Philosophy: Why Instant Gains are Toxic to Long-term Peace</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">In today’s accelerated market, we often forget that capital, much like a forest, requires seasons to mature. My recent exploration into restorative reinvestment reveals...</p>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-2 text-stone-500 text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="forum">forum</span> 42 Comments
+                            </span>
+<span class="flex items-center gap-2 text-stone-500 text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span> 128 Respects
+                            </span>
+</div>
+</div>
+<!-- Journal Item 2 -->
+<div class="bg-surface-container-low hover:bg-surface-container-lowest transition-all p-8 rounded-xl group">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Forum Post</span>
+<span class="text-stone-400 text-xs">October 28, 2023</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3 group-hover:text-secondary transition-colors">Response to: 'How do we define value beyond the ledger?'</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">We define it by the resilience of the community it supports. If your assets don't empower your neighbor, are they truly assets or just numbers in a void?</p>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-2 text-stone-500 text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="forum">forum</span> 15 Comments
+                            </span>
+<span class="flex items-center gap-2 text-stone-500 text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span> 89 Respects
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar: Saved Insights -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-highest/30 p-8 rounded-xl">
+<h3 class="font-headline text-xl font-bold text-primary mb-6">Saved Insights</h3>
+<div class="space-y-6">
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex-shrink-0 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="book_2">book_2</span>
+</div>
+<div>
+<h4 class="font-medium text-sm leading-tight group-hover:text-secondary transition-colors">Ecological Wealth Management: A Field Guide</h4>
+<p class="text-stone-400 text-xs mt-1">Saved 2 days ago</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex-shrink-0 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="data_exploration">data_exploration</span>
+</div>
+<div>
+<h4 class="font-medium text-sm leading-tight group-hover:text-secondary transition-colors">Volatile Markets &amp; Meditation: Finding the Still Point</h4>
+<p class="text-stone-400 text-xs mt-1">Saved 1 week ago</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex-shrink-0 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
+</div>
+<div>
+<h4 class="font-medium text-sm leading-tight group-hover:text-secondary transition-colors">Privacy as a Human Right in the Digital Vault</h4>
+<p class="text-stone-400 text-xs mt-1">Saved 3 weeks ago</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 border-b-2 border-secondary/20 text-secondary font-medium text-sm hover:border-secondary transition-all text-center">
+                        Explore Vault
+                    </button>
+</div>
+<div class="mt-8 p-8 bg-primary/5 rounded-xl border-l-4 border-primary/20">
+<h4 class="font-headline text-lg font-bold text-primary mb-2">Advisory Status</h4>
+<p class="text-sm text-on-surface-variant mb-4">Alexander is currently accepting new mentorship applications for the Winter season.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-primary"></span> 3 Slots Remaining
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low rounded-t-[2rem] mt-12">
+<div class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-headline text-xl font-bold text-primary">The Living Ledger</div>
+<p class="font-body text-sm leading-relaxed text-stone-600 max-w-xs text-center md:text-left">
+                    Nurturing your financial growth with empathy and intention. © 2024 The Living Ledger.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body text-sm text-stone-600 hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="#">Our Philosophy</a>
+<a class="font-body text-sm text-stone-600 hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="#">Privacy as Respect</a>
+<a class="font-body text-sm text-stone-600 hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="#">Terms of Growth</a>
+<a class="font-body text-sm text-stone-600 hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="#">Contact a Guide</a>
+</div>
+</div>
+</footer>
+</body></html>

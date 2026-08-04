@@ -104,3 +104,7 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Auto-generated blog content (rebuilt by scripts/blog/build.mjs from content/blog/*.md)
+client/src/generated/
+scripts/blog/.data/

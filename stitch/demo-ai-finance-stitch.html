@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Finance Community — Stitch Design Demo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:wght@200..800&family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "tertiary-container": "#787467",
+        "tertiary-fixed": "#e8e2d2",
+        "tertiary": "#5f5c4f",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#78351b",
+        "on-secondary-fixed": "#380d00",
+        "on-surface-variant": "#45483e",
+        "surface-container-low": "#f5f3f1",
+        "secondary-container": "#ffa17f",
+        "background": "#faf9f7",
+        "secondary-fixed": "#ffdbcf",
+        "surface-variant": "#e3e2e0",
+        "surface-tint": "#53643a",
+        "tertiary-fixed-dim": "#ccc6b7",
+        "secondary-fixed-dim": "#ffb59b",
+        "primary-fixed": "#d6eab5",
+        "primary": "#516138",
+        "outline": "#75786d",
+        "outline-variant": "#c5c8bb",
+        "on-primary-container": "#faffe9",
+        "secondary": "#934a2e",
+        "on-tertiary": "#ffffff",
+        "surface-bright": "#faf9f7",
+        "surface-container": "#efeeec",
+        "surface-dim": "#dbdad8",
+        "on-secondary-fixed-variant": "#753319",
+        "surface-container-highest": "#e3e2e0",
+        "primary-fixed-dim": "#bacd9b",
+        "on-primary": "#ffffff",
+        "surface-container-high": "#e9e8e6",
+        "on-surface": "#1b1c1b",
+        "surface": "#faf9f7",
+        "primary-container": "#697a4f",
+        "on-primary-fixed": "#121f01",
+        "on-background": "#1b1c1b",
+        "on-tertiary-container": "#fffbff",
+        "error": "#ba1a1a"
+      },
+      fontFamily: {
+        "headline": ["Newsreader"],
+        "body": ["Heebo", "Plus Jakarta Sans"],
+        "label": ["Heebo", "Plus Jakarta Sans"]
+      },
+      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+    },
+  },
+}
+</script>
+<style>
+  body { font-family: 'Heebo', 'Plus Jakarta Sans', sans-serif; background-color: #faf9f7; color: #1b1c1b; }
+  .serif-text { font-family: 'Newsreader', serif; }
+  .glass-header { backdrop-filter: blur(12px); background-color: rgba(250, 249, 247, 0.7); }
+  .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(27, 28, 27, 0.06); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in { animation: fadeInUp 0.7s ease-out forwards; }
+  .animate-in-delay-1 { animation: fadeInUp 0.7s ease-out 0.1s forwards; opacity: 0; }
+  .animate-in-delay-2 { animation: fadeInUp 0.7s ease-out 0.2s forwards; opacity: 0; }
+  .animate-in-delay-3 { animation: fadeInUp 0.7s ease-out 0.3s forwards; opacity: 0; }
+</style>
+</head>
+<body class="bg-background text-on-background">
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- TOP NAVIGATION BAR                                             -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<header class="fixed top-0 right-0 left-0 z-50 glass-header">
+  <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+    <div class="font-headline text-2xl italic font-semibold text-primary">
+      AI Finance
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-primary border-b-2 border-secondary pb-1 font-headline text-lg tracking-tight hover:text-secondary transition-colors duration-300" href="#about">על הקהילה</a>
+      <a class="text-stone-500 font-medium font-headline text-lg tracking-tight hover:text-secondary transition-colors duration-300" href="#team">הצוות</a>
+      <a class="text-stone-500 font-medium font-headline text-lg tracking-tight hover:text-secondary transition-colors duration-300" href="#services">שירותים</a>
+      <a class="text-stone-500 font-medium font-headline text-lg tracking-tight hover:text-secondary transition-colors duration-300" href="#clients">לקוחות</a>
+      <a class="text-stone-500 font-medium font-headline text-lg tracking-tight hover:text-secondary transition-colors duration-300" href="#guides">מדריכים</a>
+      <a class="text-stone-500 font-medium font-headline text-lg tracking-tight hover:text-secondary transition-colors duration-300" href="#faq">שאלות נפוצות</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="https://chat.whatsapp.com/ILojKIKBdE1E2OC7A86hoP" target="_blank" rel="noopener noreferrer"
+         class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:opacity-90 transition-all flex items-center gap-2">
+        הצטרפו לקהילה
+        <span class="material-symbols-outlined text-lg">arrow_back</span>
+      </a>
+    </div>
+  </div>
+  <div class="bg-surface-container-low h-[1px] w-full"></div>
+</header>
+
+<main class="pt-24">
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- HERO SECTION                                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="max-w-7xl mx-auto px-8 py-16">
+  <div class="grid md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-7 space-y-8 animate-in">
+      <!-- Community badge -->
+      <div class="inline-flex items-center gap-2.5 px-5 py-2.5 bg-primary-fixed rounded-full text-sm text-primary font-semibold">
+        <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+        קהילה פעילה עם 1,700+ אנשי כספים
+      </div>
+
+      <h1 class="serif-text text-5xl md:text-7xl text-primary leading-tight font-light">
+        הקהילה שמחברת בין <span class="italic font-semibold">עולם הכספים</span> לעולם הבינה המלאכותית
+      </h1>
+      <p class="text-lg text-stone-600 leading-relaxed max-w-lg">
+        מעל 1700 אנשי כספים שמקבלים ערך פרקטי לעבודה היום יומית שלהם
+        <span class="block mt-2 text-secondary font-semibold">הרצאות • כלים • קהילה</span>
+      </p>
+      <div class="flex gap-4 pt-4">
+        <a href="https://chat.whatsapp.com/ILojKIKBdE1E2OC7A86hoP" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition-all flex items-center gap-2">
+          הצטרפו לקהילה
+          <span class="material-symbols-outlined">arrow_back</span>
+        </a>
+        <a href="mailto:roei@hwcpa.co.il"
+           class="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-semibold hover:bg-surface-container-high transition-all">
+          פנו אלינו
+        </a>
+      </div>
+    </div>
+    <div class="md:col-span-5 relative animate-in-delay-2">
+      <div class="rounded-2xl overflow-hidden shadow-2xl relative aspect-[4/5]">
+        <img class="w-full h-full object-cover"
+             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+             alt="אנשי מקצוע בפגישה עסקית"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+      </div>
+      <!-- Floating Insight Card -->
+      <div class="absolute -bottom-8 -right-8 bg-secondary-fixed-dim p-6 rounded-xl shadow-xl max-w-xs hidden lg:block">
+        <p class="serif-text text-xl text-on-secondary-fixed-variant leading-snug">
+          "ההשקעה הטובה ביותר היא זו שמשנה את כל כללי המשחק"
+        </p>
+        <p class="text-xs mt-4 font-bold text-on-secondary-fixed uppercase tracking-wider">AI Finance Community</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ABOUT SECTION                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="bg-surface-container-low py-24 mt-12" id="about">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span class="text-secondary font-bold tracking-widest uppercase text-xs">הכירו אותנו</span>
+      <h2 class="serif-text text-4xl md:text-5xl text-primary mt-4 mb-8">על הקהילה</h2>
+      <p class="text-lg text-stone-600 leading-loose text-justify">
+        קהילת AI Finance הוקמה במטרה לגשר בין עולם הפיננסים בישראל לעולמות הבינה המלאכותית. אנחנו בקהילה מביאים לכם בכל שבוע את החידושים והכלים החמים ביותר בעולם ה-AI הפיננסי, מעבירים הרצאות על פתיחת הראש לשימוש בבינה המלאכותית. עוזרים למחלקות כספים להתחדש, מחברים בין סטארטאפים מבוססי בינה מלאכותית למחלקות כספים. היום הקהילה מונה מעל 1,700 אנשים כולם מעולמות כספים שמתעניינים בעולמות הבינה המלאכותית.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SERVICES SECTION                                               -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="max-w-7xl mx-auto px-8 py-24" id="services">
+  <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+    <div class="max-w-2xl">
+      <span class="text-secondary font-bold tracking-widest uppercase text-xs">הצעת ערך</span>
+      <h2 class="serif-text text-4xl text-primary mt-4 mb-4">המוצרים והשירותים שלנו</h2>
+      <p class="text-stone-600">מה אנחנו מציעים לקהילה שלנו</p>
+    </div>
+  </div>
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- Service Card 1 -->
+    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+      <div class="text-secondary mb-6">
+        <span class="material-symbols-outlined text-4xl">school</span>
+      </div>
+      <h3 class="serif-text text-2xl text-on-surface mb-3">הרצאות פותחות ראש</h3>
+      <p class="text-stone-600 leading-relaxed mb-6">סדנה מעשית המותאמות למחלקות כספים ומנהלים בארגונים - איך לשלב בינה מלאכותית בעבודה היומיומית, לפתוח את הראש ולאמץ טכנולוגיה חדשה שמשנה את כללי המשחק.</p>
+      <div class="h-[2px] w-12 bg-secondary-container group-hover:w-full transition-all duration-500"></div>
+    </div>
+    <!-- Service Card 2 -->
+    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+      <div class="text-secondary mb-6">
+        <span class="material-symbols-outlined text-4xl">diversity_3</span>
+      </div>
+      <h3 class="serif-text text-2xl text-on-surface mb-3">קהילה תומכת ומקצועית</h3>
+      <p class="text-stone-600 leading-relaxed mb-6">מעל 1700 אנשי כספים פעילים שמתעניינים בעולמות הבינה המלאכותית. כל שבוע עולה תוכן חדש על כלים ופיצ'רים מעולמות ה-AI שיכולים להפוך אתכם לפרודוקטיביים ומקצועיים יותר בעבודה.</p>
+      <div class="h-[2px] w-12 bg-secondary-container group-hover:w-full transition-all duration-500"></div>
+    </div>
+    <!-- Service Card 3 -->
+    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+      <div class="text-secondary mb-6">
+        <span class="material-symbols-outlined text-4xl">rocket_launch</span>
+      </div>
+      <h3 class="serif-text text-2xl text-on-surface mb-3">חדשנות במחלקות הכספים</h3>
+      <p class="text-stone-600 leading-relaxed mb-6">כחלק מהמחקר שלנו בנושא אנו מגיעים לעסקים בהם מחלקות הכספים עובדות בצורה מיושנת ומחפשים להם פתרונות מבוססי בינה מלאכותית שיוכלו לחסוך להם זמן ומשאבים עיקריים.</p>
+      <div class="h-[2px] w-12 bg-secondary-container group-hover:w-full transition-all duration-500"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- TEAM SECTION                                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="bg-surface-container-low py-24" id="team">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="text-secondary font-bold tracking-widest uppercase text-xs">הצוות שלנו</span>
+      <h2 class="serif-text text-4xl md:text-5xl text-primary mt-4">מי אנחנו</h2>
+      <p class="text-stone-600 mt-4 text-lg">הצוות שמאחורי הקהילה</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <!-- Team Member 1 - Tal -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow bg-surface-container-highest">
+            <img alt="רו״ח טל ולנשטין" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"/>
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <span class="text-secondary font-semibold tracking-widest text-xs uppercase mb-3 block">מייסדת שותפה</span>
+          <h3 class="font-headline text-3xl font-bold text-primary mb-2">רו״ח טל ולנשטין</h3>
+          <p class="text-sm text-secondary font-semibold mb-4">רו"ח בתחום המיסים והביקורה | מרצה</p>
+          <p class="text-stone-600 leading-relaxed mb-6">
+            בוגרת Big 4, מומחית במיסוי ישראלי ובינלאומי. מרצה לשילוב בינה מלאכותית בעולם הכספים בחברות ובאקדמיה.
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 text-sm text-stone-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
+              מיסוי ישראלי ובינלאומי, תכנון מס, ייעוץ עסקי
+            </div>
+            <div class="flex items-center gap-3 text-sm text-stone-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
+              כלי AI לחשבים ורואי חשבון
+            </div>
+            <div class="flex items-center gap-3 text-sm text-stone-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
+              הרצאות בנושא שילוב AI בעולם הפיננסים
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 - Roei -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow bg-surface-container-highest">
+            <img alt="רועי ולנשטין" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"/>
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <span class="text-secondary font-semibold tracking-widest text-xs uppercase mb-3 block">שותף מייסד</span>
+          <h3 class="font-headline text-3xl font-bold text-primary mb-2">רועי ולנשטין</h3>
+          <p class="text-sm text-secondary font-semibold mb-4">מתמחה בביקורת | מנהל קהילה</p>
+          <p class="text-stone-600 leading-relaxed mb-6">
+            דור שלישי למשפחה של רואי חשבון, מתמחה בביקורת חברות פרטיות במשרד המשפחתי. מנהל קהילה ומתמחה במציאת פתרונות טכנולוגיים מבוססי בינה מלאכותית.
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 text-sm text-stone-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
+              חיבור בין עולם הפיננסים לעולמות הטכנולוגיה
+            </div>
+            <div class="flex items-center gap-3 text-sm text-stone-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
+              מציאת פתרונות טכנולוגיים מותאמים לעסקים
+            </div>
+            <div class="flex items-center gap-3 text-sm text-stone-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
+              פיתוח תהליכים חכמים לארגונים
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CLIENTS SECTION — "Voices of Trust"                           -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="max-w-7xl mx-auto px-8 py-24" id="clients">
+  <div class="text-center mb-16">
+    <span class="text-secondary font-bold tracking-widest uppercase text-xs">אמון וניסיון</span>
+    <h2 class="serif-text text-4xl md:text-5xl text-primary mt-4">הלקוחות שלנו</h2>
+    <p class="text-stone-600 mt-4 text-lg">ארגונים מובילים שבחרו בנו</p>
+  </div>
+
+  <div class="columns-1 md:columns-2 gap-12 space-y-12">
+    <!-- Client 1 - monday.com -->
+    <div class="break-inside-avoid bg-white p-10 rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full -ml-16 -mt-16"></div>
+      <span class="material-symbols-outlined text-secondary/20 text-6xl absolute top-6 left-8">format_quote</span>
+      <h3 class="serif-text text-3xl text-primary mb-4 relative z-10">monday.com</h3>
+      <p class="text-stone-600 leading-relaxed relative z-10">
+        ההרצאה שלנו "פתיחת ראש" פתחה את שבוע ה-AI של מחלקת הכספים של החברה הישראלית והגלובלית
+      </p>
+    </div>
+
+    <!-- Client 2 - PSG Equity -->
+    <div class="break-inside-avoid bg-surface-container-high p-10 rounded-xl shadow-sm border-r-4 border-secondary">
+      <h3 class="serif-text text-3xl text-primary mb-4">PSG Equity</h3>
+      <p class="text-stone-600 leading-relaxed italic">
+        ההרצאה הועברה במשרדי הקרן ל-12 סמנכ"לי כספים בכירים בחברות הקרן
+      </p>
+    </div>
+
+    <!-- Client 3 - לשכת רואי החשבון -->
+    <div class="break-inside-avoid bg-secondary-fixed p-10 rounded-xl shadow-sm relative group overflow-hidden">
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-white"></div>
+      <h3 class="serif-text text-2xl text-on-secondary-fixed mb-4">לשכת רואי החשבון בישראל</h3>
+      <p class="text-on-secondary-fixed-variant leading-relaxed">
+        כחלק מהכנס השנתי של לשכת רואי החשבון באילת, טל לקחה חלק בפאנל המומחים לנושא שילוב הבינה המלאכותית בעולם ראיית החשבון
+      </p>
+    </div>
+
+    <!-- Client 4 - האוניברסיטה העברית -->
+    <div class="break-inside-avoid bg-white p-10 rounded-xl shadow-sm relative overflow-hidden">
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full -ml-12 -mb-12"></div>
+      <h3 class="serif-text text-2xl text-primary mb-4">האוניברסיטה העברית</h3>
+      <p class="text-stone-600 leading-relaxed">
+        הרצאה בנושא שילוב בינה מלאכותית לצרכים פיננסיים כחלק מקורס אסטרטגיה למנהלים ושימוש ב-AI של האוניברסיטה העברית — המרכז להכשרת מנהלים
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- GUIDES SECTION                                                 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="bg-surface-container-low py-24" id="guides">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="text-secondary font-bold tracking-widest uppercase text-xs">ידע מקצועי</span>
+      <h2 class="serif-text text-4xl md:text-5xl text-primary mt-4">מדריכים מקצועיים</h2>
+      <p class="text-stone-600 mt-4 text-lg">משאבים לשילוב בינה מלאכותית בעבודה היומיומית</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Guide 1 -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group cursor-pointer">
+        <div class="aspect-[4/3] bg-surface-container-high flex items-center justify-center overflow-hidden">
+          <span class="material-symbols-outlined text-primary/20 text-[80px] group-hover:scale-110 transition-transform duration-500">table_chart</span>
+        </div>
+        <div class="p-8">
+          <h3 class="serif-text text-xl text-on-surface mb-3 font-semibold">Excel Copilot Agent Mode</h3>
+          <p class="text-stone-600 leading-relaxed mb-6 text-sm">מדריך מעשי לשימוש ב-Agent Mode של Copilot ב-Excel לאוטומציה של משימות פיננסיות וניתוח נתונים</p>
+          <div class="flex items-center gap-2 text-secondary font-semibold text-sm group-hover:underline">
+            <span class="material-symbols-outlined text-lg">download</span>
+            הורד PDF
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide 2 -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group cursor-pointer">
+        <div class="aspect-[4/3] bg-surface-container-high flex items-center justify-center overflow-hidden">
+          <span class="material-symbols-outlined text-primary/20 text-[80px] group-hover:scale-110 transition-transform duration-500">smart_toy</span>
+        </div>
+        <div class="p-8">
+          <h3 class="serif-text text-xl text-on-surface mb-3 font-semibold">ChatGPT Prompts Library</h3>
+          <p class="text-stone-600 leading-relaxed mb-6 text-sm">ספריית 20 prompts מעודכנים לתפקידים שונים בפיננסים - CFO, אודיטור, אנליסט ועוד</p>
+          <div class="flex items-center gap-2 text-secondary font-semibold text-sm group-hover:underline">
+            <span class="material-symbols-outlined text-lg">download</span>
+            הורד Excel
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide 3 -->
+      <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group cursor-pointer">
+        <div class="aspect-[4/3] bg-surface-container-high flex items-center justify-center overflow-hidden">
+          <span class="material-symbols-outlined text-primary/20 text-[80px] group-hover:scale-110 transition-transform duration-500">auto_awesome</span>
+        </div>
+        <div class="p-8">
+          <h3 class="serif-text text-xl text-on-surface mb-3 font-semibold">Gemini Prompts Library</h3>
+          <p class="text-stone-600 leading-relaxed mb-6 text-sm">ספריית prompts מקצועיים עבור Google Gemini לניתוח פיננסי, דוחות ותכנון אסטרטגי</p>
+          <div class="flex items-center gap-2 text-secondary font-semibold text-sm group-hover:underline">
+            <span class="material-symbols-outlined text-lg">download</span>
+            הורד HTML
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FAQ SECTION                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="max-w-3xl mx-auto px-8 py-24" id="faq">
+  <div class="text-center mb-16">
+    <span class="text-secondary font-bold tracking-widest uppercase text-xs">שאלות ותשובות</span>
+    <h2 class="serif-text text-4xl md:text-5xl text-primary mt-4">שאלות נפוצות</h2>
+  </div>
+
+  <div class="space-y-6">
+    <!-- FAQ 1 -->
+    <details class="bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow group">
+      <summary class="px-8 py-6 cursor-pointer font-semibold text-on-surface text-lg flex justify-between items-center hover:text-secondary transition-colors list-none">
+        האם בינה מלאכותית צפויה להחליף את אנשי הכספים?
+        <span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
+      </summary>
+      <div class="px-8 pb-8 text-stone-600 leading-relaxed">
+        בינה מלאכותית תשנה את המקצוע אך לא תחליף אותו. אנשי הכספים יהפכו מאנשים שעושים משימות חזרתיות ליועצים אסטרטגים המפיקים תובנות מכריעות מנתונים פיננסיים.
+      </div>
+    </details>
+
+    <!-- FAQ 2 -->
+    <details class="bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow group">
+      <summary class="px-8 py-6 cursor-pointer font-semibold text-on-surface text-lg flex justify-between items-center hover:text-secondary transition-colors list-none">
+        מה גרם לכם לפתוח את הקהילה?
+        <span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
+      </summary>
+      <div class="px-8 pb-8 text-stone-600 leading-relaxed">
+        ראינו צורך גדול בקהילה מקצועית שמחברת בין עולם הפיננסים לעולם הטכנולוגיה. רצינו ליצור מרחב שבו אנשי כספים יכולים ללמוד, להתחבר ולגדול ביחד.
+      </div>
+    </details>
+
+    <!-- FAQ 3 -->
+    <details class="bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow group">
+      <summary class="px-8 py-6 cursor-pointer font-semibold text-on-surface text-lg flex justify-between items-center hover:text-secondary transition-colors list-none">
+        ההרצאה שלכם מתאימה גם לאנשים שאין להם רקע טכנולוגי?
+        <span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
+      </summary>
+      <div class="px-8 pb-8 text-stone-600 leading-relaxed">
+        בהחלט! ההרצאות שלנו מעוצבות עבור אנשי כספים בכל רמות הידע. אנחנו מסבירים מושגים טכניים בשפה פשוטה וקלה להבנה.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CTA SECTION                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<section class="max-w-3xl mx-auto px-8 py-24">
+  <div class="bg-secondary-fixed-dim p-16 rounded-2xl text-center relative overflow-hidden">
+    <div class="absolute -top-16 -left-16 w-48 h-48 bg-secondary/10 rounded-full"></div>
+    <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/10 rounded-full"></div>
+    <div class="relative z-10">
+      <h2 class="serif-text text-4xl md:text-5xl text-on-secondary-fixed mb-6 font-semibold">מוכנים להצטרף?</h2>
+      <p class="text-lg text-on-secondary-fixed-variant mb-10 leading-relaxed">
+        הצטרפו למעל 1,700 אנשי כספים שכבר מובילים את המהפכה הדיגיטלית
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://chat.whatsapp.com/ILojKIKBdE1E2OC7A86hoP" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-primary to-primary-container text-white px-10 py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition-all inline-flex items-center justify-center gap-2">
+          הצטרפו עכשיו לקהילה
+          <span class="material-symbols-outlined">arrow_back</span>
+        </a>
+        <a href="https://wa.me/972542380333" target="_blank" rel="noopener noreferrer"
+           class="bg-white/50 text-primary px-10 py-4 rounded-xl font-semibold hover:bg-white/70 transition-all inline-flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          </svg>
+          הצטרפו דרך WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<footer class="bg-surface-container-low rounded-t-[2rem] mt-12 w-full">
+  <div class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 max-w-7xl mx-auto">
+    <div class="space-y-4 max-w-sm">
+      <div class="font-headline text-xl font-bold text-primary">
+        AI Finance Community
+      </div>
+      <p class="text-sm leading-relaxed text-stone-600">
+        גשר בין עולם הפיננסים לעולם הבינה המלאכותית — קהילה של מעל 1,700 אנשי כספים ישראלים.
+        <br/>© 2025 AI Finance Community
+      </p>
+    </div>
+    <nav class="flex flex-wrap gap-8">
+      <a class="text-stone-600 text-sm hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="#about">על הקהילה</a>
+      <a class="text-stone-600 text-sm hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="#team">הצוות</a>
+      <a class="text-stone-600 text-sm hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="#services">שירותים</a>
+      <a class="text-stone-600 text-sm hover:text-primary underline decoration-secondary-fixed-dim decoration-2 underline-offset-4 transition-all" href="mailto:roei@hwcpa.co.il">צור קשר</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
