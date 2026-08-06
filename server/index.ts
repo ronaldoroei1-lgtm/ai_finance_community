@@ -8,7 +8,11 @@ import multer from "multer";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin2024";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+if (!ADMIN_PASSWORD) {
+  console.error("FATAL: ADMIN_PASSWORD environment variable is not set. Admin panel will be inaccessible.");
+  console.error("Set ADMIN_PASSWORD in Railway environment variables before deploying.");
+}
 
 async function startServer() {
   const app = express();
@@ -122,6 +126,14 @@ async function startServer() {
     "/404",
     "/services/ai-workshops-for-finance",
     "/services/ai-workshops-for-finance/",
+    "/services/ai-workshops-finance-teams",
+    "/services/ai-workshops-finance-teams/",
+    "/services/ai-lectures-executives",
+    "/services/ai-lectures-executives/",
+    "/services/ai-process-mapping-finance",
+    "/services/ai-process-mapping-finance/",
+    "/community",
+    "/community/",
   ]);
   app.get("*", (req, res) => {
     const status = KNOWN_APP_ROUTES.has(req.path) ? 200 : 404;

@@ -33,6 +33,12 @@ export default function BlogHeader() {
           <Link href="/blog" className="text-sm text-white font-semibold">
             בלוג
           </Link>
+          <Link href="/#services" className="text-sm text-slate-400 hover:text-white transition-colors duration-200 font-medium">
+            שירותים
+          </Link>
+          <Link href="/community/" className="text-sm text-slate-400 hover:text-white transition-colors duration-200 font-medium">
+            קהילה
+          </Link>
           <Link href="/services/ai-workshops-for-finance/" className="text-sm text-slate-400 hover:text-white transition-colors duration-200 font-medium">
             קורסים
           </Link>
@@ -68,6 +74,12 @@ export default function BlogHeader() {
             </Link>
             <Link href="/blog" className="text-sm text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
               בלוג
+            </Link>
+            <Link href="/#services" className="text-sm text-slate-300" onClick={() => setMobileMenuOpen(false)}>
+              שירותים
+            </Link>
+            <Link href="/community/" className="text-sm text-slate-300" onClick={() => setMobileMenuOpen(false)}>
+              קהילה
             </Link>
             <Link href="/services/ai-workshops-for-finance/" className="text-sm text-slate-300" onClick={() => setMobileMenuOpen(false)}>
               קורסים

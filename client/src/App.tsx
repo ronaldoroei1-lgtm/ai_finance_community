@@ -5,6 +5,10 @@ import Admin from "@/pages/Admin";
 import BlogIndex from "@/pages/BlogIndex";
 import BlogPost from "@/pages/BlogPost";
 import ServicesAIWorkshops from "@/pages/ServicesAIWorkshops";
+import ServicesWorkshopsB2B from "@/pages/ServicesWorkshopsB2B";
+import ServicesLectures from "@/pages/ServicesLectures";
+import ServicesProcessMapping from "@/pages/ServicesProcessMapping";
+import Community from "@/pages/Community";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -22,6 +26,14 @@ function Router() {
       <Route path={"/blog/:slug/"} component={BlogPost} />
       <Route path={"/services/ai-workshops-for-finance"} component={ServicesAIWorkshops} />
       <Route path={"/services/ai-workshops-for-finance/"} component={ServicesAIWorkshops} />
+      <Route path={"/services/ai-workshops-finance-teams"} component={ServicesWorkshopsB2B} />
+      <Route path={"/services/ai-workshops-finance-teams/"} component={ServicesWorkshopsB2B} />
+      <Route path={"/community"} component={Community} />
+      <Route path={"/community/"} component={Community} />
+      <Route path={"/services/ai-lectures-executives"} component={ServicesLectures} />
+      <Route path={"/services/ai-lectures-executives/"} component={ServicesLectures} />
+      <Route path={"/services/ai-process-mapping-finance"} component={ServicesProcessMapping} />
+      <Route path={"/services/ai-process-mapping-finance/"} component={ServicesProcessMapping} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
