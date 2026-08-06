@@ -8,7 +8,11 @@ import multer from "multer";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin2024";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+if (!ADMIN_PASSWORD) {
+  console.error("FATAL: ADMIN_PASSWORD environment variable is not set. Admin panel will be inaccessible.");
+  console.error("Set ADMIN_PASSWORD in Railway environment variables before deploying.");
+}
 
 async function startServer() {
   const app = express();
