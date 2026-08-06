@@ -7,7 +7,6 @@ import {
   Camera,
   MessageCircle,
   Linkedin,
-  Instagram,
   Download,
   BookOpen,
   Menu,
@@ -900,15 +899,6 @@ export default function Home() {
                 >
                   <Linkedin className="w-4 h-4 text-blue-300" aria-hidden="true" />
                 </a>
-                <a
-                  href={contact.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 bg-white/5 border border-white/10 rounded-lg hover:bg-pink-900/30 hover:border-pink-500/30 transition-all duration-200 hover:scale-105"
-                  aria-label="Instagram - AI Finance"
-                >
-                  <Instagram className="w-4 h-4 text-blue-300" aria-hidden="true" />
-                </a>
               </div>
             </div>
 
@@ -953,16 +943,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-600">© 2025 AI Finance Community. כל הזכויות שמורות.</p>
-            {/* Discreet admin access */}
-            <a
-              href="/admin"
-              className="text-slate-800 hover:text-slate-600 transition-colors duration-200 text-xs"
-              title="לוח בקרה"
-              aria-label="לוח בקרה לניהול תוכן"
-            >
-              ⚙ ניהול
-            </a>
+            <p className="text-sm text-slate-600">© 2026 AI Finance Community. כל הזכויות שמורות.</p>
           </div>
         </div>
       </footer>
