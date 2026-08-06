@@ -435,7 +435,20 @@ export default function Home() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-center mb-1.5">{member.name}</h3>
-                  <p className="text-sm text-blue-400 text-center mb-5 font-semibold leading-snug">{member.title}</p>
+                  <p className="text-sm text-blue-400 text-center mb-2 font-semibold leading-snug">{member.title}</p>
+                  {member.linkedinUrl && (
+                    <div className="flex justify-center mb-4">
+                      <a
+                        href={member.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-white/5 border border-white/10 rounded-lg hover:bg-blue-900/50 hover:border-blue-500/40 transition-all duration-200 hover:scale-105"
+                        aria-label={`לינקדין של ${member.name}`}
+                      >
+                        <Linkedin className="w-4 h-4 text-blue-300" aria-hidden="true" />
+                      </a>
+                    </div>
+                  )}
                   <p className="text-slate-300 text-sm mb-6 text-justify leading-relaxed">{member.bio}</p>
 
                   <ul className="space-y-2.5" aria-label={`תחומי התמחות של ${member.name}`}>

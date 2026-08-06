@@ -126,6 +126,14 @@ async function startServer() {
     "/404",
     "/services/ai-workshops-for-finance",
     "/services/ai-workshops-for-finance/",
+    "/services/ai-workshops-finance-teams",
+    "/services/ai-workshops-finance-teams/",
+    "/services/ai-lectures-executives",
+    "/services/ai-lectures-executives/",
+    "/services/ai-process-mapping-finance",
+    "/services/ai-process-mapping-finance/",
+    "/community",
+    "/community/",
   ]);
   app.get("*", (req, res) => {
     const status = KNOWN_APP_ROUTES.has(req.path) ? 200 : 404;

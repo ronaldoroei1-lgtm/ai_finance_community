@@ -35,7 +35,7 @@ export default function ServicesProcessMapping() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "עמוד הבית", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: "שירותים", item: `${SITE_URL}/services/` },
+      { "@type": "ListItem", position: 2, name: "שירותים", item: `${SITE_URL}/#services` },
       {
         "@type": "ListItem",
         position: 3,

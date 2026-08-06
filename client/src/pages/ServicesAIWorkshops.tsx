@@ -237,7 +237,7 @@ export default function ServicesAIWorkshops() {
                     href={course.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => gtag('event', 'external_course_click', { course_name: course.title })}
+                    onClick={() => gtag('event', 'external_course_click', { course_name: course.name })}
                     className="inline-flex items-center gap-1.5 text-xs text-blue-300 hover:text-blue-200 transition-colors duration-200"
                   >
                     לעמוד הקורס במרכז להכשרת דירקטורים
