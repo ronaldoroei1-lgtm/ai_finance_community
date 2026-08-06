@@ -224,7 +224,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                מאחורינו קהילה של 1,800+ אנשי כספים
+                סדנאות, הרצאות וליווי מעשי לצוותי כספים
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight gradient-heading">
@@ -236,23 +236,28 @@ export default function Home() {
                 <span className="text-blue-400 font-medium mt-2 block">{hero.subtagline}</span>
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
                 <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'hero' })}>
                   <Button
                     size="lg"
                     className="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
                   >
-                    דברו איתנו בוואטסאפ
+                    בדקו התאמה לסדנה
                   </Button>
                 </a>
-                <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'community_join_click')}>
+                <a href="#services">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border border-white/15 text-white bg-white/5 hover:bg-white/10 hover:border-white/25 px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200"
                   >
-                    הצטרפו לקהילה
+                    לשירותים לארגונים
                   </Button>
+                </a>
+              </div>
+              <div className="mb-12">
+                <a href="/community/" onClick={() => gtag('event', 'community_join_click')} className="text-sm text-slate-400 hover:text-blue-300 transition-colors duration-200">
+                  מחפשים כלים ותוכן מקצועי? <span className="text-blue-400 underline underline-offset-2">הצטרפו לקהילה</span>
                 </a>
               </div>
 
@@ -301,6 +306,77 @@ export default function Home() {
               <p className="text-lg text-slate-300 leading-relaxed text-justify">
                 {about.text}
               </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* ─── Why AI Finance Section ───────────────────────────────── */}
+        <motion.section
+          className="py-28 relative"
+          aria-labelledby="why-heading"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-transparent pointer-events-none" aria-hidden="true" />
+
+          <div className="container relative z-10">
+            <div className="max-w-3xl mx-auto text-center mb-14">
+              <div className="flex justify-center mb-5">
+                <span className="section-label">
+                  <TrendingUp className="w-3 h-3" aria-hidden="true" />
+                  עולם הכספים קודם לכלי
+                </span>
+              </div>
+              <h2 id="why-heading" className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
+                מחברים בין AI לעבודה הפיננסית בפועל
+              </h2>
+              <p className="text-lg text-slate-300 leading-relaxed">
+                כלי AI משתנים במהירות, אבל האתגרים במחלקת הכספים נשארים מוכרים: דוחות, תחזיות, בקרות, מסמכים, תקציבים ועבודה מול הנהלה. לכן אנחנו לא מתחילים מרשימת כלים. אנחנו מתחילים מהמשימות שהצוות מבצע, מהמידע שהוא עובד איתו ומהמגבלות הארגוניות שצריך להביא בחשבון.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-14">
+              {[
+                {
+                  title: "מיקוד במשימות פיננסיות",
+                  body: "הדוגמאות והתרגול מחוברים לעבודה של אנשי כספים — ולא לתרחישים כלליים שאינם רלוונטיים לצוות.",
+                },
+                {
+                  title: "מעבר מהיכרות ליישום",
+                  body: "המטרה היא לעזור לצוות להבין איפה AI יכול לסייע, איפה נדרשת בקרה אנושית ואיך נראה תהליך עבודה שאפשר לבחון באופן מסודר.",
+                },
+                {
+                  title: "שפה מקצועית ונגישה",
+                  body: "אנחנו מסבירים את הכלים בשפה שמתאימה למנהלים ולאנשי כספים, גם ללא רקע טכנולוגי, תוך התייחסות לסיכונים, למגבלות ולאחריות המקצועית.",
+                },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  custom={idx}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-60px" }}
+                  className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
+                >
+                  <h3 className="text-lg font-bold mb-3 text-white">{item.title}</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed">{item.body}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="max-w-2xl mx-auto text-center">
+              <p className="text-slate-400 text-sm leading-relaxed mb-8">
+                הקהילה מאפשרת לנו להישאר קרובים לשאלות, לאתגרים ולשימושים שחוזרים בעבודת הכספים בשטח. התובנות האלה עוזרות לנו לשמור את התוכן והפעילויות מחוברים לעבודה היומיומית של הקהל.
+              </p>
+              <a href="#services">
+                <Button variant="outline" className="border border-blue-500/30 text-blue-300 bg-blue-900/20 hover:bg-blue-900/50 hover:border-blue-400/60 font-semibold transition-all duration-200">
+                  הכירו את השירותים לארגונים
+                </Button>
+              </a>
             </div>
           </div>
         </motion.section>
@@ -461,13 +537,13 @@ export default function Home() {
               <div className="flex justify-center mb-5">
                 <span className="section-label">
                   <Sparkles className="w-3 h-3" aria-hidden="true" />
-                  אמון וניסיון
+                  ניסיון מהשטח
                 </span>
               </div>
               <h2 id="clients-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
-                הלקוחות שלנו
+                ארגונים שעבדנו איתם
               </h2>
-              <p className="text-slate-400 text-lg">ארגונים מובילים שבחרו בנו</p>
+              <p className="text-slate-400 text-lg">הרצאות, סדנאות ופעילויות מקצועיות לאנשי כספים, מנהלים ובעלי תפקידים</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -481,14 +557,6 @@ export default function Home() {
                   viewport={{ once: true, margin: "-60px" }}
                   className="relative bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-7 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden"
                 >
-                  {/* Decorative quote mark */}
-                  <div
-                    className="absolute top-3 left-5 text-6xl text-blue-500/15 font-serif leading-none select-none pointer-events-none"
-                    aria-hidden="true"
-                  >
-                    "
-                  </div>
-
                   {client.logoUrl && (
                     <div className="h-10 mb-4 flex items-center">
                       <img
