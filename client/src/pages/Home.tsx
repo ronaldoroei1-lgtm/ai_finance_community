@@ -19,6 +19,9 @@ import { useContent } from "@/hooks/useContent";
 import { posts as blogPosts, authors as blogAuthors, categories as blogCategories } from "@/generated/blog";
 import ArticleCard from "@/components/blog/ArticleCard";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const gtag = (...args: any[]) => { if (typeof window !== 'undefined') (window as any).gtag?.(...args); };
+
 const iconMap: Record<string, React.ReactNode> = {
   trending: <TrendingUp className="w-10 h-10" />,
   users: <Users className="w-10 h-10" />,
@@ -129,6 +132,7 @@ export default function Home() {
               href={hero.businessWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => gtag('event', 'whatsapp_click', { location: 'nav' })}
               className="hidden sm:flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/25"
             >
               דברו איתנו בוואטסאפ
@@ -168,7 +172,7 @@ export default function Home() {
                 href={hero.businessWhatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => { setMobileMenuOpen(false); gtag('event', 'whatsapp_click', { location: 'nav' }); }}
                 className="mt-3 flex items-center justify-center gap-2 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200"
               >
                 דברו איתנו בוואטסאפ
@@ -233,7 +237,7 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'hero' })}>
                   <Button
                     size="lg"
                     className="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
@@ -241,7 +245,7 @@ export default function Home() {
                     דברו איתנו בוואטסאפ
                   </Button>
                 </a>
-                <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <a href={hero.whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'community_join_click')}>
                   <Button
                     size="lg"
                     variant="outline"
@@ -425,7 +429,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                   <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">{service.description}</p>
-                  <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'services' })}>
                     <Button
                       variant="outline"
                       className="border border-blue-500/30 text-blue-300 bg-blue-900/20 hover:bg-blue-900/50 hover:border-blue-400/60 w-full font-semibold transition-all duration-200"
@@ -592,6 +596,7 @@ export default function Home() {
               <motion.a
                 href="/guides/excel-agent-guide.pdf"
                 download
+                onClick={() => gtag('event', 'guide_download', { guide_name: 'excel-copilot-agent-mode' })}
                 className="group"
                 custom={0}
                 variants={cardVariants}
@@ -624,6 +629,7 @@ export default function Home() {
               <motion.a
                 href="/guides/chatgpt-prompts.xlsx"
                 download
+                onClick={() => gtag('event', 'guide_download', { guide_name: 'chatgpt-prompts' })}
                 className="group"
                 custom={1}
                 variants={cardVariants}
@@ -656,6 +662,7 @@ export default function Home() {
               <motion.a
                 href="/guides/gemini-prompts.html"
                 download
+                onClick={() => gtag('event', 'guide_download', { guide_name: 'gemini-prompts' })}
                 className="group"
                 custom={2}
                 variants={cardVariants}
@@ -842,7 +849,7 @@ export default function Home() {
               <p className="text-lg text-slate-300 mb-10 leading-relaxed">
                 {cta.subtext}
               </p>
-              <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer">
+              <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'cta' })}>
                 <Button
                   size="lg"
                   className="bg-emerald-600 hover:bg-emerald-500 text-white px-14 py-7 text-lg font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/35 hover:-translate-y-0.5"
@@ -855,6 +862,7 @@ export default function Home() {
                   href={hero.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => gtag('event', 'community_join_click')}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700/60 hover:bg-emerald-600/80 border border-emerald-500/30 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/20"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

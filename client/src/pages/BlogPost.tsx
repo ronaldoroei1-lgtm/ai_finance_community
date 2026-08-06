@@ -119,6 +119,13 @@ export default function BlogPost() {
               // Content is compiled at build time from our own Markdown source (content/blog/*.md),
               // not from user input - safe to render as trusted static HTML.
               dangerouslySetInnerHTML={{ __html: post.html }}
+              onClick={(e) => {
+                const a = (e.target as HTMLElement).closest('a');
+                if (a?.href?.includes('/services/')) {
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  (window as any).gtag?.('event', 'blog_to_service_click', { destination: a.pathname });
+                }
+              }}
             />
             <aside className="hidden lg:block">
               <TableOfContents items={post.toc} />

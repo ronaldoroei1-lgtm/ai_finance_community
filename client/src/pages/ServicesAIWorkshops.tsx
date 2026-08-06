@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const gtag = (...args: any[]) => { if (typeof window !== 'undefined') (window as any).gtag?.(...args); };
 import { ChevronDown, CheckCircle2, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BlogHeader from "@/components/blog/BlogHeader";
@@ -235,6 +237,7 @@ export default function ServicesAIWorkshops() {
                     href={course.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => gtag('event', 'external_course_click', { course_name: course.title })}
                     className="inline-flex items-center gap-1.5 text-xs text-blue-300 hover:text-blue-200 transition-colors duration-200"
                   >
                     לעמוד הקורס במרכז להכשרת דירקטורים

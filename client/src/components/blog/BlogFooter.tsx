@@ -1,6 +1,8 @@
 import { Link } from "wouter";
-import { Linkedin, Instagram } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { useContent } from "@/hooks/useContent";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const gtag = (...args: any[]) => { if (typeof window !== 'undefined') (window as any).gtag?.(...args); };
 
 export default function BlogFooter() {
   const { content } = useContent();
@@ -26,15 +28,6 @@ export default function BlogFooter() {
                 >
                   <Linkedin className="w-4 h-4 text-blue-300" aria-hidden="true" />
                 </a>
-                <a
-                  href={contact.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 bg-white/5 border border-white/10 rounded-lg hover:bg-pink-900/30 hover:border-pink-500/30 transition-all duration-200 hover:scale-105"
-                  aria-label="Instagram - AI Finance"
-                >
-                  <Instagram className="w-4 h-4 text-blue-300" aria-hidden="true" />
-                </a>
               </div>
             )}
           </div>
@@ -44,7 +37,7 @@ export default function BlogFooter() {
             <ul className="space-y-2.5 text-sm text-slate-400">
               <li><Link href="/" className="hover:text-blue-300 transition-colors duration-200">עמוד הבית</Link></li>
               <li><Link href="/blog" className="hover:text-blue-300 transition-colors duration-200">בלוג</Link></li>
-              <li><Link href="/#services" className="hover:text-blue-300 transition-colors duration-200">שירותים</Link></li>
+              <li><Link href="/#services" onClick={() => gtag('event', 'blog_to_service_click', { destination: 'services' })} className="hover:text-blue-300 transition-colors duration-200">שירותים</Link></li>
               <li><Link href="/services/ai-workshops-for-finance/" className="hover:text-blue-300 transition-colors duration-200">קורסים</Link></li>
               <li><Link href="/#faq" className="hover:text-blue-300 transition-colors duration-200">שאלות נפוצות</Link></li>
             </ul>
