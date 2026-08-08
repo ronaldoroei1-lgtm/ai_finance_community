@@ -136,15 +136,6 @@ export default function Home() {
 
           {/* Desktop CTA + Mobile hamburger */}
           <div className="flex items-center gap-3">
-            <a
-              href={hero.businessWhatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => gtag('event', 'whatsapp_click', { location: 'nav' })}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#1FBE5B] text-white text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/25"
-            >
-              דברו איתנו בוואטסאפ
-            </a>
             <button
               className="md:hidden p-2 text-[#4B5170] hover:text-[#1B1E33] transition-colors duration-200"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -176,15 +167,6 @@ export default function Home() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href={hero.businessWhatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => { setMobileMenuOpen(false); gtag('event', 'whatsapp_click', { location: 'nav' }); }}
-                className="mt-3 flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] hover:bg-[#1FBE5B] text-white text-sm font-semibold rounded-lg transition-all duration-200"
-              >
-                דברו איתנו בוואטסאפ
-              </a>
             </div>
           </motion.div>
         )}
