@@ -11,6 +11,7 @@ import ServicesProcessMapping from "@/pages/ServicesProcessMapping";
 import Community from "@/pages/Community";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
@@ -56,6 +57,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <FloatingWhatsApp />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
