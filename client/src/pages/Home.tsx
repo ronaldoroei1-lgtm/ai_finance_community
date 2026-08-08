@@ -12,6 +12,8 @@ import {
   Menu,
   X,
   Sparkles,
+  Bot,
+  FileSpreadsheet,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Lightbox from "@/components/Lightbox";
@@ -767,6 +769,66 @@ export default function Home() {
                     <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
                       <Download className="w-4 h-4" aria-hidden="true" />
                       <span>הורד HTML</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.a>
+
+              {/* Claude Skill Guide */}
+              <motion.a
+                href="/guides/claude-skill-guide.pdf"
+                download
+                onClick={() => gtag('event', 'guide_download', { guide_name: 'claude-skill-guide' })}
+                className="group"
+                custom={3}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+              >
+                <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col group-hover:-translate-y-1">
+                  {/* Placeholder artwork - swap for a designed hero image before the next content refresh */}
+                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#0d1a2e] to-[#0a1420] flex items-center justify-center">
+                    <Bot className="w-20 h-20 text-blue-400/70" aria-hidden="true" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-3">Claude Skill — מדריך בנייה</h3>
+                    <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">
+                      מדריך צעד־אחר־צעד לבניית Skill מותאם ל-Claude: כתיבת ההוראות ב-Notepad וב-YAML, שמירה, אריזה כ-ZIP והעלאה
+                    </p>
+                    <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
+                      <Download className="w-4 h-4" aria-hidden="true" />
+                      <span>הורד PDF</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.a>
+
+              {/* Copilot Excel Prompts Guide */}
+              <motion.a
+                href="/guides/copilot-excel-prompts.pdf"
+                download
+                onClick={() => gtag('event', 'guide_download', { guide_name: 'copilot-excel-prompts' })}
+                className="group"
+                custom={4}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+              >
+                <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col group-hover:-translate-y-1">
+                  {/* Placeholder artwork - swap for a designed hero image before the next content refresh */}
+                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#0d1a2e] to-[#0a1420] flex items-center justify-center">
+                    <FileSpreadsheet className="w-20 h-20 text-blue-400/70" aria-hidden="true" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-3">Copilot ל-Excel — 15 פרומפטים</h3>
+                    <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">
+                      ספרייה של 15 פרומפטים מוכנים להעתקה, מאורגנים בחמישה שלבי עבודה: ביקורת נתונים, ניקוי, מבנה, נוסחאות, ניתוח וויזואליזציה
+                    </p>
+                    <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
+                      <Download className="w-4 h-4" aria-hidden="true" />
+                      <span>הורד PDF</span>
                     </div>
                   </div>
                 </div>
