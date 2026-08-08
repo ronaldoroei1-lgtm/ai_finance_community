@@ -82,10 +82,15 @@ function WhatsAppGlyph({ className }: { className?: string }) {
   );
 }
 
+const EXIT_INTENT_STORAGE_KEY = "aif_whatsapp_exit_intent_shown";
+const EXIT_INTENT_COOLDOWN_MS = 3500;
+
 export default function FloatingWhatsApp() {
   const { content } = useContent();
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const openRef = useRef(open);
+  openRef.current = open;
 
   useEffect(() => {
     if (!open) return;
@@ -105,11 +110,48 @@ export default function FloatingWhatsApp() {
     };
   }, [open]);
 
+  // Exit-intent: desktop cursor leaving through the top of the viewport reads
+  // as "about to close the tab / navigate away". Auto-open the same panel
+  // once per session, after a short cooldown so an accidental flick toward
+  // the address bar right after load doesn't trigger it.
+  useEffect(() => {
+    if (sessionStorage.getItem(EXIT_INTENT_STORAGE_KEY) === "1") return;
+
+    let cooldownPassed = false;
+    const cooldownTimer = window.setTimeout(() => {
+      cooldownPassed = true;
+    }, EXIT_INTENT_COOLDOWN_MS);
+
+    function handleMouseLeave(e: MouseEvent) {
+      if (!cooldownPassed) return;
+      if (e.clientY > 0) return;
+      if (openRef.current) return;
+      if (sessionStorage.getItem(EXIT_INTENT_STORAGE_KEY) === "1") return;
+      sessionStorage.setItem(EXIT_INTENT_STORAGE_KEY, "1");
+      gtag("event", "whatsapp_floating_exit_intent");
+      setOpen(true);
+    }
+
+    document.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      window.clearTimeout(cooldownTimer);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   if (!content) return null;
 
   function hrefFor(option: MenuOption) {
     if (!option.message) return content!.hero.whatsappUrl;
     return `${content!.contact.whatsappUrl}?text=${encodeURIComponent(option.message)}`;
+  }
+
+  function handleToggleClick() {
+    setOpen((v) => {
+      const next = !v;
+      if (next) gtag("event", "whatsapp_floating_open", { trigger: "click" });
+      return next;
+    });
   }
 
   function handleOptionClick(option: MenuOption) {
@@ -160,7 +202,7 @@ export default function FloatingWhatsApp() {
 
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={handleToggleClick}
         aria-label={open ? "סגור תפריט וואטסאפ" : "פתח תפריט יצירת קשר בוואטסאפ"}
         aria-expanded={open}
         className="aif-whatsapp-btn w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
@@ -170,10 +212,18 @@ export default function FloatingWhatsApp() {
       </button>
 
       <style>{`
-        .aif-whatsapp-btn { animation: aifWhatsappPulse 3.5s ease-in-out infinite; }
+        .aif-whatsapp-btn {
+          animation:
+            aifWhatsappEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+            aifWhatsappPulse 3.5s ease-in-out 0.7s infinite;
+        }
         .aif-whatsapp-btn:hover { background: ${COLORS.buttonHover} !important; }
         .aif-whatsapp-btn:active { background: ${COLORS.buttonActive} !important; }
         .aif-whatsapp-btn:focus-visible { outline: 2px solid ${COLORS.focusRing}; outline-offset: 2px; }
+        @keyframes aifWhatsappEntrance {
+          from { transform: scale(0) translateY(24px); opacity: 0; }
+          to { transform: scale(1) translateY(0); opacity: 1; }
+        }
         @keyframes aifWhatsappPulse {
           0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
           50% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
