@@ -170,10 +170,18 @@ export default function FloatingWhatsApp() {
       </button>
 
       <style>{`
-        .aif-whatsapp-btn { animation: aifWhatsappPulse 3.5s ease-in-out infinite; }
+        .aif-whatsapp-btn {
+          animation:
+            aifWhatsappEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+            aifWhatsappPulse 3.5s ease-in-out 0.7s infinite;
+        }
         .aif-whatsapp-btn:hover { background: ${COLORS.buttonHover} !important; }
         .aif-whatsapp-btn:active { background: ${COLORS.buttonActive} !important; }
         .aif-whatsapp-btn:focus-visible { outline: 2px solid ${COLORS.focusRing}; outline-offset: 2px; }
+        @keyframes aifWhatsappEntrance {
+          from { transform: scale(0) translateY(24px); opacity: 0; }
+          to { transform: scale(1) translateY(0); opacity: 1; }
+        }
         @keyframes aifWhatsappPulse {
           0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
           50% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
