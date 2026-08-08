@@ -44,62 +44,62 @@
 }
 
 :root {
-  /* ── Primary ──────────────────────────────────────────── */
-  --primary: #2563eb;
-  --primary-foreground: #eff6ff;
+  /* ── Primary (indigo) ─────────────────────────────────── */
+  --primary: #3d4a8a;
+  --primary-foreground: #ffffff;
 
-  /* ── Accent (CTA green) ────────────────────────────────── */
-  --accent: #059669;
-  --accent-foreground: #ffffff;
+  /* ── Accent (soft indigo hover surface) ────────────────── */
+  --accent: #eef0fa;
+  --accent-foreground: #1b1e33;
 
   /* ── Radius ───────────────────────────────────────────── */
   --radius: 0.75rem;
 
   /* ── Surface & background ─────────────────────────────── */
-  --background: #080e1c;
-  --foreground: #e2e8f0;
+  --background: #f7f7fd;
+  --foreground: #4b5170;
 
-  /* Card: very dark navy — NOT royal blue */
-  --card: #0d1526;
-  --card-foreground: #f1f5f9;
+  /* Card: elevated white surface */
+  --card: #ffffff;
+  --card-foreground: #1b1e33;
 
   /* Popover */
-  --popover: #0d1526;
-  --popover-foreground: #f1f5f9;
+  --popover: #ffffff;
+  --popover-foreground: #1b1e33;
 
-  /* ── Secondary ────────────────────────────────────────── */
-  --secondary: #162033;
-  --secondary-foreground: #bfdbfe;
+  /* ── Secondary (soft indigo) ──────────────────────────── */
+  --secondary: #eef0fa;
+  --secondary-foreground: #303a72;
 
-  /* ── Muted ────────────────────────────────────────────── */
-  --muted: #101828;
-  --muted-foreground: #94a3b8;
+  /* ── Muted (alternate section background) ─────────────── */
+  --muted: #f1f2fa;
+  --muted-foreground: #646b89;
 
   /* ── State colours ────────────────────────────────────── */
   --destructive: #ef4444;
   --destructive-foreground: #fafafa;
 
   /* ── Borders & inputs ─────────────────────────────────── */
-  --border: #1a2d4a;
-  --input: #1a2d4a;
-  --ring: #2563eb;
+  --border: #e2e4f3;
+  --input: #c9cde4;
+  --ring: #6674bc;
 
   /* ── Charts ───────────────────────────────────────────── */
-  --chart-1: #60a5fa;
-  --chart-2: #3b82f6;
-  --chart-3: #2563eb;
-  --chart-4: #1d4ed8;
-  --chart-5: #1e40af;
+  --chart-1: #3d4a8a;
+  --chart-2: #6876bc;
+  --chart-3: #a9b0dd;
+  --chart-4: #7481c4;
+  --chart-5: #c7cbe9;
 
   /* ── Sidebar ──────────────────────────────────────────── */
-  --sidebar: #080e1c;
-  --sidebar-foreground: #f1f5f9;
-  --sidebar-primary: #1e3a8a;
-  --sidebar-primary-foreground: #f0f9ff;
-  --sidebar-accent: #1e3a8a;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1a2d4a;
-  --sidebar-ring: #2563eb;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1b1e33;
+  --sidebar-primary: #3d4a8a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef0fa;
+  --sidebar-accent-foreground: #1b1e33;
+  --sidebar-border: #e2e4f3;
+  --sidebar-ring: #6674bc;
 }
 
 .dark {
@@ -216,29 +216,26 @@
     align-items: center;
     gap: 0.375rem;
     padding: 0.3rem 0.9rem;
-    background: rgba(37, 99, 235, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.22);
+    background: rgba(61, 74, 138, 0.08);
+    border: 1px solid rgba(61, 74, 138, 0.18);
     border-radius: 9999px;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color: #93c5fd;
+    color: #3d4a8a;
     text-transform: uppercase;
   }
 
-  /* ── Gradient heading ────────────────────────────────────── */
+  /* ── Heading (solid — no white gradient on the light theme) ── */
   .gradient-heading {
-    background: linear-gradient(140deg, #ffffff 20%, #bfdbfe 65%, #93c5fd 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #1b1e33;
   }
 
   /* ── Grid background pattern ─────────────────────────────── */
   .grid-bg {
     background-image:
-      linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(201, 205, 228, 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201, 205, 228, 0.35) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 
@@ -282,17 +279,17 @@
   /* ── Blog article body (rendered from generated Markdown HTML) ──── */
   .prose-blog {
     --tw-prose-body: var(--foreground);
-    --tw-prose-headings: #ffffff;
-    --tw-prose-links: #93c5fd;
-    --tw-prose-bold: #ffffff;
-    --tw-prose-counters: #94a3b8;
-    --tw-prose-bullets: #2563eb;
+    --tw-prose-headings: #1b1e33;
+    --tw-prose-links: #3d4a8a;
+    --tw-prose-bold: #1b1e33;
+    --tw-prose-counters: #646b89;
+    --tw-prose-bullets: #3d4a8a;
     --tw-prose-hr: var(--border);
-    --tw-prose-quotes: #bfdbfe;
-    --tw-prose-quote-borders: #2563eb;
-    --tw-prose-code: #93c5fd;
-    --tw-prose-pre-bg: #0d1526;
-    --tw-prose-pre-code: #e2e8f0;
+    --tw-prose-quotes: #303a72;
+    --tw-prose-quote-borders: #3d4a8a;
+    --tw-prose-code: #1b1e33;
+    --tw-prose-pre-bg: #f1f2fa;
+    --tw-prose-pre-code: #1b1e33;
     --tw-prose-th-borders: var(--border);
     --tw-prose-td-borders: var(--border);
     max-width: none;
@@ -310,7 +307,7 @@
   }
 
   .prose-blog a {
-    text-decoration-color: rgba(147, 197, 253, 0.35);
+    text-decoration-color: rgba(61, 74, 138, 0.35);
   }
 
   /* Wide comparison tables (common in these articles) would otherwise
