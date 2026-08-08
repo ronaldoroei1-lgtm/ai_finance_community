@@ -68,18 +68,18 @@ export default function ServicesWorkshopsB2B() {
       <main className="pt-32 pb-20">
         <div className="container">
           {/* ─── Breadcrumb ──────────────────────────────────────── */}
-          <nav aria-label="breadcrumb" className="text-sm text-slate-500 mb-6">
-            <Link href="/" className="hover:text-blue-300">
+          <nav aria-label="breadcrumb" className="text-sm text-[#646B89] mb-6">
+            <Link href="/" className="hover:text-[#3D4A8A]">
               עמוד הבית
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-slate-400">שירותים</span>
+            <span className="text-[#646B89]">שירותים</span>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-slate-400">סדנאות</span>
+            <span className="text-[#646B89]">סדנאות</span>
           </nav>
 
           {/* ─── Hero ─────────────────────────────────────────────── */}
@@ -91,7 +91,7 @@ export default function ServicesWorkshopsB2B() {
             <h1 className="text-4xl md:text-5xl font-bold gradient-heading mt-4 mb-6 leading-tight">
               סדנאות AI מעשיות למחלקות כספים
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed mb-8">
+            <p className="text-lg text-[#4B5170] leading-relaxed mb-8">
               עוזרים לצוותי כספים לעבור מהיכרות כללית עם AI לתרגול על משימות שמגיעות מהעבודה שלהם — תוך התייחסות לבקרה, למגבלות הכלים ולכללי הארגון.
             </p>
             {whatsappUrl && (
@@ -101,7 +101,7 @@ export default function ServicesWorkshopsB2B() {
                 rel="noopener noreferrer"
                 onClick={handleCtaClick}
               >
-                <Button className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8">
+                <Button className="bg-[#3D4A8A] hover:bg-[#303A72] text-white font-semibold px-8">
                   בדקו התאמה לסדנה
                 </Button>
               </a>
@@ -111,12 +111,12 @@ export default function ServicesWorkshopsB2B() {
           {/* ─── למי הסדנה מתאימה ─────────────────────────────────── */}
           <section className="relative max-w-3xl mb-20">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
             <div className="pt-14">
-              <h2 className="text-2xl font-bold text-white mb-6">למי הסדנה מתאימה?</h2>
-              <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-[#1B1E33] mb-6">למי הסדנה מתאימה?</h2>
+              <div className="bg-white border border-[#E2E4F3] rounded-2xl p-8 shadow-[0_1px_3px_rgba(27,30,51,0.06)]">
                 <ul className="space-y-4">
                   {[
                     "צוותי FP&A, חשבות, ביקורת, תקציב ובקרה",
@@ -125,8 +125,8 @@ export default function ServicesWorkshopsB2B() {
                     "מנהלי כספים שרוצים לאפשר לצוות להתנסות במסגרת מקצועית ומונחית",
                     "ארגונים שמחפשים פעילות המחוברת למשימות פיננסיות ולא הדרכת AI כללית",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-300">
-                      <Users className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" aria-hidden="true" />
+                    <li key={i} className="flex items-start gap-3 text-[#4B5170]">
+                      <Users className="w-4 h-4 text-[#3D4A8A] mt-1 flex-shrink-0" aria-hidden="true" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -138,12 +138,12 @@ export default function ServicesWorkshopsB2B() {
           {/* ─── הבעיה שהסדנה נועדה לפתור ──────────────────────────── */}
           <section className="relative max-w-3xl mb-20">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
             <div className="pt-14">
-              <h2 className="text-2xl font-bold text-white mb-6">הבעיה שהסדנה נועדה לפתור</h2>
-              <div className="space-y-5 text-slate-300 leading-relaxed">
+              <h2 className="text-2xl font-bold text-[#1B1E33] mb-6">הבעיה שהסדנה נועדה לפתור</h2>
+              <div className="space-y-5 text-[#4B5170] leading-relaxed">
                 <p>
                   אנשי כספים רבים כבר מכירים את שמות הכלים, אבל מתקשים לתרגם את היכולות שלהם לתהליך עבודה בטוח ושימושי. לעיתים כל עובד מתנסה לבד, בלי שפה משותפת, בלי דוגמאות רלוונטיות ובלי הבחנה ברורה בין משימה שמתאימה ל־AI לבין משימה שמחייבת טיפול אחר.
                 </p>
@@ -157,12 +157,12 @@ export default function ServicesWorkshopsB2B() {
           {/* ─── תוצאות ותוצרים צפויים ──────────────────────────────── */}
           <section className="relative max-w-3xl mb-20">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
             <div className="pt-14">
-              <h2 className="text-2xl font-bold text-white mb-6">תוצאות ותוצרים צפויים</h2>
-              <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-[#1B1E33] mb-6">תוצאות ותוצרים צפויים</h2>
+              <div className="bg-white border border-[#E2E4F3] rounded-2xl p-8 shadow-[0_1px_3px_rgba(27,30,51,0.06)]">
                 <ul className="space-y-4">
                   {[
                     "לזהות משימות שבהן AI עשוי לסייע",
@@ -171,8 +171,8 @@ export default function ServicesWorkshopsB2B() {
                     "להבין היכן נדרשת בקרה אנושית",
                     "לצאת עם כיווני ניסוי הרלוונטיים לעבודה של הצוות",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-300">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-1 flex-shrink-0" aria-hidden="true" />
+                    <li key={i} className="flex items-start gap-3 text-[#4B5170]">
+                      <CheckCircle2 className="w-4 h-4 text-[#3D4A8A] mt-1 flex-shrink-0" aria-hidden="true" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -184,12 +184,12 @@ export default function ServicesWorkshopsB2B() {
           {/* ─── דוגמאות למשימות פיננסיות ──────────────────────────── */}
           <section className="relative max-w-3xl mb-20">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
             <div className="pt-14">
-              <h2 className="text-2xl font-bold text-white mb-6">דוגמאות למשימות פיננסיות</h2>
-              <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-[#1B1E33] mb-6">דוגמאות למשימות פיננסיות</h2>
+              <div className="bg-white border border-[#E2E4F3] rounded-2xl p-8 shadow-[0_1px_3px_rgba(27,30,51,0.06)]">
                 <ul className="space-y-3 mb-6">
                   {[
                     "ניתוח דוחות כספיים",
@@ -200,12 +200,12 @@ export default function ServicesWorkshopsB2B() {
                     "ארגון מידע לקראת דוח או דיון",
                     "ניסוח שאילתות, בדיקות ובקרות לעבודה עם נתונים",
                   ].map((item, i) => (
-                    <li key={i} className="text-slate-300 pr-4 border-r-2 border-blue-700/40">
+                    <li key={i} className="text-[#4B5170] pr-4 border-r-2 border-[#C9CDE4]">
                       {item}
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm text-slate-500 leading-relaxed">
+                <p className="text-sm text-[#646B89] leading-relaxed">
                   הדוגמאות הסופיות ייקבעו לאחר הבנת הקהל, הכלים הזמינים והמידע שמותר לשלב בתרגול.
                 </p>
               </div>
@@ -215,11 +215,11 @@ export default function ServicesWorkshopsB2B() {
           {/* ─── מבנה הפעילות ────────────────────────────────────────── */}
           <section className="relative max-w-3xl mb-20">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
             <div className="pt-14">
-              <h2 className="text-2xl font-bold text-white mb-8">מבנה הפעילות</h2>
+              <h2 className="text-2xl font-bold text-[#1B1E33] mb-8">מבנה הפעילות</h2>
               <div className="space-y-5">
                 {[
                   {
@@ -245,14 +245,14 @@ export default function ServicesWorkshopsB2B() {
                 ].map((item) => (
                   <div
                     key={item.step}
-                    className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8 flex gap-5 items-start"
+                    className="bg-white border border-[#E2E4F3] rounded-2xl p-8 shadow-[0_1px_3px_rgba(27,30,51,0.06)] flex gap-5 items-start"
                   >
-                    <div className="w-9 h-9 rounded-full bg-blue-700/30 border border-blue-600/40 flex items-center justify-center text-blue-300 font-bold text-sm flex-shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-[#EEF0FA] border border-[#C9CDE4] flex items-center justify-center text-[#3D4A8A] font-bold text-sm flex-shrink-0">
                       {item.step}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                      <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                      <h3 className="font-semibold text-[#1B1E33] mb-1">{item.title}</h3>
+                      <p className="text-[#4B5170] text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -263,12 +263,12 @@ export default function ServicesWorkshopsB2B() {
           {/* ─── מה נדרש מהארגון ─────────────────────────────────────── */}
           <section className="relative max-w-3xl mb-20">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
             <div className="pt-14">
-              <h2 className="text-2xl font-bold text-white mb-6">מה נדרש מהארגון?</h2>
-              <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-[#1B1E33] mb-6">מה נדרש מהארגון?</h2>
+              <div className="bg-white border border-[#E2E4F3] rounded-2xl p-8 shadow-[0_1px_3px_rgba(27,30,51,0.06)]">
                 <ul className="space-y-4">
                   {[
                     "איש או אשת קשר לתיאום הפעילות",
@@ -278,8 +278,8 @@ export default function ServicesWorkshopsB2B() {
                     "הנחיות אבטחת מידע ופרטיות הרלוונטיות לתרגול",
                     "שימוש בדוגמאות מדומות או במידע שעבר הסרה של פרטים רגישים",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-300">
-                      <CheckCircle2 className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" aria-hidden="true" />
+                    <li key={i} className="flex items-start gap-3 text-[#4B5170]">
+                      <CheckCircle2 className="w-4 h-4 text-[#3D4A8A] mt-1 flex-shrink-0" aria-hidden="true" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -289,12 +289,12 @@ export default function ServicesWorkshopsB2B() {
           </section>
 
           {/* ─── Bottom CTA ───────────────────────────────────────────── */}
-          <div className="max-w-3xl bg-gradient-to-br from-blue-950/60 to-[#0a1220] border border-blue-500/20 rounded-2xl p-10 text-center">
-            <MessageCircle className="w-8 h-8 text-emerald-400 mx-auto mb-4" aria-hidden="true" />
-            <h2 className="text-2xl font-bold text-white mb-3">
+          <div className="max-w-3xl bg-[#EEF0FA] border border-[#C9CDE4] rounded-2xl p-10 text-center">
+            <MessageCircle className="w-8 h-8 text-[#3D4A8A] mx-auto mb-4" aria-hidden="true" />
+            <h2 className="text-2xl font-bold text-[#1B1E33] mb-3">
               רוצים לבדוק אם הסדנה מתאימה לצוות שלכם?
             </h2>
-            <p className="text-slate-400 mb-8 leading-relaxed max-w-xl mx-auto">
+            <p className="text-[#4B5170] mb-8 leading-relaxed max-w-xl mx-auto">
               ספרו לנו מי המשתתפים, אילו משימות מעסיקות את הצוות ומה רמת הניסיון הקיימת. נבחן יחד אם סדנה היא הצעד המתאים ומה צריך להתאים לפני הפעילות.
             </p>
             {whatsappUrl && (
@@ -304,7 +304,7 @@ export default function ServicesWorkshopsB2B() {
                 rel="noopener noreferrer"
                 onClick={handleCtaClick}
               >
-                <Button className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8">
+                <Button className="bg-[#3D4A8A] hover:bg-[#303A72] text-white font-semibold px-8">
                   בדקו התאמה לסדנה
                 </Button>
               </a>
