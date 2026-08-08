@@ -15,7 +15,7 @@ tags:
   - "human-in-the-loop"
 featuredImage: "/images/blog/agentic-ai-leadership-finance.png"
 featuredImageAlt: "מנהל כספים בוחן לוח בקרה של תהליך AI אג'נטי עם שלבי אישור אנושיים"
-status: "draft"
+status: "published"
 pillar: false
 featured: false
 relatedSlugs:
