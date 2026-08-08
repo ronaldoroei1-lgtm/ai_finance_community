@@ -14,7 +14,7 @@ export default function ArticleCard({ post, author, category }: ArticleCardProps
   return (
     <Link
       href={`/blog/${post.slug}/`}
-      className="group flex flex-col rounded-xl overflow-hidden border border-white/[0.08] bg-card hover:border-blue-500/40 transition-all duration-200 hover:-translate-y-1"
+      className="group flex flex-col rounded-xl overflow-hidden border border-[#E2E4F3] bg-card hover:border-[#C9CDE4] transition-all duration-200 hover:-translate-y-1 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)]"
     >
       <div className="aspect-[16/9] overflow-hidden bg-secondary">
         <BlogImage
@@ -31,11 +31,11 @@ export default function ArticleCard({ post, author, category }: ArticleCardProps
         {category && (
           <span className="section-label w-fit">{category.label}</span>
         )}
-        <h3 className="text-lg font-bold text-white leading-snug group-hover:text-blue-300 transition-colors duration-200">
+        <h3 className="text-lg font-bold text-[#1B1E33] leading-snug group-hover:text-[#3D4A8A] transition-colors duration-200">
           {post.title}
         </h3>
-        <p className="text-sm text-slate-400 leading-relaxed line-clamp-3 flex-1">{post.description}</p>
-        <div className="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-white/[0.06]">
+        <p className="text-sm text-[#4B5170] leading-relaxed line-clamp-3 flex-1">{post.description}</p>
+        <div className="flex items-center justify-between text-xs text-[#646B89] pt-2 border-t border-[#E2E4F3]">
           <span>{author?.name ?? post.author}</span>
           <span className="flex items-center gap-2">
             <time dateTime={post.publishedAt}>{dateFormatter.format(new Date(post.publishedAt))}</time>

@@ -76,21 +76,21 @@ export default function BlogPost() {
 
       <main className="pt-32 pb-20">
         <div className="container">
-          <nav aria-label="breadcrumb" className="text-sm text-slate-500 mb-6">
-            <a href="/" className="hover:text-blue-300">עמוד הבית</a>
+          <nav aria-label="breadcrumb" className="text-sm text-[#646B89] mb-6">
+            <a href="/" className="hover:text-[#3D4A8A]">עמוד הבית</a>
             <span className="mx-2" aria-hidden="true">/</span>
-            <a href="/blog/" className="hover:text-blue-300">בלוג</a>
+            <a href="/blog/" className="hover:text-[#3D4A8A]">בלוג</a>
             <span className="mx-2" aria-hidden="true">/</span>
-            <span className="text-slate-400">{post.title}</span>
+            <span className="text-[#646B89]">{post.title}</span>
           </nav>
 
           {category && <span className="section-label mb-4 inline-flex">{category.label}</span>}
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1B1E33] leading-tight mb-6 max-w-4xl">
             {post.title}
           </h1>
 
-          <p className="text-sm text-slate-500 mb-8 max-w-4xl">
+          <p className="text-sm text-[#646B89] mb-8 max-w-4xl">
             {author?.name ?? post.author} · פורסם ב־{dateFormatter.format(new Date(post.publishedAt))}
             {post.updatedAt !== post.publishedAt && (
               <> · עודכן ב־{dateFormatter.format(new Date(post.updatedAt))}</>
@@ -115,7 +115,7 @@ export default function BlogPost() {
 
           <div className="grid lg:grid-cols-[1fr_280px] gap-10 max-w-6xl">
             <article
-              className="prose prose-invert prose-blog max-w-none"
+              className="prose prose-blog max-w-none"
               // Content is compiled at build time from our own Markdown source (content/blog/*.md),
               // not from user input - safe to render as trusted static HTML.
               dangerouslySetInnerHTML={{ __html: post.html }}
@@ -132,11 +132,11 @@ export default function BlogPost() {
             </aside>
           </div>
 
-          <div className="max-w-4xl mt-10 pt-8 border-t border-white/[0.06] flex flex-wrap gap-2">
+          <div className="max-w-4xl mt-10 pt-8 border-t border-[#E2E4F3] flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400"
+                className="text-xs px-3 py-1 rounded-full bg-[#EEF0FA] border border-[#E2E4F3] text-[#3D4A8A]"
               >
                 #{tag}
               </span>

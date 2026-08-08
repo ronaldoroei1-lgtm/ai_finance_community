@@ -33,21 +33,21 @@ export default function BlogIndex() {
             <h1 className="text-4xl sm:text-5xl font-bold gradient-heading mb-4 leading-tight">
               בלוג AI Finance
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg text-[#4B5170] leading-relaxed">
               מדריכים מעשיים ומעודכנים לשילוב בינה מלאכותית בעבודת מחלקות כספים בישראל — כלי AI, אוטומציה
               פיננסית, ואבטחת מידע וממשל AI.
             </p>
           </div>
 
           {posts.length === 0 && (
-            <p className="text-slate-500 border border-white/[0.08] rounded-xl p-8 text-center">
+            <p className="text-[#646B89] border border-[#E2E4F3] rounded-xl p-8 text-center">
               המאמרים הראשונים בדרך. חוזרים בקרוב.
             </p>
           )}
 
           {pillarPosts.length > 0 && (
             <section className="mb-16" aria-labelledby="pillar-heading">
-              <h2 id="pillar-heading" className="text-xl font-bold text-white mb-6">
+              <h2 id="pillar-heading" className="text-xl font-bold text-[#1B1E33] mb-6">
                 מדריכי הפתיחה
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -68,10 +68,10 @@ export default function BlogIndex() {
             if (categoryPosts.length === 0) return null;
             return (
               <section key={category.id} className="mb-16" aria-labelledby={`cat-${category.id}`}>
-                <h2 id={`cat-${category.id}`} className="text-xl font-bold text-white mb-2">
+                <h2 id={`cat-${category.id}`} className="text-xl font-bold text-[#1B1E33] mb-2">
                   {category.label}
                 </h2>
-                <p className="text-sm text-slate-500 mb-6">{category.description}</p>
+                <p className="text-sm text-[#646B89] mb-6">{category.description}</p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {categoryPosts.map((post) => (
                     <ArticleCard

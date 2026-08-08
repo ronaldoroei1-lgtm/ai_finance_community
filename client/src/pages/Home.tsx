@@ -90,8 +90,8 @@ export default function Home() {
         <EntryAnimation />
         <div className="min-h-screen bg-background flex items-center justify-center">
           <div className="flex flex-col items-center gap-4">
-            <div className="w-10 h-10 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
-            <p className="text-blue-300 text-lg">טוען...</p>
+            <div className="w-10 h-10 border-2 border-[#3D4A8A] border-t-transparent rounded-full animate-spin" />
+            <p className="text-[#4B5170] text-lg">טוען...</p>
           </div>
         </div>
       </>
@@ -107,14 +107,14 @@ export default function Home() {
 
       {/* ─── Navigation ───────────────────────────────────────────── */}
       <nav
-        className="fixed top-0 right-0 left-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/[0.06]"
+        className="fixed top-0 right-0 left-0 z-50 bg-white/[0.92] backdrop-blur-xl border-b border-[#E2E4F3]"
         aria-label="ניווט ראשי"
       >
         <div className="container flex items-center justify-between h-16">
           {/* Logo */}
           <a
             href="#"
-            className="text-xl font-bold text-white hover:text-blue-200 transition-colors duration-200"
+            className="text-xl font-bold text-[#1B1E33] hover:text-[#3D4A8A] transition-colors duration-200"
             onClick={() => setMobileMenuOpen(false)}
           >
             AI Finance
@@ -126,10 +126,10 @@ export default function Home() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-slate-400 hover:text-white transition-colors duration-200 font-medium relative group"
+                className="text-sm text-[#4B5170] hover:text-[#1B1E33] transition-colors duration-200 font-medium relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-0.5 right-0 w-0 h-px bg-blue-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-0.5 right-0 w-0 h-px bg-[#3D4A8A] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
@@ -141,12 +141,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => gtag('event', 'whatsapp_click', { location: 'nav' })}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/25"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#1FBE5B] text-white text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/25"
             >
               דברו איתנו בוואטסאפ
             </a>
             <button
-              className="md:hidden p-2 text-slate-400 hover:text-white transition-colors duration-200"
+              className="md:hidden p-2 text-[#4B5170] hover:text-[#1B1E33] transition-colors duration-200"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "סגור תפריט" : "פתח תפריט"}
               aria-expanded={mobileMenuOpen}
@@ -163,7 +163,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-background/98 border-b border-white/[0.06] py-4"
+            className="md:hidden bg-white/[0.98] border-b border-[#E2E4F3] shadow-[0_16px_40px_rgba(27,30,51,0.10)] py-4"
           >
             <div className="container flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -171,7 +171,7 @@ export default function Home() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-slate-300 hover:text-white transition-colors duration-200 py-3 border-b border-white/[0.05] last:border-0 font-medium text-base"
+                  className="text-[#4B5170] hover:text-[#1B1E33] transition-colors duration-200 py-3 border-b border-[#E2E4F3] last:border-0 font-medium text-base"
                 >
                   {link.label}
                 </a>
@@ -181,7 +181,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => { setMobileMenuOpen(false); gtag('event', 'whatsapp_click', { location: 'nav' }); }}
-                className="mt-3 flex items-center justify-center gap-2 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-all duration-200"
+                className="mt-3 flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] hover:bg-[#1FBE5B] text-white text-sm font-semibold rounded-lg transition-all duration-200"
               >
                 דברו איתנו בוואטסאפ
               </a>
@@ -198,24 +198,24 @@ export default function Home() {
 
           {/* Ambient glow blobs */}
           <div
-            className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/8 rounded-full blur-3xl pointer-events-none"
+            className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#3D4A8A]/[0.06] rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"
           />
           <div
-            className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-500/6 rounded-full blur-3xl pointer-events-none"
+            className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-[#3D4A8A]/[0.05] rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"
           />
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/4 rounded-full blur-3xl pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#3D4A8A]/[0.04] rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"
           />
 
           {/* Floating particles */}
-          <div className="absolute top-20 right-20 w-1.5 h-1.5 bg-blue-400 rounded-full particle opacity-50" aria-hidden="true" />
-          <div className="absolute top-40 right-40 w-1 h-1 bg-blue-300 rounded-full particle opacity-40" style={{ animationDelay: "1s" }} aria-hidden="true" />
-          <div className="absolute top-60 right-60 w-1.5 h-1.5 bg-blue-500 rounded-full particle opacity-50" style={{ animationDelay: "2s" }} aria-hidden="true" />
-          <div className="absolute bottom-40 right-32 w-1 h-1 bg-blue-400 rounded-full particle opacity-40" style={{ animationDelay: "3s" }} aria-hidden="true" />
-          <div className="absolute top-32 left-20 w-1 h-1 bg-blue-300 rounded-full particle opacity-35" style={{ animationDelay: "1.5s" }} aria-hidden="true" />
+          <div className="absolute top-20 right-20 w-1.5 h-1.5 bg-[#7784C8] rounded-full particle opacity-50" aria-hidden="true" />
+          <div className="absolute top-40 right-40 w-1 h-1 bg-[#B7BDE5] rounded-full particle opacity-40" style={{ animationDelay: "1s" }} aria-hidden="true" />
+          <div className="absolute top-60 right-60 w-1.5 h-1.5 bg-[#7784C8] rounded-full particle opacity-50" style={{ animationDelay: "2s" }} aria-hidden="true" />
+          <div className="absolute bottom-40 right-32 w-1 h-1 bg-[#B7BDE5] rounded-full particle opacity-40" style={{ animationDelay: "3s" }} aria-hidden="true" />
+          <div className="absolute top-32 left-20 w-1 h-1 bg-[#7784C8] rounded-full particle opacity-35" style={{ animationDelay: "1.5s" }} aria-hidden="true" />
 
           <div className="container relative z-10">
             <motion.div
@@ -226,29 +226,29 @@ export default function Home() {
             >
               {/* Community size badge — visible & meaningful content */}
               <motion.div
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-10 bg-blue-950/70 border border-blue-700/40 rounded-full text-sm text-blue-300 font-medium"
+                className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-10 bg-[#EEF0FA] border border-[#E2E4F3] rounded-full text-sm text-[#3D4A8A] font-medium"
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                <span className="w-2 h-2 bg-[#3D4A8A] rounded-full animate-pulse" />
                 סדנאות, הרצאות וליווי מעשי לצוותי כספים
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight gradient-heading">
                 {hero.headline}
               </h1>
-              <p className="text-lg md:text-xl text-slate-300 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-[#4B5170] mb-10 font-light max-w-2xl mx-auto leading-relaxed">
                 {hero.subtext}
                 <br />
-                <span className="text-blue-400 font-medium mt-2 block">{hero.subtagline}</span>
+                <span className="text-[#3D4A8A] font-medium mt-2 block">{hero.subtagline}</span>
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
                 <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'hero' })}>
                   <Button
                     size="lg"
-                    className="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-0.5"
+                    className="bg-[#3D4A8A] hover:bg-[#303A72] text-white px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-[#3D4A8A]/20 hover:-translate-y-0.5"
                   >
                     בדקו התאמה לסדנה
                   </Button>
@@ -257,15 +257,15 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border border-white/15 text-white bg-white/5 hover:bg-white/10 hover:border-white/25 px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200"
+                    className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200"
                   >
                     לשירותים לארגונים
                   </Button>
                 </a>
               </div>
               <div className="mb-12">
-                <a href="/community/" onClick={() => gtag('event', 'community_join_click')} className="text-sm text-slate-400 hover:text-blue-300 transition-colors duration-200">
-                  מחפשים כלים ותוכן מקצועי? <span className="text-blue-400 underline underline-offset-2">הצטרפו לקהילה</span>
+                <a href="/community/" onClick={() => gtag('event', 'community_join_click')} className="text-sm text-[#646B89] hover:text-[#3D4A8A] transition-colors duration-200">
+                  מחפשים כלים ותוכן מקצועי? <span className="text-[#3D4A8A] underline underline-offset-2">הצטרפו לקהילה</span>
                 </a>
               </div>
 
@@ -274,10 +274,10 @@ export default function Home() {
                   href={hero.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-blue-900/50 hover:border-blue-500/40 transition-all duration-200 hover:scale-110"
+                  className="p-3 bg-[#EEF0FA] border border-[#E2E4F3] rounded-xl hover:bg-[#E2E5F4] hover:border-[#C9CDE4] transition-all duration-200 hover:scale-110"
                   aria-label="LinkedIn - AI Finance"
                 >
-                  <Linkedin className="w-5 h-5 text-blue-300" aria-hidden="true" />
+                  <Linkedin className="w-5 h-5 text-[#3D4A8A]" aria-hidden="true" />
                 </a>
               </div>
             </motion.div>
@@ -295,7 +295,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-80px" }}
         >
           {/* Subtle top divider gradient */}
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
 
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
@@ -311,7 +311,7 @@ export default function Home() {
               <h2 id="about-heading" className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-heading">
                 על הקהילה
               </h2>
-              <p className="text-lg text-slate-300 leading-relaxed text-justify">
+              <p className="text-lg text-[#4B5170] leading-relaxed text-justify">
                 {about.text}
               </p>
             </div>
@@ -327,8 +327,8 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-transparent pointer-events-none" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F1F2FA] to-transparent pointer-events-none" aria-hidden="true" />
 
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center mb-14">
@@ -341,7 +341,7 @@ export default function Home() {
               <h2 id="why-heading" className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
                 מחברים בין AI לעבודה הפיננסית בפועל
               </h2>
-              <p className="text-lg text-slate-300 leading-relaxed">
+              <p className="text-lg text-[#4B5170] leading-relaxed">
                 כלי AI משתנים במהירות, אבל האתגרים במחלקת הכספים נשארים מוכרים: דוחות, תחזיות, בקרות, מסמכים, תקציבים ועבודה מול הנהלה. לכן אנחנו לא מתחילים מרשימת כלים. אנחנו מתחילים מהמשימות שהצוות מבצע, מהמידע שהוא עובד איתו ומהמגבלות הארגוניות שצריך להביא בחשבון.
               </p>
             </div>
@@ -368,20 +368,20 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-60px" }}
-                  className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
+                  className="bg-white border border-[#E2E4F3] rounded-2xl p-8 hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)]"
                 >
-                  <h3 className="text-lg font-bold mb-3 text-white">{item.title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{item.body}</p>
+                  <h3 className="text-lg font-bold mb-3 text-[#1B1E33]">{item.title}</h3>
+                  <p className="text-[#4B5170] text-sm leading-relaxed">{item.body}</p>
                 </motion.div>
               ))}
             </div>
 
             <div className="max-w-2xl mx-auto text-center">
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              <p className="text-[#646B89] text-sm leading-relaxed mb-8">
                 הקהילה מאפשרת לנו להישאר קרובים לשאלות, לאתגרים ולשימושים שחוזרים בעבודת הכספים בשטח. התובנות האלה עוזרות לנו לשמור את התוכן והפעילויות מחוברים לעבודה היומיומית של הקהל.
               </p>
               <a href="#services">
-                <Button variant="outline" className="border border-blue-500/30 text-blue-300 bg-blue-900/20 hover:bg-blue-900/50 hover:border-blue-400/60 font-semibold transition-all duration-200">
+                <Button variant="outline" className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] font-semibold transition-all duration-200">
                   הכירו את השירותים לארגונים
                 </Button>
               </a>
@@ -399,10 +399,10 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
 
           {/* Section bg tint */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-transparent pointer-events-none" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F1F2FA] to-transparent pointer-events-none" aria-hidden="true" />
 
           <div className="container relative z-10">
             <div className="text-center mb-14">
@@ -415,7 +415,7 @@ export default function Home() {
               <h2 id="team-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
                 מי אנחנו
               </h2>
-              <p className="text-slate-400 text-lg">הצוות שמאחורי הקהילה</p>
+              <p className="text-[#646B89] text-lg">הצוות שמאחורי הקהילה</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -427,15 +427,15 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-60px" }}
-                  className="relative bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 group overflow-hidden"
+                  className="relative bg-white border border-[#E2E4F3] rounded-2xl p-8 hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] group overflow-hidden"
                 >
                   {/* Decorative top-right glow */}
                   <div
-                    className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-bl-full pointer-events-none"
+                    className="absolute top-0 right-0 w-32 h-32 bg-[#3D4A8A]/[0.05] rounded-bl-full pointer-events-none"
                     aria-hidden="true"
                   />
 
-                  <div className="w-24 h-24 rounded-full mx-auto mb-6 group-hover:scale-105 transition-transform duration-300 overflow-hidden border-2 border-white/10 shadow-xl shadow-blue-900/40 ring-2 ring-blue-500/20">
+                  <div className="w-24 h-24 rounded-full mx-auto mb-6 group-hover:scale-105 transition-transform duration-300 overflow-hidden border-2 border-[#E2E4F3] shadow-md shadow-[#3D4A8A]/10 ring-2 ring-[#C9CDE4]">
                     <img
                       src={member.image}
                       alt={`תמונת פרופיל של ${member.name}`}
@@ -443,26 +443,26 @@ export default function Home() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-center mb-1.5">{member.name}</h3>
-                  <p className="text-sm text-blue-400 text-center mb-2 font-semibold leading-snug">{member.title}</p>
+                  <p className="text-sm text-[#3D4A8A] text-center mb-2 font-semibold leading-snug">{member.title}</p>
                   {member.linkedinUrl && (
                     <div className="flex justify-center mb-4">
                       <a
                         href={member.linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 bg-white/5 border border-white/10 rounded-lg hover:bg-blue-900/50 hover:border-blue-500/40 transition-all duration-200 hover:scale-105"
+                        className="p-2 bg-[#EEF0FA] border border-[#E2E4F3] rounded-lg hover:bg-[#E2E5F4] hover:border-[#C9CDE4] transition-all duration-200 hover:scale-105"
                         aria-label={`לינקדין של ${member.name}`}
                       >
-                        <Linkedin className="w-4 h-4 text-blue-300" aria-hidden="true" />
+                        <Linkedin className="w-4 h-4 text-[#3D4A8A]" aria-hidden="true" />
                       </a>
                     </div>
                   )}
-                  <p className="text-slate-300 text-sm mb-6 text-justify leading-relaxed">{member.bio}</p>
+                  <p className="text-[#4B5170] text-sm mb-6 text-justify leading-relaxed">{member.bio}</p>
 
                   <ul className="space-y-2.5" aria-label={`תחומי התמחות של ${member.name}`}>
                     {member.expertise.map((exp, i) => (
-                      <li key={i} className="text-sm text-slate-400 flex items-start gap-3">
-                        <span className="text-blue-500 font-bold mt-0.5 flex-shrink-0" aria-hidden="true">▸</span>
+                      <li key={i} className="text-sm text-[#646B89] flex items-start gap-3">
+                        <span className="text-[#3D4A8A] font-bold mt-0.5 flex-shrink-0" aria-hidden="true">▸</span>
                         <span>{exp}</span>
                       </li>
                     ))}
@@ -483,7 +483,7 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
 
           <div className="container relative z-10">
             <div className="text-center mb-14">
@@ -496,7 +496,7 @@ export default function Home() {
               <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
                 מה אנחנו עושים
               </h2>
-              <p className="text-slate-400 text-lg">סדנאות, הרצאות וליווי למחלקות כספים</p>
+              <p className="text-[#646B89] text-lg">סדנאות, הרצאות וליווי למחלקות כספים</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -508,32 +508,38 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-60px" }}
-                  className="relative bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 group overflow-hidden flex flex-col"
+                  className="relative bg-white border border-[#E2E4F3] rounded-2xl p-8 hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] group overflow-hidden flex flex-col"
                 >
                   {/* Large background number */}
                   <div
-                    className="absolute bottom-4 left-4 text-8xl font-black text-blue-800/15 select-none leading-none pointer-events-none"
+                    className="absolute bottom-4 left-4 text-8xl font-black text-[#3D4A8A]/[0.10] select-none leading-none pointer-events-none"
                     aria-hidden="true"
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </div>
 
-                  <div
-                    className="text-blue-400 mb-6 group-hover:scale-110 group-hover:text-blue-300 transition-all duration-300 w-fit"
-                    aria-hidden="true"
-                  >
-                    {iconMap[service.iconKey] ?? <TrendingUp className="w-10 h-10" />}
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">{service.description}</p>
-                  <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'services' })}>
-                    <Button
-                      variant="outline"
-                      className="border border-blue-500/30 text-blue-300 bg-blue-900/20 hover:bg-blue-900/50 hover:border-blue-400/60 w-full font-semibold transition-all duration-200"
+                  {/* Stacked above the decorative background number, which is
+                      position:absolute with z-index:auto and would otherwise
+                      paint on top of this in-flow content per CSS painting
+                      order (positioned descendants paint after static ones). */}
+                  <div className="relative z-10 flex flex-col flex-grow">
+                    <div
+                      className="text-[#3D4A8A] mb-6 group-hover:scale-110 group-hover:text-[#303A72] transition-all duration-300 w-fit"
+                      aria-hidden="true"
                     >
-                      דברו איתנו לפרטים
-                    </Button>
-                  </a>
+                      {iconMap[service.iconKey] ?? <TrendingUp className="w-10 h-10" />}
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                    <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">{service.description}</p>
+                    <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'services' })}>
+                      <Button
+                        variant="outline"
+                        className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] w-full font-semibold transition-all duration-200"
+                      >
+                        דברו איתנו לפרטים
+                      </Button>
+                    </a>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -550,8 +556,8 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-transparent pointer-events-none" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F1F2FA] to-transparent pointer-events-none" aria-hidden="true" />
 
           <div className="container relative z-10">
             <div className="text-center mb-14">
@@ -564,7 +570,7 @@ export default function Home() {
               <h2 id="clients-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
                 ארגונים שעבדנו איתם
               </h2>
-              <p className="text-slate-400 text-lg">הרצאות, סדנאות ופעילויות מקצועיות לאנשי כספים, מנהלים ובעלי תפקידים</p>
+              <p className="text-[#646B89] text-lg">הרצאות, סדנאות ופעילויות מקצועיות לאנשי כספים, מנהלים ובעלי תפקידים</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -576,7 +582,7 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-60px" }}
-                  className="relative bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-7 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden"
+                  className="relative bg-white border border-[#E2E4F3] rounded-2xl p-7 hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] overflow-hidden"
                 >
                   {client.logoUrl && (
                     <div className="h-10 mb-4 flex items-center">
@@ -587,8 +593,8 @@ export default function Home() {
                       />
                     </div>
                   )}
-                  <h3 className="text-xl font-bold mb-3 text-white">{client.name}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{client.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-[#1B1E33]">{client.name}</h3>
+                  <p className="text-[#4B5170] text-sm leading-relaxed">{client.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -605,7 +611,7 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
 
           <div className="container relative z-10">
             <div className="text-center mb-14">
@@ -618,7 +624,7 @@ export default function Home() {
               <h2 id="gallery-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
                 גלריית תמונות מההרצאות
               </h2>
-              <p className="text-slate-400 text-lg">רגעים מיוחדים מהרצאות שלנו</p>
+              <p className="text-[#646B89] text-lg">רגעים מיוחדים מהרצאות שלנו</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4" role="list" aria-label="גלריית תמונות הרצאות">
@@ -631,7 +637,7 @@ export default function Home() {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-40px" }}
                   role="listitem"
-                  className="aspect-square bg-gradient-to-br from-blue-900/30 to-blue-950/50 rounded-2xl overflow-hidden hover:scale-[1.03] transition-transform duration-300 cursor-pointer group border border-white/[0.06] hover:border-blue-500/30 shadow-md hover:shadow-2xl hover:shadow-blue-500/15"
+                  className="aspect-square bg-[#F1F2FA] rounded-2xl overflow-hidden hover:scale-[1.03] transition-transform duration-300 cursor-pointer group border border-[#E2E4F3] hover:border-[#C9CDE4] shadow-sm hover:shadow-lg hover:shadow-[#1B1E33]/10"
                   onClick={() => openLightbox(i)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
@@ -663,8 +669,8 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-transparent pointer-events-none" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F1F2FA] to-transparent pointer-events-none" aria-hidden="true" />
 
           <div className="container relative z-10">
             <div className="text-center mb-14">
@@ -677,7 +683,7 @@ export default function Home() {
               <h2 id="guides-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
                 מדריכים מקצועיים
               </h2>
-              <p className="text-slate-400 text-lg">משאבים לשילוב בינה מלאכותית בעבודה היומיומית</p>
+              <p className="text-[#646B89] text-lg">משאבים לשילוב בינה מלאכותית בעבודה היומיומית</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -693,8 +699,8 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
               >
-                <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col group-hover:-translate-y-1">
-                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#0d1a2e] to-[#0a1420]">
+                <div className="bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] h-full flex flex-col group-hover:-translate-y-1">
+                  <div className="aspect-square overflow-hidden bg-[#F1F2FA]">
                     <img
                       src="/images/excel-agent-guide.png"
                       alt="מדריך Excel Copilot Agent Mode לאוטומציה פיננסית"
@@ -703,10 +709,10 @@ export default function Home() {
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-3">Excel Copilot Agent Mode</h3>
-                    <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">
+                    <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">
                       מדריך מעשי לשימוש ב-Agent Mode של Copilot ב-Excel לאוטומציה של משימות פיננסיות וניתוח נתונים
                     </p>
-                    <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
+                    <div className="flex items-center gap-2 text-[#3D4A8A] group-hover:text-[#303A72] transition-colors duration-200 font-semibold">
                       <Download className="w-4 h-4" aria-hidden="true" />
                       <span>הורד PDF</span>
                     </div>
@@ -726,8 +732,8 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
               >
-                <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col group-hover:-translate-y-1">
-                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#0d1a2e] to-[#0a1420]">
+                <div className="bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] h-full flex flex-col group-hover:-translate-y-1">
+                  <div className="aspect-square overflow-hidden bg-[#F1F2FA]">
                     <img
                       src="/images/chatgpt-prompts-guide.png"
                       alt="ספריית ChatGPT Prompts לאנשי פיננסים"
@@ -736,10 +742,10 @@ export default function Home() {
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-3">ChatGPT Prompts Library</h3>
-                    <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">
+                    <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">
                       ספריית 20 prompts מעודכנים לתפקידים שונים בפיננסים - CFO, אודיטור, אנליסט ועוד
                     </p>
-                    <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
+                    <div className="flex items-center gap-2 text-[#3D4A8A] group-hover:text-[#303A72] transition-colors duration-200 font-semibold">
                       <Download className="w-4 h-4" aria-hidden="true" />
                       <span>הורד Excel</span>
                     </div>
@@ -759,8 +765,8 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
               >
-                <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col group-hover:-translate-y-1">
-                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#0d1a2e] to-[#0a1420]">
+                <div className="bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] h-full flex flex-col group-hover:-translate-y-1">
+                  <div className="aspect-square overflow-hidden bg-[#F1F2FA]">
                     <img
                       src="/images/gemini-prompts-guide.png"
                       alt="ספריית Gemini Prompts לניתוח פיננסי"
@@ -769,10 +775,10 @@ export default function Home() {
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-3">Gemini Prompts Library</h3>
-                    <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">
+                    <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">
                       ספריית prompts מקצועיים עבור Google Gemini לניתוח פיננסי, דוחות ותכנון אסטרטגי
                     </p>
-                    <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
+                    <div className="flex items-center gap-2 text-[#3D4A8A] group-hover:text-[#303A72] transition-colors duration-200 font-semibold">
                       <Download className="w-4 h-4" aria-hidden="true" />
                       <span>הורד HTML</span>
                     </div>
@@ -792,17 +798,17 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
               >
-                <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col group-hover:-translate-y-1">
+                <div className="bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] h-full flex flex-col group-hover:-translate-y-1">
                   {/* Placeholder artwork - swap for a designed hero image before the next content refresh */}
-                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#0d1a2e] to-[#0a1420] flex items-center justify-center">
-                    <Bot className="w-20 h-20 text-blue-400/70" aria-hidden="true" />
+                  <div className="aspect-square overflow-hidden bg-[#F1F2FA] flex items-center justify-center">
+                    <Bot className="w-20 h-20 text-[#3D4A8A]/70" aria-hidden="true" />
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-3">Claude Skill — מדריך בנייה</h3>
-                    <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">
+                    <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">
                       מדריך צעד־אחר־צעד לבניית Skill מותאם ל-Claude: כתיבת ההוראות ב-Notepad וב-YAML, שמירה, אריזה כ-ZIP והעלאה
                     </p>
-                    <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
+                    <div className="flex items-center gap-2 text-[#3D4A8A] group-hover:text-[#303A72] transition-colors duration-200 font-semibold">
                       <Download className="w-4 h-4" aria-hidden="true" />
                       <span>הורד PDF</span>
                     </div>
@@ -822,17 +828,17 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
               >
-                <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col group-hover:-translate-y-1">
+                <div className="bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] h-full flex flex-col group-hover:-translate-y-1">
                   {/* Placeholder artwork - swap for a designed hero image before the next content refresh */}
-                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#0d1a2e] to-[#0a1420] flex items-center justify-center">
-                    <FileSpreadsheet className="w-20 h-20 text-blue-400/70" aria-hidden="true" />
+                  <div className="aspect-square overflow-hidden bg-[#F1F2FA] flex items-center justify-center">
+                    <FileSpreadsheet className="w-20 h-20 text-[#3D4A8A]/70" aria-hidden="true" />
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-3">Copilot ל-Excel — 15 פרומפטים</h3>
-                    <p className="text-slate-300 text-sm mb-6 leading-relaxed flex-grow">
+                    <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">
                       ספרייה של 15 פרומפטים מוכנים להעתקה, מאורגנים בחמישה שלבי עבודה: ביקורת נתונים, ניקוי, מבנה, נוסחאות, ניתוח וויזואליזציה
                     </p>
-                    <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-200 font-semibold">
+                    <div className="flex items-center gap-2 text-[#3D4A8A] group-hover:text-[#303A72] transition-colors duration-200 font-semibold">
                       <Download className="w-4 h-4" aria-hidden="true" />
                       <span>הורד PDF</span>
                     </div>
@@ -857,7 +863,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
           >
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
 
             <div className="container relative z-10">
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
@@ -872,7 +878,7 @@ export default function Home() {
                 </div>
                 <a
                   href="/blog/"
-                  className="text-sm font-semibold text-blue-300 hover:text-blue-200 transition-colors duration-200"
+                  className="text-sm font-semibold text-[#3D4A8A] hover:text-[#303A72] transition-colors duration-200"
                 >
                   כל המדריכים ←
                 </a>
@@ -902,7 +908,7 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
 
           <div className="container max-w-3xl relative z-10">
             <div className="text-center mb-14">
@@ -930,10 +936,10 @@ export default function Home() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-40px" }}
-                    className={`bg-gradient-to-r from-[#0f1c35] to-[#0a1220] border rounded-xl overflow-hidden transition-all duration-300 ${
+                    className={`bg-white border rounded-xl overflow-hidden transition-all duration-300 ${
                       isExpanded
-                        ? "border-blue-500/40 shadow-lg shadow-blue-500/8"
-                        : "border-white/[0.07] hover:border-white/15"
+                        ? "border-[#6674BC] shadow-lg shadow-[#3D4A8A]/[0.08]"
+                        : "border-[#E2E4F3] hover:border-[#C9CDE4]"
                     }`}
                   >
                     <button
@@ -941,11 +947,11 @@ export default function Home() {
                       aria-expanded={isExpanded}
                       aria-controls={panelId}
                       onClick={() => setExpandedFaq(isExpanded ? null : idx)}
-                      className="w-full px-6 py-5 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200 text-right"
+                      className="w-full px-6 py-5 flex items-center justify-between hover:bg-[#F0F1FA] transition-colors duration-200 text-right"
                     >
-                      <span className="font-semibold text-right text-base leading-snug text-white">{item.question}</span>
+                      <span className="font-semibold text-right text-base leading-snug text-[#1B1E33]">{item.question}</span>
                       <ChevronDown
-                        className={`w-5 h-5 text-blue-400 transition-transform duration-300 flex-shrink-0 ml-4 ${
+                        className={`w-5 h-5 text-[#3D4A8A] transition-transform duration-300 flex-shrink-0 ml-4 ${
                           isExpanded ? "rotate-180" : ""
                         }`}
                         aria-hidden="true"
@@ -956,7 +962,7 @@ export default function Home() {
                       role="region"
                       aria-labelledby={buttonId}
                       hidden={!isExpanded}
-                      className="px-6 py-5 bg-black/20 border-t border-white/[0.06] text-slate-300 text-sm leading-relaxed"
+                      className="px-6 py-5 bg-[#F7F7FD] border-t border-[#E2E4F3] text-[#4B5170] text-sm leading-relaxed"
                     >
                       {item.answer}
                     </div>
@@ -976,16 +982,16 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent" aria-hidden="true" />
 
           {/* Ambient glow */}
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#3D4A8A]/[0.05] rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"
           />
 
           <div className="container max-w-2xl relative z-10">
-            <div className="text-center bg-gradient-to-br from-[#0f1c35]/80 to-[#0a1220]/80 backdrop-blur-sm border border-white/[0.08] rounded-3xl p-12 shadow-2xl shadow-blue-900/20">
+            <div className="text-center bg-white/95 backdrop-blur-sm border border-[#E2E4F3] rounded-3xl p-12 shadow-[0_20px_50px_rgba(27,30,51,0.12)]">
               <div className="flex justify-center mb-6">
                 <span className="section-label">
                   <Sparkles className="w-3 h-3" aria-hidden="true" />
@@ -995,13 +1001,13 @@ export default function Home() {
               <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
                 {cta.headline}
               </h2>
-              <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+              <p className="text-lg text-[#4B5170] mb-10 leading-relaxed">
                 {cta.subtext}
               </p>
               <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'cta' })}>
                 <Button
                   size="lg"
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white px-14 py-7 text-lg font-semibold rounded-xl transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-500/35 hover:-translate-y-0.5"
+                  className="bg-[#25D366] hover:bg-[#1FBE5B] text-white px-14 py-7 text-lg font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-[#25D366]/25 hover:-translate-y-0.5"
                 >
                   {cta.buttonText}
                 </Button>
@@ -1012,7 +1018,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => gtag('event', 'community_join_click')}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700/60 hover:bg-emerald-600/80 border border-emerald-500/30 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/20"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366]/90 hover:bg-[#1FBE5B] border border-[#25D366]/30 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/20"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -1036,14 +1042,14 @@ export default function Home() {
       />
 
       {/* ─── Footer ───────────────────────────────────────────────── */}
-      <footer className="border-t border-white/[0.06] bg-[#060c18] py-16">
+      <footer className="border-t border-[#D2D6EA] bg-[#E9EAF8] py-16">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-10 mb-12">
 
             {/* Brand */}
             <div className="md:col-span-2">
-              <h3 className="font-bold mb-3 text-lg text-white">AI Finance Community</h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-xs">
+              <h3 className="font-bold mb-3 text-lg text-[#1B1E33]">AI Finance Community</h3>
+              <p className="text-sm text-[#4B5170] leading-relaxed mb-6 max-w-xs">
                 AI מעשי למחלקות כספים — סדנאות, הרצאות וליווי, מאחורינו קהילה של מעל 1,800 אנשי כספים ישראלים.
               </p>
               <div className="flex gap-3">
@@ -1051,34 +1057,34 @@ export default function Home() {
                   href={contact.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 bg-white/5 border border-white/10 rounded-lg hover:bg-blue-900/50 hover:border-blue-500/40 transition-all duration-200 hover:scale-105"
+                  className="p-2.5 bg-[#EEF0FA] border border-[#E2E4F3] rounded-lg hover:bg-[#E2E5F4] hover:border-[#C9CDE4] transition-all duration-200 hover:scale-105"
                   aria-label="LinkedIn - AI Finance"
                 >
-                  <Linkedin className="w-4 h-4 text-blue-300" aria-hidden="true" />
+                  <Linkedin className="w-4 h-4 text-[#3D4A8A]" aria-hidden="true" />
                 </a>
               </div>
             </div>
 
             {/* Links */}
             <div>
-              <h3 className="font-semibold mb-4 text-sm text-white uppercase tracking-wider">ניווט</h3>
-              <ul className="space-y-2.5 text-sm text-slate-400">
-                <li><a href="#about" className="hover:text-blue-300 transition-colors duration-200">על הקהילה</a></li>
-                <li><a href="#team" className="hover:text-blue-300 transition-colors duration-200">הצוות</a></li>
-                <li><a href="#services" className="hover:text-blue-300 transition-colors duration-200">שירותים</a></li>
-                <li><a href="/services/ai-workshops-for-finance/" className="hover:text-blue-300 transition-colors duration-200">קורסים</a></li>
-                <li><a href="#guides" className="hover:text-blue-300 transition-colors duration-200">מדריכים</a></li>
-                <li><a href="/blog/" className="hover:text-blue-300 transition-colors duration-200">בלוג</a></li>
-                <li><a href="#faq" className="hover:text-blue-300 transition-colors duration-200">שאלות נפוצות</a></li>
+              <h3 className="font-semibold mb-4 text-sm text-[#1B1E33] uppercase tracking-wider">ניווט</h3>
+              <ul className="space-y-2.5 text-sm text-[#3D4A8A]">
+                <li><a href="#about" className="hover:text-[#303A72] hover:underline transition-colors duration-200">על הקהילה</a></li>
+                <li><a href="#team" className="hover:text-[#303A72] hover:underline transition-colors duration-200">הצוות</a></li>
+                <li><a href="#services" className="hover:text-[#303A72] hover:underline transition-colors duration-200">שירותים</a></li>
+                <li><a href="/services/ai-workshops-for-finance/" className="hover:text-[#303A72] hover:underline transition-colors duration-200">קורסים</a></li>
+                <li><a href="#guides" className="hover:text-[#303A72] hover:underline transition-colors duration-200">מדריכים</a></li>
+                <li><a href="/blog/" className="hover:text-[#303A72] hover:underline transition-colors duration-200">בלוג</a></li>
+                <li><a href="#faq" className="hover:text-[#303A72] hover:underline transition-colors duration-200">שאלות נפוצות</a></li>
               </ul>
             </div>
 
             {/* Contact */}
             <div>
-              <h3 className="font-semibold mb-4 text-sm text-white uppercase tracking-wider">צור קשר</h3>
-              <ul className="space-y-2.5 text-sm text-slate-400">
+              <h3 className="font-semibold mb-4 text-sm text-[#1B1E33] uppercase tracking-wider">צור קשר</h3>
+              <ul className="space-y-2.5 text-sm text-[#3D4A8A]">
                 <li>
-                  <a href={`mailto:${contact.email}`} className="hover:text-blue-300 transition-colors duration-200">
+                  <a href={`mailto:${contact.email}`} className="hover:text-[#303A72] hover:underline transition-colors duration-200">
                     {contact.email}
                   </a>
                 </li>
@@ -1087,7 +1093,7 @@ export default function Home() {
                     href={contact.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-emerald-400 transition-colors duration-200 inline-flex items-center gap-2"
+                    className="hover:text-[#303A72] hover:underline transition-colors duration-200 inline-flex items-center gap-2"
                   >
                     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -1099,8 +1105,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-600">© 2026 AI Finance Community. כל הזכויות שמורות.</p>
+          <div className="border-t border-[#D2D6EA] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-[#646B89]">© 2026 AI Finance Community. כל הזכויות שמורות.</p>
           </div>
         </div>
       </footer>
