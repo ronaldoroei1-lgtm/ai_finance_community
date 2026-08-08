@@ -12,8 +12,6 @@ import {
   Menu,
   X,
   Sparkles,
-  Bot,
-  FileSpreadsheet,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Lightbox from "@/components/Lightbox";
@@ -781,9 +779,12 @@ export default function Home() {
                 viewport={{ once: true, margin: "-60px" }}
               >
                 <div className="bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] h-full flex flex-col group-hover:-translate-y-1">
-                  {/* Placeholder artwork - swap for a designed hero image before the next content refresh */}
-                  <div className="aspect-square overflow-hidden bg-[#F1F2FA] flex items-center justify-center">
-                    <Bot className="w-20 h-20 text-[#3D4A8A]/70" aria-hidden="true" />
+                  <div className="aspect-square overflow-hidden bg-[#F1F2FA]">
+                    <img
+                      src="/images/guides/guide-claude-skill.png"
+                      alt="מדריך בניית Skill מותאם ל-Claude"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-3">Claude Skill — מדריך בנייה</h3>
@@ -811,9 +812,12 @@ export default function Home() {
                 viewport={{ once: true, margin: "-60px" }}
               >
                 <div className="bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] h-full flex flex-col group-hover:-translate-y-1">
-                  {/* Placeholder artwork - swap for a designed hero image before the next content refresh */}
-                  <div className="aspect-square overflow-hidden bg-[#F1F2FA] flex items-center justify-center">
-                    <FileSpreadsheet className="w-20 h-20 text-[#3D4A8A]/70" aria-hidden="true" />
+                  <div className="aspect-square overflow-hidden bg-[#F1F2FA]">
+                    <img
+                      src="/images/guides/guide-copilot-excel.png"
+                      alt="ספריית 15 פרומפטים ל-Copilot ב-Excel"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-3">Copilot ל-Excel — 15 פרומפטים</h3>
