@@ -96,10 +96,10 @@ export default function Community() {
         <div className="container">
 
           {/* ─── Breadcrumb ───────────────────────────────────────── */}
-          <nav aria-label="breadcrumb" className="text-sm text-slate-500 mb-6">
-            <Link href="/" className="hover:text-blue-300">עמוד הבית</Link>
+          <nav aria-label="breadcrumb" className="text-sm text-[#646B89] mb-6">
+            <Link href="/" className="hover:text-[#3D4A8A]">עמוד הבית</Link>
             <span className="mx-2" aria-hidden="true">/</span>
-            <span className="text-slate-400">קהילה</span>
+            <span className="text-[#646B89]">קהילה</span>
           </nav>
 
           {/* ─── Hero ─────────────────────────────────────────────── */}
@@ -111,10 +111,10 @@ export default function Community() {
             <h1 className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
               קהילת AI Finance לאנשי כספים
             </h1>
-            <p className="text-lg text-slate-300 leading-relaxed mb-5">
+            <p className="text-lg text-[#4B5170] leading-relaxed mb-5">
               תוכן מקצועי, מדריכים ודוגמאות מעשיות לשימוש ב־AI בעולם הכספים — ישירות בקהילת ה־WhatsApp.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-8">
+            <p className="text-[#4B5170] leading-relaxed mb-8">
               קהילת AI Finance מונה יותר מ־1,800 אנשי ונשות כספים שרוצים להבין כיצד כלי AI מתחברים לעבודה המקצועית שלהם. הקהילה מיועדת ללמידה שוטפת ולהיכרות עם שימושים חדשים, בלי צורך לעקוב בכל יום אחרי עשרות כלים ועדכונים.
             </p>
             <a
@@ -125,18 +125,18 @@ export default function Community() {
             >
               <Button
                 size="lg"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8"
+                className="bg-[#25D366] hover:bg-[#1FBE5B] text-white font-semibold px-8"
               >
                 הצטרפו לקהילת AI Finance ב־WhatsApp
               </Button>
             </a>
-            <p className="text-xs text-slate-500 mt-3">ההצטרפות מתבצעת ישירות ב־WhatsApp, ללא טופס.</p>
+            <p className="text-xs text-[#646B89] mt-3">ההצטרפות מתבצעת ישירות ב־WhatsApp, ללא טופס.</p>
           </div>
 
           {/* ─── Divider ──────────────────────────────────────────── */}
           <div className="relative mb-16">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
           </div>
@@ -146,16 +146,16 @@ export default function Community() {
             <h2 id="audience-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
               למי הקהילה מתאימה?
             </h2>
-            <div className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8 max-w-3xl">
+            <div className="bg-white border border-[#E2E4F3] rounded-2xl p-8 max-w-3xl shadow-[0_1px_3px_rgba(27,30,51,0.06)]">
               <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
                 {AUDIENCE_ITEMS.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-slate-300 text-sm leading-relaxed">
-                    <span className="text-blue-400 mt-0.5 flex-shrink-0" aria-hidden="true">▸</span>
+                  <li key={item} className="flex items-start gap-2 text-[#4B5170] text-sm leading-relaxed">
+                    <span className="text-[#3D4A8A] mt-0.5 flex-shrink-0" aria-hidden="true">▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-slate-500 mt-6 leading-relaxed border-t border-white/[0.06] pt-5">
+              <p className="text-xs text-[#646B89] mt-6 leading-relaxed border-t border-[#E2E4F3] pt-5">
                 לא נדרש רקע טכנולוגי. כן נדרשת סקרנות מקצועית ונכונות לבחון כלים חדשים באופן ביקורתי.
               </p>
             </div>
@@ -170,10 +170,10 @@ export default function Community() {
               {FEATURES.map((feature) => (
                 <div
                   key={feature.title}
-                  className="bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl p-8"
+                  className="bg-white border border-[#E2E4F3] rounded-2xl p-8 shadow-[0_1px_3px_rgba(27,30,51,0.06)]"
                 >
-                  <h3 className="text-base font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{feature.body}</p>
+                  <h3 className="text-base font-bold text-[#1B1E33] mb-2">{feature.title}</h3>
+                  <p className="text-sm text-[#4B5170] leading-relaxed">{feature.body}</p>
                 </div>
               ))}
             </div>
@@ -182,28 +182,28 @@ export default function Community() {
           {/* ─── Divider ──────────────────────────────────────────── */}
           <div className="relative mb-16">
             <div
-              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-700/40 to-transparent"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E2E4F3] to-transparent"
               aria-hidden="true"
             />
           </div>
 
           {/* ─── איך זה עובד ──────────────────────────────────────── */}
           <section className="max-w-3xl mb-20" aria-labelledby="how-it-works-heading">
-            <h2 id="how-it-works-heading" className="text-2xl font-bold text-white mb-4">
+            <h2 id="how-it-works-heading" className="text-2xl font-bold text-[#1B1E33] mb-4">
               איך זה עובד?
             </h2>
-            <p className="text-slate-300 leading-relaxed mb-4">
+            <p className="text-[#4B5170] leading-relaxed mb-4">
               מצטרפים דרך הקישור לקבוצת ה־WhatsApp ומקבלים את התוכן במסגרת הפעילות השוטפת של הקהילה. ההצטרפות אינה מחייבת הרשמה בטופס באתר.
             </p>
-            <p className="text-xs text-slate-500 leading-relaxed">
+            <p className="text-xs text-[#646B89] leading-relaxed">
               השימוש ב־WhatsApp כפוף לתנאים ולמדיניות הפרטיות של WhatsApp. מומלץ להימנע מפרסום בקהילה של מידע פיננסי, עסקי או אישי שאינו מיועד לחשיפה בפני יתר חברי הקבוצה.
             </p>
           </section>
 
           {/* ─── Bottom CTA ───────────────────────────────────────── */}
-          <div className="max-w-3xl bg-gradient-to-br from-blue-950/60 to-[#0a1220] border border-blue-500/20 rounded-2xl p-10 text-center">
-            <h2 className="text-2xl font-bold text-white mb-3">רוצים להצטרף?</h2>
-            <p className="text-slate-400 mb-6">
+          <div className="max-w-3xl bg-[#EEF0FA] border border-[#C9CDE4] rounded-2xl p-10 text-center">
+            <h2 className="text-2xl font-bold text-[#1B1E33] mb-3">רוצים להצטרף?</h2>
+            <p className="text-[#4B5170] mb-6">
               אם אתם עובדים בעולם הכספים ורוצים לקבל תוכן מקצועי על AI בשפה שמחוברת לעבודה שלכם, אתם מוזמנים להצטרף.
             </p>
             <a
@@ -214,7 +214,7 @@ export default function Community() {
             >
               <Button
                 size="lg"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8"
+                className="bg-[#25D366] hover:bg-[#1FBE5B] text-white font-semibold px-8"
               >
                 הצטרפו לקהילת AI Finance ב־WhatsApp
               </Button>

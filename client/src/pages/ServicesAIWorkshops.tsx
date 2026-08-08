@@ -183,29 +183,29 @@ export default function ServicesAIWorkshops() {
 
       <main className="pt-32 pb-20">
         <div className="container">
-          <nav aria-label="breadcrumb" className="text-sm text-slate-500 mb-6">
-            <Link href="/" className="hover:text-blue-300">עמוד הבית</Link>
+          <nav aria-label="breadcrumb" className="text-sm text-[#646B89] mb-6">
+            <Link href="/" className="hover:text-[#3D4A8A]">עמוד הבית</Link>
             <span className="mx-2" aria-hidden="true">/</span>
-            <span className="text-slate-400">קורסי AI לאנשי כספים ומנהלים</span>
+            <span className="text-[#646B89]">קורסי AI לאנשי כספים ומנהלים</span>
           </nav>
 
           {/* ─── Hero ─────────────────────────────────────────────── */}
           <div className="max-w-3xl mb-12 fade-in">
             <span className="section-label mb-5 inline-flex">בשיתוף המרכז הארצי להכשרת דירקטורים</span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mt-4 mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1B1E33] leading-tight mt-4 mb-4">
               {HERO.h1}
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">{HERO.subtext}</p>
+            <p className="text-lg text-[#4B5170] leading-relaxed">{HERO.subtext}</p>
           </div>
 
-          <p className="max-w-3xl text-slate-300 leading-relaxed mb-16">{INTRO}</p>
+          <p className="max-w-3xl text-[#4B5170] leading-relaxed mb-16">{INTRO}</p>
 
           {/* ─── Course cards ─────────────────────────────────────── */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {COURSES.map((course, idx) => (
               <div
                 key={course.name}
-                className="relative bg-gradient-to-br from-[#0f1c35] to-[#0a1220] border border-white/[0.07] rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 flex flex-col"
+                className="relative bg-white border border-[#E2E4F3] rounded-2xl overflow-hidden hover:border-[#C9CDE4] transition-all duration-300 shadow-[0_1px_3px_rgba(27,30,51,0.06)] hover:shadow-[0_4px_12px_rgba(27,30,51,0.11)] flex flex-col"
               >
                 <div className="aspect-square bg-secondary">
                   <img
@@ -217,28 +217,28 @@ export default function ServicesAIWorkshops() {
                 </div>
 
                 <div className="p-8 flex flex-col flex-grow">
-                  <h2 className="text-xl font-bold mb-3 text-white">{course.name}</h2>
-                  <p className="text-sm text-slate-300 leading-relaxed mb-4">{course.description}</p>
-                  <p className="text-xs text-slate-500 mb-4">{course.audience}</p>
+                  <h2 className="text-xl font-bold mb-3 text-[#1B1E33]">{course.name}</h2>
+                  <p className="text-sm text-[#4B5170] leading-relaxed mb-4">{course.description}</p>
+                  <p className="text-xs text-[#646B89] mb-4">{course.audience}</p>
 
                   <ul className="space-y-2 mb-6 flex-grow">
                     {course.highlights.map((point, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <li key={i} className="flex items-start gap-2 text-sm text-[#4B5170]">
+                        <CheckCircle2 className="w-4 h-4 text-[#3D4A8A] mt-0.5 flex-shrink-0" aria-hidden="true" />
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="text-xs text-slate-500 mb-1">{course.format}</div>
-                  <div className="text-xs text-slate-500 mb-6">{course.price}</div>
+                  <div className="text-xs text-[#646B89] mb-1">{course.format}</div>
+                  <div className="text-xs text-[#646B89] mb-6">{course.price}</div>
 
                   <a
                     href={course.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => gtag('event', 'external_course_click', { course_name: course.name })}
-                    className="inline-flex items-center gap-1.5 text-xs text-blue-300 hover:text-blue-200 transition-colors duration-200"
+                    className="inline-flex items-center gap-1.5 text-xs text-[#3D4A8A] hover:text-[#303A72] transition-colors duration-200"
                   >
                     לעמוד הקורס במרכז להכשרת דירקטורים
                     <ExternalLink className="w-3 h-3" aria-hidden="true" />
@@ -250,11 +250,11 @@ export default function ServicesAIWorkshops() {
 
           {/* ─── Comparison ───────────────────────────────────────── */}
           <div className="max-w-4xl mb-20">
-            <h2 className="text-2xl font-bold text-white mb-6">איזה קורס מתאים לכם?</h2>
-            <div className="overflow-x-auto rounded-xl border border-white/[0.07]">
+            <h2 className="text-2xl font-bold text-[#1B1E33] mb-6">איזה קורס מתאים לכם?</h2>
+            <div className="overflow-x-auto rounded-xl border border-[#E2E4F3]">
               <table className="w-full text-sm text-right">
                 <thead>
-                  <tr className="bg-white/[0.03] text-slate-400">
+                  <tr className="bg-[#F1F2FA] text-[#646B89]">
                     <th className="px-5 py-3 font-semibold">קורס</th>
                     <th className="px-5 py-3 font-semibold">מתאים בעיקר ל...</th>
                     <th className="px-5 py-3 font-semibold">רמת ניסיון</th>
@@ -262,10 +262,10 @@ export default function ServicesAIWorkshops() {
                 </thead>
                 <tbody>
                   {COMPARISON.map((row, i) => (
-                    <tr key={row.course} className={i % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"}>
-                      <td className="px-5 py-4 font-semibold text-white whitespace-nowrap">{row.course}</td>
-                      <td className="px-5 py-4 text-slate-300">{row.fit}</td>
-                      <td className="px-5 py-4 text-slate-400">{row.level}</td>
+                    <tr key={row.course} className={i % 2 === 0 ? "bg-transparent" : "bg-[#F7F7FD]"}>
+                      <td className="px-5 py-4 font-semibold text-[#1B1E33] whitespace-nowrap">{row.course}</td>
+                      <td className="px-5 py-4 text-[#4B5170]">{row.fit}</td>
+                      <td className="px-5 py-4 text-[#646B89]">{row.level}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -275,7 +275,7 @@ export default function ServicesAIWorkshops() {
 
           {/* ─── FAQ ──────────────────────────────────────────────── */}
           <div className="max-w-3xl mb-20">
-            <h2 className="text-2xl font-bold text-white mb-6">שאלות נפוצות</h2>
+            <h2 className="text-2xl font-bold text-[#1B1E33] mb-6">שאלות נפוצות</h2>
             <div className="space-y-3">
               {FAQ.map((item, idx) => {
                 const isExpanded = expandedFaq === idx;
@@ -284,8 +284,8 @@ export default function ServicesAIWorkshops() {
                 return (
                   <div
                     key={idx}
-                    className={`bg-gradient-to-r from-[#0f1c35] to-[#0a1220] border rounded-xl overflow-hidden transition-all duration-300 ${
-                      isExpanded ? "border-blue-500/40" : "border-white/[0.07] hover:border-white/15"
+                    className={`bg-white border rounded-xl overflow-hidden transition-all duration-300 ${
+                      isExpanded ? "border-[#6674BC] shadow-lg shadow-[#3D4A8A]/[0.08]" : "border-[#E2E4F3] hover:border-[#C9CDE4]"
                     }`}
                   >
                     <button
@@ -293,11 +293,11 @@ export default function ServicesAIWorkshops() {
                       aria-expanded={isExpanded}
                       aria-controls={panelId}
                       onClick={() => setExpandedFaq(isExpanded ? null : idx)}
-                      className="w-full px-6 py-5 flex items-center justify-between hover:bg-white/[0.02] transition-colors duration-200 text-right"
+                      className="w-full px-6 py-5 flex items-center justify-between hover:bg-[#F0F1FA] transition-colors duration-200 text-right"
                     >
-                      <span className="font-semibold text-right text-base leading-snug text-white">{item.question}</span>
+                      <span className="font-semibold text-right text-base leading-snug text-[#1B1E33]">{item.question}</span>
                       <ChevronDown
-                        className={`w-5 h-5 text-blue-400 transition-transform duration-300 flex-shrink-0 ml-4 ${
+                        className={`w-5 h-5 text-[#3D4A8A] transition-transform duration-300 flex-shrink-0 ml-4 ${
                           isExpanded ? "rotate-180" : ""
                         }`}
                         aria-hidden="true"
@@ -308,7 +308,7 @@ export default function ServicesAIWorkshops() {
                       role="region"
                       aria-labelledby={buttonId}
                       hidden={!isExpanded}
-                      className="px-6 py-5 bg-black/20 border-t border-white/[0.06] text-slate-300 text-sm leading-relaxed"
+                      className="px-6 py-5 bg-[#F7F7FD] border-t border-[#E2E4F3] text-[#4B5170] text-sm leading-relaxed"
                     >
                       {item.answer}
                     </div>
@@ -319,12 +319,12 @@ export default function ServicesAIWorkshops() {
           </div>
 
           {/* ─── CTA ──────────────────────────────────────────────── */}
-          <div className="max-w-3xl bg-gradient-to-br from-blue-950/60 to-[#0a1220] border border-blue-500/20 rounded-2xl p-10 text-center">
-            <h2 className="text-2xl font-bold text-white mb-3">{CTA.heading}</h2>
-            <p className="text-slate-400 mb-6">{CTA.subtext}</p>
+          <div className="max-w-3xl bg-[#EEF0FA] border border-[#C9CDE4] rounded-2xl p-10 text-center">
+            <h2 className="text-2xl font-bold text-[#1B1E33] mb-3">{CTA.heading}</h2>
+            <p className="text-[#4B5170] mb-6">{CTA.subtext}</p>
             {whatsappUrl && (
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8">
+                <Button className="bg-[#25D366] hover:bg-[#1FBE5B] text-white font-semibold px-8">
                   {CTA.buttonText}
                 </Button>
               </a>
