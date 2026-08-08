@@ -518,22 +518,28 @@ export default function Home() {
                     {String(idx + 1).padStart(2, "0")}
                   </div>
 
-                  <div
-                    className="text-[#3D4A8A] mb-6 group-hover:scale-110 group-hover:text-[#303A72] transition-all duration-300 w-fit"
-                    aria-hidden="true"
-                  >
-                    {iconMap[service.iconKey] ?? <TrendingUp className="w-10 h-10" />}
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">{service.description}</p>
-                  <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'services' })}>
-                    <Button
-                      variant="outline"
-                      className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] w-full font-semibold transition-all duration-200"
+                  {/* Stacked above the decorative background number, which is
+                      position:absolute with z-index:auto and would otherwise
+                      paint on top of this in-flow content per CSS painting
+                      order (positioned descendants paint after static ones). */}
+                  <div className="relative z-10 flex flex-col flex-grow">
+                    <div
+                      className="text-[#3D4A8A] mb-6 group-hover:scale-110 group-hover:text-[#303A72] transition-all duration-300 w-fit"
+                      aria-hidden="true"
                     >
-                      דברו איתנו לפרטים
-                    </Button>
-                  </a>
+                      {iconMap[service.iconKey] ?? <TrendingUp className="w-10 h-10" />}
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                    <p className="text-[#4B5170] text-sm mb-6 leading-relaxed flex-grow">{service.description}</p>
+                    <a href={hero.businessWhatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => gtag('event', 'whatsapp_click', { location: 'services' })}>
+                      <Button
+                        variant="outline"
+                        className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] w-full font-semibold transition-all duration-200"
+                      >
+                        דברו איתנו לפרטים
+                      </Button>
+                    </a>
+                  </div>
                 </motion.div>
               ))}
             </div>
