@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Lightbox from "@/components/Lightbox";
+import EntryAnimation from "@/components/EntryAnimation";
 import { useContent } from "@/hooks/useContent";
 import { posts as blogPosts, authors as blogAuthors, categories as blogCategories } from "@/generated/blog";
 import ArticleCard from "@/components/blog/ArticleCard";
@@ -85,19 +86,24 @@ export default function Home() {
 
   if (loading || !content) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
-          <p className="text-blue-300 text-lg">טוען...</p>
+      <>
+        <EntryAnimation />
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-10 h-10 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+            <p className="text-blue-300 text-lg">טוען...</p>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   const { hero, about, team, services, clients, gallery, faq, contact, cta } = content;
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden">
+    <>
+      <EntryAnimation />
+      <div className="min-h-screen bg-background text-foreground overflow-hidden">
 
       {/* ─── Navigation ───────────────────────────────────────────── */}
       <nav
@@ -1098,6 +1104,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
