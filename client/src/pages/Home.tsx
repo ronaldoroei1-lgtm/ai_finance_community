@@ -30,9 +30,9 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 const navLinks = [
-  { label: "על הקהילה", href: "#about" },
+  { label: "על AI Finance", href: "#about" },
   { label: "הצוות", href: "#team" },
-  { label: "שירותים", href: "#services" },
+  { label: "שירותים לארגונים", href: "#services" },
   { label: "קורסים", href: "/services/ai-workshops-for-finance/" },
   { label: "לקוחות", href: "#clients" },
   { label: "מדריכים", href: "#guides" },
@@ -212,7 +212,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <span className="w-2 h-2 bg-[#3D4A8A] rounded-full animate-pulse" />
-                סדנאות, הרצאות וליווי מעשי לצוותי כספים
+                סדנאות, הרצאות וליווי מעשי לעולמות הכספים, החשבונאות והשכר
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight gradient-heading">
@@ -230,7 +230,7 @@ export default function Home() {
                     size="lg"
                     className="bg-[#3D4A8A] hover:bg-[#303A72] text-white px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-[#3D4A8A]/20 hover:-translate-y-0.5"
                   >
-                    בדקו התאמה לסדנה
+                    בדקו מה מתאים לצוות או למשרד שלכם
                   </Button>
                 </a>
                 <a href="#services">
@@ -239,13 +239,13 @@ export default function Home() {
                     variant="outline"
                     className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] px-10 py-6 text-base font-semibold rounded-xl transition-all duration-200"
                   >
-                    לשירותים לארגונים
+                    הכירו את השירותים לארגונים
                   </Button>
                 </a>
               </div>
               <div className="mb-12">
                 <a href="/community/" onClick={() => gtag('event', 'community_join_click')} className="text-sm text-[#646B89] hover:text-[#3D4A8A] transition-colors duration-200">
-                  מחפשים כלים ותוכן מקצועי? <span className="text-[#3D4A8A] underline underline-offset-2">הצטרפו לקהילה</span>
+                  רוצים כלים ותוכן מקצועי לשימוש שוטף? <span className="text-[#3D4A8A] underline underline-offset-2">הצטרפו לקהילה</span>
                 </a>
               </div>
 
@@ -282,14 +282,14 @@ export default function Home() {
               <div className="flex justify-center mb-5">
                 <span className="section-label">
                   <Sparkles className="w-3 h-3" aria-hidden="true" />
-                  הכירו אותנו
+                  הכירו את AI Finance
                 </span>
               </div>
               <div className="flex justify-center mb-10">
                 <img src="/images/logo.png" alt="לוגו קהילת AI Finance" className="h-28 w-auto drop-shadow-2xl" />
               </div>
               <h2 id="about-heading" className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-heading">
-                על הקהילה
+                AI שפוגש את עולם הכספים
               </h2>
               <p className="text-lg text-[#4B5170] leading-relaxed text-justify">
                 {about.text}
@@ -322,23 +322,23 @@ export default function Home() {
                 מחברים בין AI לעבודה הפיננסית בפועל
               </h2>
               <p className="text-lg text-[#4B5170] leading-relaxed">
-                כלי AI משתנים במהירות, אבל האתגרים במחלקת הכספים נשארים מוכרים: דוחות, תחזיות, בקרות, מסמכים, תקציבים ועבודה מול הנהלה. לכן אנחנו לא מתחילים מרשימת כלים. אנחנו מתחילים מהמשימות שהצוות מבצע, מהמידע שהוא עובד איתו ומהמגבלות הארגוניות שצריך להביא בחשבון.
+                כלי AI משתנים במהירות, אבל המשימות בעולמות הכספים והחשבונאות נשארות מוכרות: דוחות, תחזיות, בקרות, מסמכים, תקציבים ועבודה מול לקוחות והנהלות. לכן אנחנו מתחילים מהמשימות, מהמידע הזמין ומהמגבלות המקצועיות והארגוניות, ורק אחר כך בוחנים אילו כלים ושיטות יכולים להתאים.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-14">
               {[
                 {
-                  title: "מיקוד במשימות פיננסיות",
-                  body: "הדוגמאות והתרגול מחוברים לעבודה של אנשי כספים — ולא לתרחישים כלליים שאינם רלוונטיים לצוות.",
+                  title: "מתחילים במשימות פיננסיות",
+                  body: "הדוגמאות והתרגול מחוברים לעבודה של אנשי כספים, ולא לתרחישים כלליים שאינם משרתים את הצוות.",
                 },
                 {
-                  title: "מעבר מהיכרות ליישום",
-                  body: "המטרה היא לעזור לצוות להבין איפה AI יכול לסייע, איפה נדרשת בקרה אנושית ואיך נראה תהליך עבודה שאפשר לבחון באופן מסודר.",
+                  title: "עוברים מהיכרות לתהליך עבודה",
+                  body: "המטרה היא לעזור לצוות להבין היכן AI יכול לסייע, היכן נדרשת בקרה אנושית וכיצד לבנות תהליך שאפשר לבדוק ולבקר.",
                 },
                 {
-                  title: "שפה מקצועית ונגישה",
-                  body: "אנחנו מסבירים את הכלים בשפה שמתאימה למנהלים ולאנשי כספים, גם ללא רקע טכנולוגי, תוך התייחסות לסיכונים, למגבלות ולאחריות המקצועית.",
+                  title: "מדברים בשפה מקצועית ונגישה",
+                  body: "אנחנו מסבירים את הכלים בשפה שמתאימה למנהלים ולאנשי כספים, גם ללא רקע טכנולוגי, ומתייחסים לסיכונים, למגבלות ולאחריות המקצועית.",
                 },
               ].map((item, idx) => (
                 <motion.div
@@ -358,7 +358,7 @@ export default function Home() {
 
             <div className="max-w-2xl mx-auto text-center">
               <p className="text-[#646B89] text-sm leading-relaxed mb-8">
-                הקהילה מאפשרת לנו להישאר קרובים לשאלות, לאתגרים ולשימושים שחוזרים בעבודת הכספים בשטח. התובנות האלה עוזרות לנו לשמור את התוכן והפעילויות מחוברים לעבודה היומיומית של הקהל.
+                הקהילה שומרת אותנו קרובים לשאלות, לאתגרים ולשימושים שחוזרים בעבודת הכספים. התובנות מהשטח עוזרות לנו לבנות תוכן ופעילויות שמחוברים לעבודה היומיומית של הצוותים.
               </p>
               <a href="#services">
                 <Button variant="outline" className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] font-semibold transition-all duration-200">
@@ -393,9 +393,9 @@ export default function Home() {
                 </span>
               </div>
               <h2 id="team-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
-                מי אנחנו
+                מי עומד מאחורי AI Finance
               </h2>
-              <p className="text-[#646B89] text-lg">הצוות שמאחורי הקהילה</p>
+              <p className="text-[#646B89] text-lg">ניסיון פיננסי לצד חיבור מעשי לכלי AI</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -470,13 +470,13 @@ export default function Home() {
               <div className="flex justify-center mb-5">
                 <span className="section-label">
                   <TrendingUp className="w-3 h-3" aria-hidden="true" />
-                  הצעת ערך
+                  מהצורך לפעילות מעשית
                 </span>
               </div>
               <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
-                מה אנחנו עושים
+                שירותי AI למחלקות כספים, למשרדי רואי חשבון ולהנהלות
               </h2>
-              <p className="text-[#646B89] text-lg">סדנאות, הרצאות וליווי למחלקות כספים</p>
+              <p className="text-[#646B89] text-lg">סדנאות, הרצאות וליווי שמתחילים מהעבודה של הצוות</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -516,7 +516,7 @@ export default function Home() {
                         variant="outline"
                         className="border border-[#C9CDE4] text-[#303A72] bg-[#EEF0FA] hover:bg-[#E2E5F4] hover:border-[#C9CDE4] w-full font-semibold transition-all duration-200"
                       >
-                        דברו איתנו לפרטים
+                        בדקו התאמה לצוות או למשרד שלכם
                       </Button>
                     </a>
                   </div>
@@ -598,13 +598,13 @@ export default function Home() {
               <div className="flex justify-center mb-5">
                 <span className="section-label">
                   <Camera className="w-3 h-3" aria-hidden="true" />
-                  גלריה
+                  מהפעילות שלנו
                 </span>
               </div>
               <h2 id="gallery-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
-                גלריית תמונות מההרצאות
+                סדנאות והרצאות בתמונות
               </h2>
-              <p className="text-[#646B89] text-lg">רגעים מיוחדים מהרצאות שלנו</p>
+              <p className="text-[#646B89] text-lg">רגעים מפעילויות AI Finance עם אנשי כספים וארגונים</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4" role="list" aria-label="גלריית תמונות הרצאות">
@@ -657,13 +657,13 @@ export default function Home() {
               <div className="flex justify-center mb-5">
                 <span className="section-label">
                   <BookOpen className="w-3 h-3" aria-hidden="true" />
-                  ידע מקצועי
+                  כלים לשימוש מעשי
                 </span>
               </div>
               <h2 id="guides-heading" className="text-4xl md:text-5xl font-bold mb-3 gradient-heading">
                 מדריכים מקצועיים
               </h2>
-              <p className="text-[#646B89] text-lg">משאבים לשילוב בינה מלאכותית בעבודה היומיומית</p>
+              <p className="text-[#646B89] text-lg">משאבים מעשיים לשילוב AI בעבודה הפיננסית היומיומית</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -859,14 +859,14 @@ export default function Home() {
                     מהבלוג
                   </span>
                   <h2 id="blog-heading" className="text-4xl md:text-5xl font-bold gradient-heading">
-                    מדריכים אחרונים
+                    תוכן מקצועי לשימוש בעבודה
                   </h2>
                 </div>
                 <a
                   href="/blog/"
                   className="text-sm font-semibold text-[#3D4A8A] hover:text-[#303A72] transition-colors duration-200"
                 >
-                  כל המדריכים ←
+                  לכל המדריכים ←
                 </a>
               </div>
 
@@ -901,7 +901,7 @@ export default function Home() {
               <div className="flex justify-center mb-5">
                 <span className="section-label">
                   <MessageCircle className="w-3 h-3" aria-hidden="true" />
-                  שאלות ותשובות
+                  כל מה שחשוב לדעת
                 </span>
               </div>
               <h2 id="faq-heading" className="text-4xl md:text-5xl font-bold gradient-heading">
@@ -981,7 +981,7 @@ export default function Home() {
               <div className="flex justify-center mb-6">
                 <span className="section-label">
                   <Sparkles className="w-3 h-3" aria-hidden="true" />
-                  מוכנים להתחיל?
+                  בואו נבדוק התאמה
                 </span>
               </div>
               <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold mb-6 gradient-heading">
@@ -1036,7 +1036,7 @@ export default function Home() {
             <div className="md:col-span-2">
               <h3 className="font-bold mb-3 text-lg text-[#1B1E33]">AI Finance Community</h3>
               <p className="text-sm text-[#4B5170] leading-relaxed mb-6 max-w-xs">
-                AI מעשי למחלקות כספים — סדנאות, הרצאות וליווי, מאחורינו קהילה של מעל 1,800 אנשי כספים ישראלים.
+                AI מעשי למחלקות כספים ולמשרדי רואי חשבון: סדנאות, הרצאות וליווי, לצד קהילה מקצועית של מעל 2,000 אנשי כספים בישראל.
               </p>
               <div className="flex gap-3">
                 <a
@@ -1055,9 +1055,9 @@ export default function Home() {
             <div>
               <h3 className="font-semibold mb-4 text-sm text-[#1B1E33] uppercase tracking-wider">ניווט</h3>
               <ul className="space-y-2.5 text-sm text-[#3D4A8A]">
-                <li><a href="#about" className="hover:text-[#303A72] hover:underline transition-colors duration-200">על הקהילה</a></li>
+                <li><a href="#about" className="hover:text-[#303A72] hover:underline transition-colors duration-200">על AI Finance</a></li>
                 <li><a href="#team" className="hover:text-[#303A72] hover:underline transition-colors duration-200">הצוות</a></li>
-                <li><a href="#services" className="hover:text-[#303A72] hover:underline transition-colors duration-200">שירותים</a></li>
+                <li><a href="#services" className="hover:text-[#303A72] hover:underline transition-colors duration-200">שירותים לארגונים</a></li>
                 <li><a href="/services/ai-workshops-for-finance/" className="hover:text-[#303A72] hover:underline transition-colors duration-200">קורסים</a></li>
                 <li><a href="#guides" className="hover:text-[#303A72] hover:underline transition-colors duration-200">מדריכים</a></li>
                 <li><a href="/blog/" className="hover:text-[#303A72] hover:underline transition-colors duration-200">בלוג</a></li>
