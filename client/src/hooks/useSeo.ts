@@ -11,7 +11,7 @@ export interface SeoOptions {
   jsonLd?: object;
 }
 
-const SITE_URL = "https://ai-finance-community.up.railway.app";
+const SITE_URL = "https://ai-finance.co.il";
 
 function upsertMeta(attr: "name" | "property", key: string, content: string) {
   let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
