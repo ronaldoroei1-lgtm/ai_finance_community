@@ -270,3 +270,10 @@
 .af-site .af-section-heading>div:first-child{flex:1 1 540px;min-width:0}
 .af-site .af-section-heading>h2{flex:1 1 auto;min-width:0}
 @media(min-width:901px){.af-site .af-hero-copy{max-width:none}.af-site .af-stories-heading{grid-template-columns:1.5fr 1fr;gap:16px 32px}}
+
+/* Make the expandable demo invitation unmistakable. */
+.af-site .af-demo-disclosure>details>summary{position:relative;justify-content:center;text-align:center;background:#10234f;color:#c5e8ff;border:2px solid #467de1;padding:24px 60px;box-shadow:0 5px 18px #163b8120}
+.af-site .af-demo-disclosure>details>summary::after{position:absolute;inset-inline-end:24px;color:#c5e8ff}
+.af-site .af-demo-disclosure>details>summary:hover{background:#173260;border-color:#78a8ff}
+.af-site .af-demo-disclosure>details>summary:focus-visible{outline:3px solid #467de1;outline-offset:4px}
+@media(max-width:700px){.af-site .af-demo-disclosure>details>summary{padding:20px 44px}.af-site .af-demo-disclosure>details>summary::after{inset-inline-end:16px}}
