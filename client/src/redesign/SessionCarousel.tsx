@@ -5,7 +5,7 @@ import type { Lang } from './data';
 export default function SessionCarousel({items,lang,onSelect}:{items:{src:string;alt:string}[];lang:Lang;onSelect:(index:number)=>void}) {
  const rail=useRef<HTMLDivElement>(null);
  const en=lang==='en';
- const featured=['tal-on-stage.webp','roei-workshop.webp','conference-hall.webp','team-session.webp','roei-audience.webp','hands-on-room.webp'];
+ const featured=['tal-stage-gesture.webp','roei-workshop.webp','conference-hall.webp','team-session.webp','roei-audience.webp','hands-on-room.webp'];
  const ordered=items.map((item,index)=>({item,index})).sort((a,b)=>{const rank=(src:string)=>{const i=featured.indexOf(src.split('/').pop()??'');return i<0?featured.length:i};return rank(a.item.src)-rank(b.item.src)});
  const move=(direction:number)=>{
   const el=rail.current;if(!el)return;
