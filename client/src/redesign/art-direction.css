@@ -182,8 +182,8 @@
 @media(max-width:700px){.af-field .af-session-rail .af-gallery-photo{flex-basis:84%;aspect-ratio:4/3}.af-carousel-toolbar{font-size:13px}.af-demo-disclosure>details>summary{font-size:20px;padding:18px}.af-session-rail .af-gallery-caption{font-size:14px}}
 
 /* Two compact rows: the opening six combine both founders, audience and practice. */
-.af-session-carousel{max-width:960px;margin-inline:auto}
+.af-session-carousel{max-width:840px;margin-inline:auto}
 .af-session-rail{display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px}
-.af-field .af-session-rail .af-gallery-photo{width:100%;aspect-ratio:4/3;min-width:0;grid-row:auto;grid-column:auto}
+.af-field .af-session-rail .af-gallery-photo{width:100%;aspect-ratio:3/2;min-width:0;grid-row:auto;grid-column:auto}
 .af-session-rail .af-gallery-caption{font-size:13px;padding:30px 12px 12px}
-@media(max-width:700px){.af-session-rail{grid-auto-columns:calc((100% - 12px)/2);gap:12px}.af-field .af-session-rail .af-gallery-photo{aspect-ratio:1}.af-session-rail .af-gallery-caption{font-size:11px;padding:24px 8px 8px;line-height:1.4}}
+@media(max-width:700px){.af-session-rail{grid-auto-columns:calc((100% - 12px)/2);gap:12px}.af-field .af-session-rail .af-gallery-photo{aspect-ratio:4/3}.af-session-rail .af-gallery-caption{font-size:11px;padding:24px 8px 8px;line-height:1.4}}
