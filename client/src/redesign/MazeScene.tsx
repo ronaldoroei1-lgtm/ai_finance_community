@@ -151,7 +151,7 @@ export default function MazeScene({ className = "", paused = false }: { classNam
       lastTime = time;
       if (!reduced.matches && !pauseRef.current) {
         elapsed += delta;
-        progress = (progress + delta * 0.10) % 1;
+        progress = Math.min(1, elapsed / 4);
         sculpture.rotation.y += (-0.1 + pointer.x * 0.1 - sculpture.rotation.y) * 0.04;
         sculpture.rotation.x += (pointer.y * 0.025 - sculpture.rotation.x) * 0.04;
       }
@@ -160,8 +160,8 @@ export default function MazeScene({ className = "", paused = false }: { classNam
       const reveal = reduced.matches ? 1 : Math.min(1, Math.max(0, (elapsed - .5) / 3.5));
       for(const geometry of [pathGeometry,glowGeometry]) {const total=geometry.index!.count;geometry.setDrawRange(0, Math.floor(total*reveal/3)*3);}
       marker.visible = reveal > 0;
-      marker.position.copy(curve.getPoint(reduced.matches ? 0.72 : reveal < 1 ? reveal : progress));
-      sculpture.position.y = reduced.matches ? 0 : Math.sin(elapsed*.7)*.055;
+      marker.position.copy(curve.getPoint(reduced.matches ? 1 : reveal));
+      sculpture.position.y = 0;
       renderer.render(scene, camera);
       if (!reduced.matches && !pauseRef.current) frame = requestAnimationFrame(draw);
     };
