@@ -263,3 +263,10 @@
 @media(max-width:760px){.af-adapted-tools{grid-template-columns:1fr;padding:20px;gap:22px}.af-tool-brands>div{padding:14px 10px;gap:8px}.af-tool-brands img{width:30px;height:30px}.af-tool-brands span{font-size:14px}.af-tool-security{align-items:flex-start}.af-adapted-copy p,.af-tool-security p{font-size:16px}}
 .af-client-select button{padding-block:18px}
 @media(max-width:760px){.af-client-select{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.af-client-select button{min-height:76px;padding:14px 10px}.af-client-select button:last-child{grid-column:1/-1}}
+
+/* Let headings wrap naturally at every viewport instead of forcing editorial breaks. */
+.af-site h1,.af-site h2,.af-site h3{white-space:normal;text-wrap:wrap;overflow-wrap:normal;word-break:normal}
+.af-site .af-hero h1,.af-site[lang=en] .af-hero h1{max-width:none}
+.af-site .af-section-heading>div:first-child{flex:1 1 540px;min-width:0}
+.af-site .af-section-heading>h2{flex:1 1 auto;min-width:0}
+@media(min-width:901px){.af-site .af-hero-copy{max-width:none}.af-site .af-stories-heading{grid-template-columns:1.5fr 1fr;gap:16px 32px}}
