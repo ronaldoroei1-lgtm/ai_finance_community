@@ -13,26 +13,26 @@
   "team": [
     {
       "name": "Tal Wallenstein, CPA",
-      "title": "Co-founder and lecturer | CPA specializing in tax and audit",
-      "bio": "A Big 4 alumna and specialist in Israeli and international taxation. Lectures in companies and academia on integrating artificial intelligence into finance.",
+      "title": "CPA | Finance, data and artificial intelligence",
+      "bio": "A certified public accountant and Big 4 alumna. Specializes in connecting finance, data and artificial intelligence, supporting organizations, finance departments and accounting firms in adopting AI tools, streamlining processes, improving controls and increasing team productivity.",
       "image": "/images/tal-profile.jpg",
       "linkedinUrl": "https://www.linkedin.com/in/tal-wallenstein/",
       "expertise": [
-        "Israeli and international taxation, tax planning and business advisory",
-        "AI tools for controllers and accountants",
-        "Lectures on integrating AI into financial work"
+        "Connecting finance, data and AI",
+        "AI adoption in organizations and accounting firms",
+        "Streamlining processes and improving controls"
       ]
     },
     {
       "name": "Roei Wallenstein",
-      "title": "Co-founder and community manager | Audit intern",
-      "bio": "The third generation in a family of accountants and an audit intern working with private companies at the family firm. Manages the community and specializes in finding AI-based technology solutions for finance departments and businesses.",
+      "title": "AI Systems Builder | Community and workshop lead",
+      "bio": "A partner at AI Finance, leading the community and workshops. Specializes in financial systems and processes. Roei focuses on turning business processes into intelligent workflows, from defining requirements to building automations and agents tailored to professional teams.",
       "image": "/images/roei-profile.jpg",
       "linkedinUrl": "https://www.linkedin.com/in/roei-wallenstein",
       "expertise": [
-        "Connecting finance with technology",
-        "Finding technology solutions tailored to businesses",
-        "Developing intelligent processes for organizations"
+        "Financial systems and processes",
+        "Designing automations and agents",
+        "Community and workshops for professional teams"
       ]
     }
   ],

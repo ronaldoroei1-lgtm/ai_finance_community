@@ -56,6 +56,28 @@ async function startServer() {
     try { await fs.copyFile(seedPath, contentPath, 1); } catch (error) {
       if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
     }
+    // One-time correction of the superseded founder bios; preserve later admin edits.
+    const saved = JSON.parse(await fs.readFile(contentPath, "utf-8"));
+    const seed = JSON.parse(await fs.readFile(seedPath, "utf-8"));
+    const oldBios = [
+      "בוגרת Big 4 ומומחית במיסוי ישראלי ובינלאומי. מרצה בחברות ובאקדמיה על שילוב בינה מלאכותית בעולם הכספים.",
+      "דור שלישי למשפחה של רואי חשבון ומתמחה בביקורת חברות פרטיות במשרד המשפחתי. מנהל את הקהילה ומתמחה באיתור פתרונות טכנולוגיים מבוססי AI למחלקות כספים ולעסקים."
+    ];
+    let corrected = false;
+    if (Array.isArray(saved.team) && Array.isArray(seed.team)) {
+      saved.team = saved.team.map((person: any) => {
+        const index = oldBios.indexOf(person.bio);
+        if (index < 0 || !seed.team[index]) return person;
+        corrected = true;
+        const { name, title, bio, expertise } = seed.team[index];
+        return { ...person, name, title, bio, expertise };
+      });
+    }
+    if (corrected) {
+      await fs.writeFile(contentPath + ".before-bio-update", await fs.readFile(contentPath));
+      await fs.writeFile(contentPath + ".tmp", JSON.stringify(saved, null, 2));
+      await fs.rename(contentPath + ".tmp", contentPath);
+    }
     storageReady = true;
   } catch (error) {
     console.error("Admin storage unavailable; serving bundled site content", error);

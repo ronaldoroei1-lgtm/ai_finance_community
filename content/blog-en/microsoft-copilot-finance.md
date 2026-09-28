@@ -178,4 +178,4 @@ In AI Finance workshops, we work with familiar files and processes, define contr
 
 ## About the author
 
-**Tal Wallenstein, CPA** is an AI Finance co-founder, a Big 4 alumna and a lecturer on applying artificial intelligence in finance. Her work spans Israeli and international taxation, business advisory and training companies and finance professionals in practical, controlled use of AI tools. [Tal's LinkedIn profile](https://il.linkedin.com/in/tal-wallenstein).
+**Tal Wallenstein, CPA**. A certified public accountant and Big 4 alumna. Specializes in connecting finance, data and artificial intelligence, supporting organizations, finance departments and accounting firms in adopting AI tools, streamlining processes, improving controls and increasing team productivity. [LinkedIn](https://il.linkedin.com/in/tal-wallenstein).

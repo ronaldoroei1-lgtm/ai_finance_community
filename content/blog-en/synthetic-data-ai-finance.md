@@ -175,4 +175,4 @@ In AI Finance workshops, we define a use case, build a practice environment and 
 
 ## About the author
 
-**Roei Wallenstein** is an AI Finance co-founder and community manager. His work connects financial processes with AI tools, evaluates technology solutions and turns general use cases into practical workflows. [Roei's LinkedIn profile](https://il.linkedin.com/in/roei-wallenstein).
+**Roei Wallenstein**. A partner at AI Finance, leading the community and workshops. Specializes in financial systems and processes. Roei focuses on turning business processes into intelligent workflows, from defining requirements to building automations and agents tailored to professional teams. [LinkedIn](https://il.linkedin.com/in/roei-wallenstein).
