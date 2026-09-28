@@ -163,11 +163,11 @@ Tonic Fabricate מאפשר לייצר נתונים מאפס באמצעות Data 
 
 המידע נבדק ב־4 באוגוסט 2026:
 
-- [Tonic Fabricate — User Guide](https://docs.tonic.ai/fabricate)
-- [Tonic Fabricate — Data generation processes](https://docs.tonic.ai/fabricate/fabricate-data-generation-processes)
-- [Tonic — Fabricate Trust Center](https://docs.tonic.ai/trust-center/tonic.ai-applications/fabricate)
-- [UK Government — AI Insights: Synthetic Data](https://www.gov.uk/government/publications/ai-insights/ai-insights-synthetic-data-html)
-- [NVIDIA — Generating Safe Synthetic Data](https://docs.nvidia.com/nemo-platform/documentation/synthesize-safe-data/about)
+- [Tonic Fabricate: User Guide](https://docs.tonic.ai/fabricate)
+- [Tonic Fabricate: Data generation processes](https://docs.tonic.ai/fabricate/fabricate-data-generation-processes)
+- [Tonic: Fabricate Trust Center](https://docs.tonic.ai/trust-center/tonic.ai-applications/fabricate)
+- [UK Government: AI Insights: Synthetic Data](https://www.gov.uk/government/publications/ai-insights/ai-insights-synthetic-data-html)
+- [NVIDIA: Generating Safe Synthetic Data](https://docs.nvidia.com/nemo-platform/documentation/synthesize-safe-data/about)
 
 ## רוצים לבנות POC בלי לסכן נתוני אמת?
 

@@ -40,11 +40,11 @@ relatedSlugs:
 - עבודה בתוך Microsoft 365 או Google Workspace.
 - בניית תהליכים חוזרים עם כללי בקרה.
 
-אם הארגון טרם הגדיר אילו נתונים מותר להעלות לכלי AI, זו צריכה להיות נקודת ההתחלה — לפני ההשוואה בין המודלים.
+אם הארגון טרם הגדיר אילו נתונים מותר להעלות לכלי AI, זו צריכה להיות נקודת ההתחלה: לפני ההשוואה בין המודלים.
 
 ## ההבדל החשוב: המודל הוא רק חלק מהמוצר
 
-“ChatGPT”, “Claude” ו־“Gemini” אינם רק מודלי שפה. כל אחד הוא סביבת עבודה שכוללת, בהתאם לתוכנית ולהרשאות, יכולות כגון העלאת קבצים, הרצת קוד, חיפוש, חיבורים למערכות ארגוניות, יצירת מסמכים וסוכנים.
+“ChatGPT”, “Claude” ו־“Gemini” אינם רק מודלי שפה. כל אחד מהם הוא סביבת עבודה שכוללת, בהתאם לתוכנית ולהרשאות, יכולות כגון העלאת קבצים, הרצת קוד, חיפוש, חיבורים למערכות ארגוניות, יצירת מסמכים וסוכנים.
 
 אותו מודל יכול להתנהג אחרת כאשר:
 
@@ -152,11 +152,11 @@ OpenAI מציינת שנתוני ChatGPT Business ו־Enterprise אינם משמ
 
 המידע על זמינות ומדיניות נבדק ב־4 באוגוסט 2026:
 
-- [OpenAI — Business data privacy, security and compliance](https://openai.com/business-data/)
-- [Google — Generative AI in Workspace Privacy Hub](https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub)
-- [Google — Learn about NotebookLM](https://support.google.com/notebooklm/answer/16164461)
-- [Anthropic — Claude for Small Business](https://www.anthropic.com/news/claude-for-small-business)
-- [Microsoft — Edit with Copilot in Excel](https://support.microsoft.com/en-us/office/agent-mode-in-excel-frontier-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a)
+- [OpenAI: Business data privacy, security and compliance](https://openai.com/business-data/)
+- [Google: Generative AI in Workspace Privacy Hub](https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub)
+- [Google: Learn about NotebookLM](https://support.google.com/notebooklm/answer/16164461)
+- [Anthropic: Claude for Small Business](https://www.anthropic.com/news/claude-for-small-business)
+- [Microsoft: Edit with Copilot in Excel](https://support.microsoft.com/en-us/office/agent-mode-in-excel-frontier-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a)
 
 ## רוצים לבחור כלי לפי התהליכים שלכם?
 

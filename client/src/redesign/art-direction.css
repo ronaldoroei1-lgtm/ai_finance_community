@@ -187,3 +187,25 @@
 .af-field .af-session-rail .af-gallery-photo{width:100%;aspect-ratio:3/2;min-width:0;grid-row:auto;grid-column:auto}
 .af-session-rail .af-gallery-caption{font-size:13px;padding:30px 12px 12px}
 @media(max-width:700px){.af-session-rail{grid-auto-columns:calc((100% - 12px)/2);gap:12px}.af-field .af-session-rail .af-gallery-photo{aspect-ratio:4/3}.af-session-rail .af-gallery-caption{font-size:11px;padding:24px 8px 8px;line-height:1.4}}
+
+/* Denser page rhythm and a wide, integrated photo strip. */
+.af-site{background:#fff;--af-surface-raised:#f2f5fa}
+.af-site .af-section{padding-block:52px}
+.af-site .af-section-heading{margin-bottom:26px;gap:20px}
+.af-site .af-experience-intro{padding-block:52px;background:#fff}
+.af-site .af-people-editorial figure:nth-child(2){margin-top:20px}
+.af-site .af-client-stories{padding-block:52px}
+.af-site .af-stories-heading{margin-bottom:26px}
+.af-site .af-field{background:#edf2f9;padding-block:32px}
+.af-site .af-field>.af-wrap{width:calc(100% - 48px);max-width:1600px}
+.af-session-carousel{max-width:none}
+.af-session-rail{grid-auto-columns:calc((100% - 48px)/5);gap:12px;padding-bottom:10px}
+.af-field .af-session-rail .af-gallery-photo{aspect-ratio:3/2}
+.af-carousel-toolbar{margin-bottom:14px}
+.af-site .af-team,.af-site .af-why-us,.af-site .af-social-section,.af-site .af-knowledge{background:#fff}
+.af-site .af-why-grid{margin-top:30px}
+.af-site .af-team-academic{margin-top:20px;padding-block:18px}
+.af-site .af-demo-disclosure{padding-block:20px}
+.af-site .af-home-film .af-conference-talk{padding-bottom:20px;margin-bottom:16px}
+@media(min-width:701px) and (max-width:1100px){.af-session-rail{grid-auto-columns:calc((100% - 36px)/4)}}
+@media(max-width:700px){.af-site .af-section,.af-site .af-client-stories,.af-site .af-experience-intro{padding-block:34px}.af-site .af-section-heading{margin-bottom:20px;gap:12px}.af-site .af-field{padding-block:26px}.af-site .af-field>.af-wrap{width:calc(100% - 24px)}.af-session-rail{grid-auto-columns:calc((100% - 12px)/2)}.af-field .af-session-rail .af-gallery-photo{aspect-ratio:3/2}.af-site .af-people-editorial figure:nth-child(2){margin-top:0}.af-site .af-demo-disclosure{padding-block:16px}}

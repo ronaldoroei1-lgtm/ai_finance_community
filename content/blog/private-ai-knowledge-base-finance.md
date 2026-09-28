@@ -161,9 +161,9 @@ AnythingLLM הוא פרויקט open-source ו־local-first שניתן להרי�
 
 המידע נבדק ב־4 באוגוסט 2026:
 
-- [AnythingLLM — GitHub repository and telemetry notes](https://github.com/Mintplex-Labs/anything-llm)
-- [AnythingLLM — Self-hosted privacy and terms](https://github.com/Mintplex-Labs/anything-llm/blob/master/TERMS_SELF_HOSTED.md)
-- [Google — Learn about NotebookLM](https://support.google.com/notebooklm/answer/16164461)
+- [AnythingLLM: GitHub repository and telemetry notes](https://github.com/Mintplex-Labs/anything-llm)
+- [AnythingLLM: Self-hosted privacy and terms](https://github.com/Mintplex-Labs/anything-llm/blob/master/TERMS_SELF_HOSTED.md)
+- [Google: Learn about NotebookLM](https://support.google.com/notebooklm/answer/16164461)
 
 ## רוצים למפות מאגר ידע בצורה אחראית?
 

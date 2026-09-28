@@ -43,7 +43,7 @@ Microsoft Copilot יכול כיום לסייע ישירות בתוך Excel וב�
 
 ## מה Copilot יכול לעשות בתוך Excel?
 
-Microsoft שינתה את המיתוג של “Agent Mode in Excel” ל־**Editing with Copilot in Excel**. כאשר עריכה מאופשרת, Copilot יכול לעבוד לצד המשתמש ולשנות את החוברת באמצעות יכולות Excel עצמן, כך שהנוסחאות, הטבלאות והתרשימים נשארים ניתנים לעריכה.
+Microsoft שינתה את המיתוג של “Agent Mode in Excel” ל־**Editing with Copilot in Excel**. כאשר אפשרות העריכה מופעלת, Copilot יכול לעבוד לצד המשתמש ולשנות את החוברת באמצעות יכולות Excel עצמן, כך שהנוסחאות, הטבלאות והתרשימים נשארים ניתנים לעריכה.
 
 דוגמאות שימוש:
 
@@ -111,8 +111,8 @@ Legal Agent הוא תכונת Frontier מוקדמת ב־Word desktop למשתמ�
 1. הגדרת playbook מאושר.
 2. הרצה על חוזה שאושר לשימוש.
 3. הצגת מקור לכל הערה.
-4. בדיקת איש כספים לסעיפים מסחריים.
-5. בדיקת יועץ משפטי להחלטה ולנוסח.
+4. בדיקת הסעיפים המסחריים בידי איש כספים.
+5. בדיקת ההחלטה והנוסח בידי יועץ משפטי.
 
 ## דרישות, רישוי וזמינות
 
@@ -141,7 +141,7 @@ Legal Agent הוא תכונת Frontier מוקדמת ב־Word desktop למשתמ�
 ## חלופות
 
 - Power Query ומאקרו לתהליכים דטרמיניסטיים.
-- Python או כלי BI לניתוח שחייב להיות שחזורי.
+- Python או כלי BI לניתוח שנדרש לשחזר.
 - ChatGPT או Claude לניתוח קובץ חד־פעמי, לפי מדיניות.
 - Power Automate לתהליכי workflow.
 - [Skills וסוכני AI](/blog/ai-skills-finance/) לתהליך חוצה כלים.
@@ -160,17 +160,17 @@ Legal Agent הוא תכונת Frontier מוקדמת ב־Word desktop למשתמ�
 
 ### האם Copilot Skills מחליפים Power Query?
 
-לא בהכרח. כאשר תהליך דטרמיניסטי ויציב, Power Query או קוד עשויים להיות עקביים ושחזוריים יותר. Skill מתאים כאשר נדרשת גם פרשנות, יצירת פלט או תזמור.
+לא בהכרח. כאשר תהליך דטרמיניסטי ויציב, Power Query או קוד עשויים להיות עקביים וקלים יותר לשחזור. Skill מתאים כאשר נדרשת גם פרשנות, יצירת פלט או תזמור.
 
 ## מקורות ותאריך אימות
 
 המידע נבדק ב־4 באוגוסט 2026:
 
-- [Microsoft — Edit with Copilot in Excel](https://support.microsoft.com/en-us/office/agent-mode-in-excel-frontier-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a)
-- [Microsoft — What’s New in Microsoft 365 Copilot, June 2026](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
-- [Microsoft — Copilot Cowork](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/)
-- [Microsoft — Get started with Legal Agent](https://support.microsoft.com/en-US/Word/get-started-with-the-legal-agent-frontier)
-- [Microsoft — What is Frontier?](https://support.microsoft.com/en-US/Microsoft-365-Copilot/what-is-frontier)
+- [Microsoft: Edit with Copilot in Excel](https://support.microsoft.com/en-us/office/agent-mode-in-excel-frontier-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a)
+- [Microsoft: What’s New in Microsoft 365 Copilot, June 2026](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
+- [Microsoft: Copilot Cowork](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/)
+- [Microsoft: Get started with Legal Agent](https://support.microsoft.com/en-US/Word/get-started-with-the-legal-agent-frontier)
+- [Microsoft: What is Frontier?](https://support.microsoft.com/en-US/Microsoft-365-Copilot/what-is-frontier)
 
 ## רוצים להפוך את Copilot לכלי עבודה אמיתי?
 

@@ -76,13 +76,13 @@ relatedSlugs:
 - שדות חובה.
 - סכום בקרה צפוי.
 
-אם המקור לא התעדכן, המשימה צריכה לעצור ולדווח — לא להציג נתונים ישנים כאילו הם עדכניים.
+אם המקור לא התעדכן, המשימה צריכה לעצור ולדווח: לא להציג נתונים ישנים כאילו הם עדכניים.
 
 ### שלב 3: כתבו הוראות עם תנאי כשל
 
 דוגמה:
 
-> בכל יום עבודה בשעה 08:00 קרא את קובץ הגבייה המאושר. ודא שקיימים כל שדות החובה ושמועד הרענון הוא מהיום. חשב יתרה כוללת והשווה לסכום הבקרה. אם קיימת סטייה, נתון חסר או קובץ ישן — אל תפיק דוח; שלח התראת כשל. אחרת צור בריף בן חמש נקודות, צרף טבלת חריגים ובקש אישור מנהל לפני כל פנייה ללקוח.
+> בכל יום עבודה בשעה 08:00 קרא את קובץ הגבייה המאושר. ודא שקיימים כל שדות החובה ושמועד הרענון הוא מהיום. חשב יתרה כוללת והשווה לסכום הבקרה. אם קיימת סטייה, נתון חסר או קובץ ישן: אל תפיק דוח; שלח התראת כשל. אחרת צור בריף בן חמש נקודות, צרף טבלת חריגים ובקש אישור מנהל לפני כל פנייה ללקוח.
 
 ### שלב 4: בצעו shadow run
 
@@ -154,9 +154,9 @@ relatedSlugs:
 
 המידע נבדק ב־4 באוגוסט 2026:
 
-- [OpenAI — Scheduled Tasks in ChatGPT](https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt)
-- [OpenAI Academy — Codex Automations](https://openai.com/academy/codex-automations/)
-- [Anthropic — Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork)
+- [OpenAI: Scheduled Tasks in ChatGPT](https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt)
+- [OpenAI Academy: Codex Automations](https://openai.com/academy/codex-automations/)
+- [Anthropic: Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork)
 
 ## רוצים להפוך משימה חוזרת לתהליך מבוקר?
 

@@ -1,7 +1,7 @@
 ---
 title: "מנהיגות בעולם של AI אג׳נטי: מדריך למחלקות כספים"
 slug: "agentic-ai-leadership-finance"
-description: "מהו AI אג׳נטי, איך מתרגמים תכנון–ביצוע–למידה לתהליך פיננסי, ואילו בקרות נדרשות לפני שנותנים לסוכן לבצע משימות."
+description: "מהו AI אג׳נטי, איך מתרגמים תכנון, ביצוע ולמידה לתהליך פיננסי, ואילו בקרות נדרשות לפני שנותנים לסוכן לבצע משימות."
 publishedAt: "2026-08-07"
 updatedAt: "2026-08-07"
 lastVerifiedAt: "2026-08-07"
@@ -53,7 +53,7 @@ AI אג׳נטי אינו עוד חלון צ׳אט שמחזיר תשובה לשא
 
 אלה אינם נתונים של AI Finance או תחזית לשוק הישראלי. הם כן מצביעים על שלב שבו ארגונים רבים מתנסים, בעוד ששיטות העבודה עדיין אינן מקובעות. זו הזדמנות לבנות ניסיון מבוקר בתהליכים צרים.
 
-הציטוט הקצר שמסכם היטב את האחריות הניהולית הוא: **״רגע האדם בתוך הלולאה יהיה קריטי״** — Ritcha Ranjan, בתרגום חופשי מתוך HBS Working Knowledge.
+הציטוט הקצר שמסכם היטב את האחריות הניהולית הוא: **״רגע האדם בתוך הלולאה יהיה קריטי״**: Ritcha Ranjan, בתרגום חופשי מתוך HBS Working Knowledge.
 
 ## הלולאה: תכנון, ביצוע ולמידה
 
@@ -157,8 +157,8 @@ Copilot הוא שם למספר מוצרים ויכולות בסביבת Microsof
 
 המידע נבדק ב־7 באוגוסט 2026:
 
-- [HBS Working Knowledge — What Leadership Looks Like in an Agentic AI World](https://www.library.hbs.edu/working-knowledge/what-leadership-looks-like-in-an-agentic-ai-world), מאת Michael Blanding, בהשתתפות Tsedal Neeley, פורסם ב־11 בפברואר 2026.
-- [McKinsey — The State of AI in 2025: Agents, Innovation, and Transformation](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai/), סקר שפורסם ב־5 בנובמבר 2025. הסקר כלל 1,993 משיבים מ־105 מדינות; הנתונים משקפים דיווחי משיבים ואינם מדד ייעודי לשוק הישראלי.
+- [HBS Working Knowledge: What Leadership Looks Like in an Agentic AI World](https://www.library.hbs.edu/working-knowledge/what-leadership-looks-like-in-an-agentic-ai-world), מאת Michael Blanding, בהשתתפות Tsedal Neeley, פורסם ב־11 בפברואר 2026.
+- [McKinsey: The State of AI in 2025: Agents, Innovation, and Transformation](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai/), סקר שפורסם ב־5 בנובמבר 2025. הסקר כלל 1,993 משיבים מ־105 מדינות; הנתונים משקפים דיווחי משיבים ואינם מדד ייעודי לשוק הישראלי.
 
 ## רוצים לבחון תהליך אג׳נטי במחלקת הכספים?
 

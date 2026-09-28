@@ -42,7 +42,7 @@ Skills וסוכנים מתאימים לתהליך ש:
 
 דוגמאות: הכנת close checklist, ניתוח ראשוני של גיול חובות, איסוף מסמכים, בדיקת שלמות קובץ, יצירת חבילת דיווח וסיכום תנאים מסחריים בחוזים.
 
-## Skill, Plugin, Connector וסוכן — מה ההבדל?
+## Skill, Plugin, Connector וסוכן: מה ההבדל?
 
 **Skill:** הוראות ממוקדות למשימה. הוא עשוי לכלול `skill.md`, דוגמאות, תבניות וסקריפטים.
 
@@ -138,7 +138,7 @@ Anthropic מציעה גם חבילת Claude for Small Business הכוללת work
 - **סודות בקבצים:** אין לשמור API keys או סיסמאות ב־Skill.
 - **Connector רחב:** העניקו הרשאות מינימליות.
 - **פעולה בלתי הפיכה:** דרשו אישור לפני שליחה, תשלום, מחיקה או רישום.
-- **שינוי בתהליך:** מנו בעלים וגרסת Skill.
+- **שינוי בתהליך:** מנו אחראי לתהליך ותעדו את גרסת ה־Skill.
 - **הוראות סותרות:** הגדירו מקור סמכות אחד.
 - **תוצאה משכנעת אך שגויה:** השתמשו בסכומי בקרה והפניות למקור.
 - **הקלטת מסך:** השתמשו בסביבת דמה ונקו התראות ופרטים מזהים.
@@ -173,10 +173,10 @@ Anthropic מציעה גם חבילת Claude for Small Business הכוללת work
 
 המידע נבדק ב־4 באוגוסט 2026:
 
-- [Anthropic — How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
-- [Anthropic — Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
-- [Anthropic — Use plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)
-- [Anthropic — Claude for Small Business](https://www.anthropic.com/news/claude-for-small-business)
+- [Anthropic: How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
+- [Anthropic: Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
+- [Anthropic: Use plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)
+- [Anthropic: Claude for Small Business](https://www.anthropic.com/news/claude-for-small-business)
 
 ## רוצים להפוך SOP פיננסי ל־Skill?
 

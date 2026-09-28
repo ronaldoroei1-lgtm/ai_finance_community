@@ -73,6 +73,20 @@ async function startServer() {
         return { ...person, name, title, bio, expertise };
       });
     }
+    if (Array.isArray(saved.faq)) {
+      for (const item of saved.faq) {
+        if (typeof item.answer !== "string") continue;
+        const answer = item.answer.replaceAll("חשבי וחשבות שכר", "חשבי שכר וחשבות שכר").replaceAll("לרואי ורואות חשבון", "לרואי חשבון ולרואות חשבון").replaceAll("מנהלי ומנהלות חשבונות", "מנהלי חשבונות ומנהלות חשבונות");
+        if (answer !== item.answer) { item.answer = answer; corrected = true; }
+      }
+    }
+    if (Array.isArray(saved.clients)) {
+      for (const item of saved.clients) {
+        if (typeof item.description !== "string") continue;
+        const description = item.description.replaceAll("ניתוח נתונים ודשבורדים", "ניתוח נתונים ולוחות מחוונים");
+        if (description !== item.description) { item.description = description; corrected = true; }
+      }
+    }
     if (corrected) {
       await fs.writeFile(contentPath + ".before-bio-update", await fs.readFile(contentPath));
       await fs.writeFile(contentPath + ".tmp", JSON.stringify(saved, null, 2));
