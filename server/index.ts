@@ -4,7 +4,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { promises as fs } from "fs";
 import multer from "multer";
-import sharp from "sharp";
 import { randomBytes, randomUUID, createHash, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 
@@ -50,9 +49,16 @@ async function startServer() {
   const dataDir = path.resolve(process.env.DATA_DIR || path.resolve(__dirname, "../data"));
   const contentPath = path.join(dataDir, "content.json");
   const uploadsPath = path.join(dataDir, "uploads");
-  await fs.mkdir(uploadsPath, { recursive: true });
-  try { await fs.copyFile(seedPath, contentPath, 1); } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+  // Public pages remain available if the host has no writable admin volume.
+  let storageReady = false;
+  try {
+    await fs.mkdir(uploadsPath, { recursive: true });
+    try { await fs.copyFile(seedPath, contentPath, 1); } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+    }
+    storageReady = true;
+  } catch (error) {
+    console.error("Admin storage unavailable; serving bundled site content", error);
   }
   const sessions = new Map<string, number>();
   const attempts = new Map<string, { count: number; until: number }>();
@@ -62,6 +68,7 @@ async function startServer() {
   }, 60000);
   cleanExpired.unref();
   const authenticate: express.RequestHandler = (req, res, next) => {
+    if (!storageReady) { res.status(503).json({ error: "Admin storage unavailable" }); return; }
     const token = req.headers.authorization?.replace(/^Bearer /, "") || "";
     if (!ADMIN_PASSWORD || (sessions.get(token) || 0) <= Date.now()) {
       res.status(401).json({ error: "נדרשת התחברות מחדש" }); return;
@@ -92,6 +99,8 @@ async function startServer() {
   app.post("/api/upload", authenticate, upload.single("image"), async (req, res) => {
     if (!req.file) { res.status(400).json({ error: "לא נבחר קובץ" }); return; }
     try {
+      // Native image processing is needed only for an authenticated upload.
+      const { default: sharp } = await import("sharp");
       const decoded = sharp(req.file.buffer, { limitInputPixels: 40000000 });
       const metadata = await decoded.metadata();
       if (!["jpeg", "png", "webp", "gif"].includes(metadata.format || "")) throw new Error("Unsupported image");
@@ -102,7 +111,7 @@ async function startServer() {
   });
   const readContent: express.RequestHandler = async (_req, res) => {
     try {
-      const data = await fs.readFile(contentPath, "utf-8");
+      const data = await fs.readFile(storageReady ? contentPath : seedPath, "utf-8");
       res.setHeader("Cache-Control", "no-store");
       res.setHeader("X-Content-Revision", revisionOf(data));
       res.json(JSON.parse(data));
@@ -185,7 +194,7 @@ async function startServer() {
 
   const port = process.env.PORT || 3000;
 
-  server.listen(port, () => {
+  server.listen(Number(port), "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${port}/`);
     if (!isProduction) {
       console.log(`Admin panel: http://localhost:${port}/admin`);
@@ -193,4 +202,4 @@ async function startServer() {
   });
 }
 
-startServer().catch(console.error);
+startServer().catch(error => { console.error(error); process.exitCode = 1; });
