@@ -126,3 +126,9 @@
 .is-reduced .af-robot-visitor{opacity:1;transform:none}.is-reduced *{animation:none!important}
 @media(max-width:760px){.af-moment-layout{grid-template-columns:1fr;gap:26px}.af-moment-controls{grid-column:1;margin-top:-26px}.af-mini-dashboard{padding:22px 18px}.af-demo-stat strong{font-size:36px}.af-demo-stat>span{font-size:14px}.af-dashboard-numbers{gap:9px}.af-robot-visitor{inset-inline-end:0;width:96px}.af-finance-moment p{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.af-dashboard-scene *{animation:none!important}.af-robot-visitor{opacity:1}}
+
+/* Keep normal scrolling direct, with no delayed content reveal or blurred sticky layer. */
+.af-site .af-header{backdrop-filter:none;background:#0b1740}
+.af-site .af-reveal{opacity:1;transform:none;transition:none}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

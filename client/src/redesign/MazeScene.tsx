@@ -142,7 +142,7 @@ export default function MazeScene({ className = "", paused = false }: { classNam
     const marker = new THREE.Mesh(new THREE.SphereGeometry(0.095, 12, 8), new THREE.MeshBasicMaterial({ color: 0xe8fbff }));
     sculpture.add(marker);
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let inView = true, stopped = false, frame = 0, progress = 0, lastTime = 0, elapsed = 0;
+    let inView = true, stopped = false, frame = 0, lastTime = 0, elapsed = 0;
     const pointer = { x: 0, y: 0 };
     const draw = (time: number) => {
       frame = 0;
@@ -151,7 +151,6 @@ export default function MazeScene({ className = "", paused = false }: { classNam
       lastTime = time;
       if (!reduced.matches && !pauseRef.current) {
         elapsed += delta;
-        progress = Math.min(1, elapsed / 4);
         sculpture.rotation.y += (-0.1 + pointer.x * 0.1 - sculpture.rotation.y) * 0.04;
         sculpture.rotation.x += (pointer.y * 0.025 - sculpture.rotation.x) * 0.04;
       }
@@ -163,7 +162,8 @@ export default function MazeScene({ className = "", paused = false }: { classNam
       marker.position.copy(curve.getPoint(reduced.matches ? 1 : reveal));
       sculpture.position.y = 0;
       renderer.render(scene, camera);
-      if (!reduced.matches && !pauseRef.current) frame = requestAnimationFrame(draw);
+      const unsettled = Math.abs(-0.1 + pointer.x * 0.1 - sculpture.rotation.y) > 0.001 || Math.abs(pointer.y * 0.025 - sculpture.rotation.x) > 0.001;
+      if (!reduced.matches && !pauseRef.current && (elapsed < 4.1 || unsettled)) frame = requestAnimationFrame(draw);
     };
     const start = () => { if (!frame && !stopped && inView && !document.hidden) { lastTime = performance.now(); frame = requestAnimationFrame(draw); } };
     resumeRef.current = start;
@@ -182,8 +182,9 @@ export default function MazeScene({ className = "", paused = false }: { classNam
       const rect = container.getBoundingClientRect();
       pointer.x = (event.clientX - rect.left) / rect.width - 0.5;
       pointer.y = (event.clientY - rect.top) / rect.height - 0.5;
+      start();
     };
-    const onLeave = () => { pointer.x = 0; pointer.y = 0; };
+    const onLeave = () => { pointer.x = 0; pointer.y = 0; start(); };
     const onVisibility = () => { if (document.hidden) { cancelAnimationFrame(frame); frame = 0; } else start(); };
     const observer = new IntersectionObserver(([entry]) => {
       inView = entry.isIntersecting;
