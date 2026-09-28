@@ -73,6 +73,14 @@ async function startServer() {
         return { ...person, name, title, bio, expertise };
       });
     }
+    if (Array.isArray(saved.team)) {
+      for (const person of saved.team) {
+        if (person.image === "/images/tal-profile.jpg" && typeof person.bio === "string" && person.bio.startsWith("רואת חשבון ויוצאת Big 4.")) {
+          person.bio = person.bio.replace("רואת חשבון ויוצאת Big 4.", "רואת חשבון, דירקטורית מוסמכת ויוצאת Big 4.");
+          corrected = true;
+        }
+      }
+    }
     if (Array.isArray(saved.faq)) {
       for (const item of saved.faq) {
         if (typeof item.answer !== "string") continue;

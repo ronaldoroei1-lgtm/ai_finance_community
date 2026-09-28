@@ -209,3 +209,33 @@
 .af-site .af-home-film .af-conference-talk{padding-bottom:20px;margin-bottom:16px}
 @media(min-width:701px) and (max-width:1100px){.af-session-rail{grid-auto-columns:calc((100% - 36px)/4)}}
 @media(max-width:700px){.af-site .af-section,.af-site .af-client-stories,.af-site .af-experience-intro{padding-block:34px}.af-site .af-section-heading{margin-bottom:20px;gap:12px}.af-site .af-field{padding-block:26px}.af-site .af-field>.af-wrap{width:calc(100% - 24px)}.af-session-rail{grid-auto-columns:calc((100% - 12px)/2)}.af-field .af-session-rail .af-gallery-photo{aspect-ratio:3/2}.af-site .af-people-editorial figure:nth-child(2){margin-top:0}.af-site .af-demo-disclosure{padding-block:16px}}
+
+/* Clear blue headings, course-inspired service panels and a brighter invitation. */
+.af-site .af-label,.af-site .af-kicker{font-size:clamp(19px,1.65vw,23px);line-height:1.4;font-weight:600;letter-spacing:0}
+.af-site .af-section-heading>.af-label,.af-site .af-section-heading>div>.af-label,.af-site .af-stories-heading>.af-label{margin-bottom:14px}
+.af-site .af-team-summary .af-section-heading .af-label{font-size:clamp(23px,2.1vw,30px)}
+.af-site .af-more-clients>summary{font-size:clamp(22px,2vw,28px);font-weight:600;line-height:1.4;padding:22px 24px;background:#e3eaf7;border:1px solid #a8b9d8;border-radius:12px;color:#163b81;min-height:68px}
+.af-site .af-more-clients>summary svg{width:26px;height:26px;flex-shrink:0}
+.af-site .af-service{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#142951,#123781 70%,#2356a4);color:#fff;border:1px solid #5578b6;border-radius:18px;padding:30px;gap:18px;box-shadow:0 9px 24px #142e6014}
+.af-site .af-service:nth-child(2){background:linear-gradient(135deg,#132b57,#234995)}
+.af-site .af-service::after{content:'';position:absolute;width:180px;height:180px;border:1px solid #b7d0ff28;outline:1px solid #b7d0ff20;outline-offset:20px;inset-inline-end:-90px;top:0;transform:rotate(30deg);z-index:-1;pointer-events:none}
+.af-site .af-service h3{color:#fff;font-size:clamp(25px,2.4vw,32px);line-height:1.3}
+.af-site .af-service p{color:#e3ebfb;font-size:18px;line-height:1.7}
+.af-site .af-service-top,.af-site .af-service-top span{color:#cfddfa;font-size:17px}
+.af-site .af-service-top>svg{width:48px;height:48px;padding:10px;border:1px solid #a9c7ff70;border-radius:12px;background:#ffffff12}
+.af-site .af-service .af-text-link{color:#fff;border-top:1px solid #d4e2ff45;padding-top:16px;margin-top:auto;justify-content:space-between}
+.af-site .af-service:hover{border-color:#99baff;box-shadow:0 12px 28px #173b8125}
+.af-site .af-course-strip{border-radius:18px}.af-site .af-course-strip .af-kicker{color:#c7dbff}.af-site .af-course-strip .af-text-link{color:#fff}
+.af-site .af-offer-grid article{background:linear-gradient(135deg,#142951,#234995);color:#fff;border:1px solid #5578b6;border-radius:18px}
+.af-site .af-offer-grid article h3,.af-site .af-offer-grid article .af-text-link,.af-site .af-offer-grid article summary{color:#fff}
+.af-site .af-offer-grid article p,.af-site .af-offer-grid article li,.af-site .af-offer-grid article .af-kicker{color:#dce8ff}
+.af-site .af-decision-help{background:linear-gradient(115deg,#edf3ff,#dfeafb);color:#142b55;border-top:1px solid #c2d1ec}
+.af-site .af-decision-help h2,.af-site .af-decision-questions h3{color:#10264d}
+.af-site .af-decision-help .af-label{color:#264f91}
+.af-site .af-decision-help p,.af-site .af-decision-help small{color:#314868}
+.af-site .af-decision-help .af-button{background:#153b83;color:#fff;border:1px solid #153b83;box-shadow:0 6px 16px #153b8320}
+.af-site .af-decision-questions{border:0;display:grid;gap:12px}
+.af-site .af-decision-questions>div{background:#ffffffd9;border:1px solid #bacde8;padding:20px;border-radius:14px;gap:16px}
+.af-site .af-decision-questions>div>span{color:#345a95;font-size:17px;font-weight:600}
+.af-site .af-decision-questions h3{font-size:24px}.af-site .af-decision-help .af-button:focus-visible{outline-color:#214e9b}
+@media(max-width:700px){.af-site .af-label,.af-site .af-kicker{font-size:19px}.af-site .af-service{padding:24px}.af-site .af-more-clients>summary{padding:18px;font-size:22px}.af-site .af-team-summary .af-section-heading .af-label{font-size:23px}.af-site .af-person>div>p{font-size:17px}.af-site .af-decision-layout{gap:24px}}
