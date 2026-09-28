@@ -1,5 +1,5 @@
 [
-  { "id": "ai-tools-for-finance", "label": "כלי AI לאנשי כספים", "description": "השוואות וסקירות של כלי בינה מלאכותית רלוונטיים לעבודת מחלקות כספים." },
-  { "id": "financial-automation", "label": "אוטומציה ותהליכי כספים", "description": "מדריכים לאוטומציה של תהליכים פיננסיים חוזרים באמצעות AI." },
-  { "id": "ai-governance-security", "label": "אבטחת מידע וממשל AI", "description": "שיקולי אבטחת מידע, פרטיות ובקרה בשילוב AI בעולם הכספים." }
+  { "id": "ai-tools-for-finance", "label": "כלי AI לאנשי כספים", "labelEn": "AI tools for finance", "description": "השוואות וסקירות של כלי בינה מלאכותית רלוונטיים לעבודת מחלקות כספים." },
+  { "id": "financial-automation", "label": "אוטומציה ותהליכי כספים", "labelEn": "Automation & finance processes", "description": "מדריכים לאוטומציה של תהליכים פיננסיים חוזרים באמצעות AI." },
+  { "id": "ai-governance-security", "label": "אבטחת מידע וממשל AI", "labelEn": "AI governance & security", "description": "שיקולי אבטחת מידע, פרטיות ובקרה בשילוב AI בעולם הכספים." }
 ]

@@ -3,11 +3,11 @@
 
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
     <title>AI Finance - AI מעשי למחלקות כספים | סדנאות, הרצאות וליווי</title>
-    <meta name="description" content="AI Finance עוזרת למחלקות כספים בישראל לעבור מדיבורים על AI לשימוש מעשי: סדנאות פרקטיות, הרצאות הנהלה ומיפוי תהליכים. מאחורינו קהילה של 1,800+ אנשי כספים." />
+    <meta name="description" content="AI Finance עוזרת למחלקות כספים בישראל לעבור מדיבורים על AI לשימוש מעשי: סדנאות פרקטיות, הרצאות הנהלה ומיפוי תהליכים. " />
     <meta name="keywords" content="AI Finance, סדנת AI למחלקת כספים, בינה מלאכותית לפיננסים, קהילת כספים ישראל, רואי חשבון AI, CFO בינה מלאכותית, ChatGPT לפיננסים, כלי AI לחשבים, הרצאות AI לעסקים, AI לרואי חשבון, FP&A AI" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="AI Finance Community" />
@@ -24,7 +24,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ai-finance.co.il/" />
     <meta property="og:title" content="AI Finance - AI מעשי למחלקות כספים" />
-    <meta property="og:description" content="סדנאות פרקטיות, הרצאות הנהלה ומיפוי תהליכים למחלקות כספים. מאחורינו קהילה של 1,800+ אנשי כספים." />
+    <meta property="og:description" content="סדנאות פרקטיות, הרצאות הנהלה ומיפוי תהליכים למחלקות כספים. " />
     <meta property="og:image" content="https://ai-finance.co.il/images/logo.png" />
     <meta property="og:locale" content="he_IL" />
     <meta property="og:site_name" content="AI Finance Community" />
@@ -32,7 +32,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AI Finance - AI מעשי למחלקות כספים" />
-    <meta name="twitter:description" content="סדנאות, הרצאות וליווי למחלקות כספים. מאחורינו קהילה של 1,800+ אנשי כספים." />
+    <meta name="twitter:description" content="סדנאות, הרצאות וליווי למחלקות כספים. " />
     <meta name="twitter:image" content="https://ai-finance.co.il/images/logo.png" />
 
     <!-- Structured Data - Organization -->
@@ -44,13 +44,12 @@
       "alternateName": "קהילת AI Finance",
       "url": "https://ai-finance.co.il",
       "logo": "https://ai-finance.co.il/images/logo.png",
-      "description": "AI מעשי למחלקות כספים - סדנאות, הרצאות ומיפוי תהליכים, לצד קהילה מקצועית של 1,800+ אנשי כספים ישראלים",
+      "description": "AI מעשי למחלקות כספים - סדנאות, הרצאות ומיפוי תהליכים, לצד קהילה מקצועית לאנשי כספים",
       "areaServed": "IL",
       "inLanguage": "he",
-      "foundingDate": "2024",
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "roei@hwcpa.co.il",
+        "email": "ronaldoroei1@gmail.com",
         "contactType": "customer service",
         "availableLanguage": "Hebrew"
       },
@@ -66,18 +65,21 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HDND56NGK"></script>
+
     <script>
+      if (location.hostname === 'ai-finance.co.il' || location.hostname === 'www.ai-finance.co.il') {
+      const analytics = document.createElement('script'); analytics.async = true; analytics.src = 'https://www.googletagmanager.com/gtag/js?id=G-6HDND56NGK'; document.head.appendChild(analytics);
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-6HDND56NGK');
+      }
     </script>
   </body>
 

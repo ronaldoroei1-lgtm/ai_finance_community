@@ -109,3 +109,9 @@ temp/
 # Auto-generated blog content (rebuilt by scripts/blog/build.mjs from content/blog/*.md)
 client/src/generated/
 scripts/blog/.data/
+
+# Private editable content and version backups
+data/
+
+# Local media preparation scratch files
+/work/

@@ -10,7 +10,7 @@ import type { SiteContent } from "@/hooks/useContent";
 import { Eye, EyeOff, Save, LogOut, Lock, ArrowRight, CheckCircle2, AlertCircle, Plus, Trash2, Upload, Image } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-const PASSWORD_STORAGE_KEY = "aif_admin_pw";
+
 
 // ─── Small helper components ────────────────────────────────────────────────
 
@@ -50,12 +50,12 @@ const inputClass =
 function ImageUploader({
   currentImage,
   onUpload,
-  password,
+  token,
   label = "תמונה",
 }: {
   currentImage: string;
   onUpload: (url: string) => void;
-  password: string;
+  token: string;
   label?: string;
 }) {
   const [uploading, setUploading] = useState(false);
@@ -72,10 +72,10 @@ function ImageUploader({
     setUploading(true);
     const formData = new FormData();
     formData.append("image", file);
-    formData.append("password", password);
+
 
     try {
-      const res = await fetch("/api/upload", { method: "POST", body: formData });
+      const res = await fetch("/api/upload", { method: "POST", headers: { Authorization: `Bearer ${token}` }, body: formData });
       if (!res.ok) throw new Error("שגיאה בהעלאה");
       const data = await res.json();
       if (data.url) {
@@ -131,13 +131,10 @@ function clone<T>(val: T): T {
 
 // ─── Main Admin component ────────────────────────────────────────────────────
 export default function Admin() {
-  const [password, setPassword] = useState<string>(() => {
-    try {
-      return localStorage.getItem(PASSWORD_STORAGE_KEY) ?? "";
-    } catch {
-      return "";
-    }
-  });
+  const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
+  const [revision, setRevision] = useState("");
+  useEffect(() => { try { localStorage.removeItem("aif_admin_pw"); } catch {} }, []);
   const [showPassword, setShowPassword] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
   const [content, setContent] = useState<SiteContent | null>(null);
@@ -152,6 +149,7 @@ export default function Admin() {
       if (!res.ok) throw new Error("API לא זמין");
       const data: SiteContent = await res.json();
       setContent(data);
+      setRevision(res.headers.get("X-Content-Revision") || "");
       setLoadError(null);
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : "שגיאה לא ידועה";
@@ -167,28 +165,14 @@ export default function Admin() {
     }
     setLoginLoading(true);
     try {
-      // Verify the password works by trying a dry-run save of current content
-      const getRes = await fetch("/api/content");
-      if (!getRes.ok) throw new Error("השרת אינו זמין. ודא שהשרת פועל.");
-      const data: SiteContent = await getRes.json();
-
-      const testRes = await fetch("/api/content", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password: password.trim(), content: data }),
+      const response = await fetch("/api/login", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
       });
-
-      if (testRes.status === 401) {
-        toast.error("סיסמה שגויה. נסה שוב.");
-        return;
-      }
-      if (!testRes.ok) throw new Error("שגיאה בחיבור לשרת");
-
-      // Success
-      try {
-        localStorage.setItem(PASSWORD_STORAGE_KEY, password.trim());
-      } catch {}
-      setContent(data);
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "שגיאה בהתחברות");
+      setToken(result.token);
+      setPassword("");
       setIsAuth(true);
       toast.success("ברוכים הבאים ללוח הבקרה!");
     } catch (e: unknown) {
@@ -200,9 +184,9 @@ export default function Admin() {
   };
 
   const handleLogout = () => {
-    try {
-      localStorage.removeItem(PASSWORD_STORAGE_KEY);
-    } catch {}
+    void fetch("/api/logout", { method: "POST", headers: { Authorization: `Bearer ${token}` } }).catch(() => {});
+    setToken("");
+    setRevision("");
     setIsAuth(false);
     setContent(null);
     setPassword("");
@@ -215,18 +199,19 @@ export default function Admin() {
     try {
       const res = await fetch("/api/content", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password: password.trim(), content }),
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`, "If-Match": revision },
+        body: JSON.stringify({ content }),
       });
       if (res.status === 401) {
         toast.error("הסיסמה פגה. אנא התחבר מחדש.");
         handleLogout();
         return;
       }
-      if (!res.ok) throw new Error("שגיאה בשמירה");
+      if (!res.ok) { const failure = await res.json(); throw new Error(failure.error || "שגיאה בשמירה"); }
+      setRevision(res.headers.get("X-Content-Revision") || "");
       toast.success("השינויים נשמרו בהצלחה!", { icon: <CheckCircle2 className="w-4 h-4 text-green-400" /> });
-    } catch {
-      toast.error("שגיאה בשמירת השינויים");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "שגיאה בשמירת השינויים");
     } finally {
       setSaving(false);
     }
@@ -610,7 +595,7 @@ export default function Admin() {
                 <ImageUploader
                   currentImage={member.image}
                   onUpload={(url) => setArr("team", idx, "image", url)}
-                  password={password}
+                  token={token}
                   label="תמונת פרופיל"
                 />
                 <div className="space-y-3">
@@ -740,7 +725,7 @@ export default function Admin() {
                 <ImageUploader
                   currentImage={client.logoUrl}
                   onUpload={(url) => setArr("clients", idx, "logoUrl", url)}
-                  password={password}
+                  token={token}
                   label="לוגו (אופציונלי)"
                 />
                 <div className="pt-4 border-t border-blue-800/50">
@@ -834,7 +819,7 @@ export default function Admin() {
                     <ImageUploader
                       currentImage={image.src}
                       onUpload={(url) => setArr("gallery", idx, "src", url)}
-                      password={password}
+                      token={token}
                       label="תמונה"
                     />
                     <Button

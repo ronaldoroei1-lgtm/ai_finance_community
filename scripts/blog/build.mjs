@@ -324,12 +324,16 @@ export interface Author {
   bio: string;
   image: string;
   linkedinUrl: string;
+  nameEn?: string;
+  titleEn?: string;
+  bioEn?: string;
 }
 
 export interface Category {
   id: string;
   label: string;
   description: string;
+  labelEn?: string;
 }
 
 export interface ImageSrcset {

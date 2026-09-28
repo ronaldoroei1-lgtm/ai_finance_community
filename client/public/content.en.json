@@ -1,0 +1,205 @@
+{
+  "hero": {
+    "headline": "The future of finance.\nStarts with people.",
+    "subtext": "We’re Tal and Roei. We bring experience in finance and practical AI together, through talks, workshops and personal guidance.",
+    "subtagline": "Workshops · Talks · Process guidance",
+    "whatsappUrl": "https://chat.whatsapp.com/ILojKIKBdE1E2OC7A86hoP",
+    "businessWhatsappUrl": "https://wa.me/972542380333?text=Hi%2C%20I%20found%20you%20through%20the%20AI%20Finance%20website%20and%20would%20love%20to%20hear%20how%20AI%20could%20fit%20into%20our%20finance%20department.",
+    "linkedinUrl": "https://www.linkedin.com/in/tal-wallenstein/"
+  },
+  "about": {
+    "text": "AI Finance grew out of finance and accounting. We help finance departments, accounting firms, and accounting and payroll professionals in Israel move from general discussion of AI to practical work through workshops, executive lectures and process mapping for initial pilots. Our professional community of more than 2,000 finance professionals connects us each week to real questions, tasks and challenges. This helps us build content and activities around financial work itself, in accessible language and with room for professional oversight."
+  },
+  "team": [
+    {
+      "name": "Tal Wallenstein, CPA",
+      "title": "Co-founder and lecturer | CPA specializing in tax and audit",
+      "bio": "A Big 4 alumna and specialist in Israeli and international taxation. Lectures in companies and academia on integrating artificial intelligence into finance.",
+      "image": "/images/tal-profile.jpg",
+      "linkedinUrl": "https://www.linkedin.com/in/tal-wallenstein/",
+      "expertise": [
+        "Israeli and international taxation, tax planning and business advisory",
+        "AI tools for controllers and accountants",
+        "Lectures on integrating AI into financial work"
+      ]
+    },
+    {
+      "name": "Roei Wallenstein",
+      "title": "Co-founder and community manager | Audit intern",
+      "bio": "The third generation in a family of accountants and an audit intern working with private companies at the family firm. Manages the community and specializes in finding AI-based technology solutions for finance departments and businesses.",
+      "image": "/images/roei-profile.jpg",
+      "linkedinUrl": "https://www.linkedin.com/in/roei-wallenstein",
+      "expertise": [
+        "Connecting finance with technology",
+        "Finding technology solutions tailored to businesses",
+        "Developing intelligent processes for organizations"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "iconKey": "trending",
+      "title": "Talks that open possibilities",
+      "description": "Understand what AI can do, which questions to ask and where to begin."
+    },
+    {
+      "iconKey": "users",
+      "title": "Workshops that put AI to work",
+      "description": "Try tools on familiar work tasks, with room for questions and professional review."
+    },
+    {
+      "iconKey": "message",
+      "title": "Guidance from idea to process",
+      "description": "Identify opportunities, select a process and prepare a measurable pilot."
+    }
+  ],
+  "clients": [
+    {
+      "name": "Institute of Certified Public Accountants in Israel",
+      "description": "At the annual conference in Eilat, Tal joined an expert panel on integrating artificial intelligence into accounting.",
+      "logoUrl": ""
+    },
+    {
+      "name": "The Hebrew University. Executive Education Center",
+      "description": "A lecture on applying artificial intelligence to financial needs, as part of the Hebrew University's executive strategy and AI course.",
+      "logoUrl": ""
+    },
+    {
+      "name": "Pango",
+      "description": "An AI workshop for the finance department, alongside support for integrating artificial intelligence into the team's work.",
+      "logoUrl": ""
+    },
+    {
+      "name": "Tidhar Group",
+      "description": "A two-day workshop for the FP&A department. The first part focused on analyzing financial and public data with AI. The second focused on hands-on work with the organization's approved AI tools (Copilot), including building logic for manual processes and checking outputs.",
+      "logoUrl": ""
+    },
+    {
+      "name": "Fetcherr",
+      "description": "AI activities with the finance department, alongside planning a follow-up session to explore implementation.",
+      "logoUrl": ""
+    },
+    {
+      "name": "Final",
+      "description": "A lecture and workshop for women in finance at the organization, covering role-specific prompts, data analysis and dashboards, and process mapping for automation.",
+      "logoUrl": ""
+    },
+    {
+      "name": "National Director Training Center",
+      "logoUrl": "",
+      "description": ""
+    },
+    {
+      "name": "UVision",
+      "logoUrl": "",
+      "description": ""
+    },
+    {
+      "name": "Europe Asia Pipeline Company (EAPC)",
+      "logoUrl": "",
+      "description": ""
+    },
+    {
+      "name": "Mid-sized accounting firms",
+      "description": "Practical training around accounting work and professional review.",
+      "logoUrl": ""
+    },
+    {
+      "name": "monday.com",
+      "description": "An opening lecture that launched the finance department's AI week, attended by finance professionals from Israel and around the world.",
+      "logoUrl": ""
+    },
+    {
+      "name": "PSG Equity",
+      "description": "A lecture at the fund's offices for 12 senior CFOs from portfolio companies.",
+      "logoUrl": ""
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/images/events/conference-stage.webp",
+      "alt": "Tal speaking at an accountants’ conference"
+    },
+    {
+      "src": "/images/events/roei-workshop.webp",
+      "alt": "Roei leading a hands-on session"
+    },
+    {
+      "src": "/images/events/team-session.webp",
+      "alt": "Tal and Roei in a training session"
+    },
+    {
+      "src": "/images/events/hands-on-room.webp",
+      "alt": "Participants working on laptops during a workshop"
+    },
+    {
+      "src": "/images/events/tal-on-stage.webp",
+      "alt": "Tal speaking on stage"
+    },
+    {
+      "src": "/images/events/roundtable.webp",
+      "alt": "Learning together around the table"
+    },
+    {
+      "src": "/images/events/conference-panel.webp",
+      "alt": "A panel at an accountants’ conference"
+    },
+    {
+      "src": "/images/events/workshop-conversation.webp",
+      "alt": "A shared moment during a working session"
+    },
+    {
+      "src": "/images/events/tal-teaching.webp",
+      "alt": "Tal demonstrating a tool during a talk"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Who is the AI Finance community for?",
+      "answer": "The community is for accountants, controllers, payroll professionals, bookkeepers, FP&A professionals, analysts, finance managers and people working in budgeting, audit and controls. It is for anyone who wants to understand how AI can fit into financial and accounting work in a practical, professional way."
+    },
+    {
+      "question": "What do community members receive?",
+      "answer": "Members receive weekly professional content, guides, templates and examples of using AI in finance, accounting and payroll. We filter the flood of updates and focus on tools and capabilities that can support work with Excel, reports, documents, controls, data analysis, budgets and recurring processes."
+    },
+    {
+      "question": "Do I need a technical background to join?",
+      "answer": "No. The community grew out of finance and accounting, and content is explained in professional, accessible language for people without a technology background too. All you need is curiosity and a desire to explore how AI can fit into your work."
+    },
+    {
+      "question": "How do I join the community?",
+      "answer": "Join directly through the AI Finance WhatsApp group, with no form to complete. Once you join, you can receive content, guides and updates as part of the community’s ongoing activities."
+    },
+    {
+      "question": "Who are AI Finance services for?",
+      "answer": "Our services are for finance departments, accounting firms, leadership teams, and accounting and payroll professionals, including FP&A, controllership, audit and bookkeeping teams. They suit both beginners and organizations or firms already using tools and seeking to expand their use."
+    },
+    {
+      "question": "Which fits us: a lecture, a workshop or process mapping?",
+      "answer": "A lecture suits leadership teams and teams wanting to understand opportunities, risks and possible uses. A workshop suits teams wanting to practice with tools on finance, accounting and payroll tasks. Process mapping suits an organization or firm seeking practical uses and a foundation for a pilot that can be tested, measured and expanded. In a short introductory conversation, we will identify what fits your needs together."
+    },
+    {
+      "question": "Is the content tailored to our team and tasks?",
+      "answer": "Yes. We start with the tasks your team performs, its knowledge level, the tools available in your organization or firm, and the constraints that matter. This keeps activities connected to everyday work rather than general examples of AI."
+    },
+    {
+      "question": "Do workshops include hands-on practice?",
+      "answer": "Yes. Workshops include familiar finance and accounting tasks such as report analysis, Excel work, document summaries, producing deliverables, controls and recurring processes. The aim is to help participants learn the tools and understand how to start integrating them into their work."
+    },
+    {
+      "question": "How do you address information security and human oversight?",
+      "answer": "Alongside AI capabilities, we cover limitations, risks and the need for professional oversight. Activities address information that should not be uploaded to public tools, reviewing outputs and situations where professional judgment remains essential."
+    }
+  ],
+  "contact": {
+    "email": "ronaldoroei1@gmail.com",
+    "whatsappUrl": "https://wa.me/972542380333",
+    "linkedinUrl": "https://www.linkedin.com/in/tal-wallenstein/"
+  },
+  "cta": {
+    "headline": "What will you\nmake possible?",
+    "subtext": "Tell us about your people, task or challenge. We’ll find the next step together.",
+    "buttonText": "Let’s talk",
+    "whatsappButtonText": "Join the community"
+  }
+}
