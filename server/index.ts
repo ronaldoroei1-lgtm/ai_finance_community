@@ -75,6 +75,7 @@ async function startServer() {
     }
     if (Array.isArray(saved.team)) {
       for (const person of saved.team) {
+        if (person.title === "AI Systems Builder | מוביל קהילה וסדנאות") { person.title = "AI Builder | מוביל קהילה וסדנאות"; corrected = true; }
         if (person.image === "/images/tal-profile.jpg" && typeof person.bio === "string" && person.bio.startsWith("רואת חשבון ויוצאת Big 4.")) {
           person.bio = person.bio.replace("רואת חשבון ויוצאת Big 4.", "רואת חשבון, דירקטורית מוסמכת ויוצאת Big 4.");
           corrected = true;
