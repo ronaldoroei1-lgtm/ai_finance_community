@@ -10,5 +10,13 @@
   "workshop-room": {
     "he": "מה הוא צריך לעשות, איך הוא צריך לעשות, כמה, למה ואיך. ואז אני באה ולוקחת בעצם את ה... הורדת את הקובץ שביקשתי? כן. מפה אני חוזרת חזרה, בעצם, לשיחה הרגילה.",
     "en": "What it should do, how it should do it, how much, why and how. Then I take the… Did you download the file I asked for? Yes. From here I return to the regular conversation."
+  },
+  "tal-live-demo": {
+    "he": "אז כרגע הוא מתחיל ממש ניתוח מלא. הוא פועל בלייב, כמו שאתם רואים. API יורד עם הטוקנים שאני משלמת לו כרגע. והוא מנתח לי ברמת הערכת שווי מניה, של כל הזמנים, של כל השנים.",
+    "en": "It is now starting a full analysis. It is running live, as you can see. The API is using tokens that I am paying for right now. It is analysing the stock valuation across the years."
+  },
+  "tal-audience": {
+    "he": "וממש את כל הלקוחות שלי. כאשר יש לי פה, אם תסתכלו, שתי חריגות. זה אומר שיש שניים שלא שילמו לי עדיין. מבחינת הגבייה, לא קיבלתי את הכסף שלהם.",
+    "en": "All of my clients. If you look here, there are two exceptions. That means two have not paid me yet. In terms of collections, I have not received their payment."
   }
 }
