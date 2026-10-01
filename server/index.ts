@@ -82,6 +82,14 @@ async function startServer() {
         }
       }
     }
+    if (Array.isArray(saved.team)) {
+      for (const person of saved.team) {
+        if (person.bio === "רואת חשבון, דירקטורית מוסמכת ויוצאת Big 4. מתמחה בחיבור שבין פיננסים, נתונים ובינה מלאכותית, ומלווה ארגונים, מחלקות כספים ומשרדי רואי חשבון בהטמעת כלי AI, בקיצור תהליכים, בשיפור בקרות ובהגדלת הפרודוקטיביות של הצוותים.") {
+          person.bio += " מרצה בארבעה קמפוסים של הקריה האקדמית אונו בקורס הראשון מסוגו לניתוח דוחות כספיים וריגול פיננסי באמצעות AI.";
+          corrected = true;
+        }
+      }
+    }
     if (Array.isArray(saved.faq)) {
       for (const item of saved.faq) {
         if (typeof item.answer !== "string") continue;

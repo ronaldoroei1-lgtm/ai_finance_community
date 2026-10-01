@@ -282,3 +282,11 @@
 .af-social-grid-pair{grid-template-columns:repeat(2,minmax(0,1fr))}
 .af-menu-toggle,.af-language{min-width:44px;min-height:44px}
 @media(max-width:760px){.af-social-grid-pair{grid-template-columns:1fr}}
+
+/* Personal introduction before the professional profiles. */
+.af-team-personal{margin-block:0 32px}.af-personal-intro{font-size:20px;line-height:1.6;margin:0 0 16px;color:#233d64}
+.af-personal-facts{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.af-personal-facts li{padding:22px;border:1px solid #cfdef2;border-radius:14px;background:#f0f5fc}
+.af-personal-facts li>span{display:block;color:#3567a8;font-size:15px;font-weight:600;margin-bottom:10px}
+.af-personal-facts p{margin:0;color:#192d50;font-size:18px;line-height:1.7}.af-team-more{margin-top:24px}
+@media(max-width:760px){.af-personal-facts{grid-template-columns:1fr;gap:10px}.af-personal-facts li{padding:16px;display:flex;align-items:baseline;gap:14px}.af-personal-facts li>span{margin:0}.af-personal-facts p{font-size:17px}.af-personal-intro{font-size:18px}}
