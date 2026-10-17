@@ -208,6 +208,15 @@ async function startServer() {
   // automatically for exact matches, including the directory-index +
   // trailing-slash redirect behaviour, before ever reaching the catch-all
   // below.
+  // Legal pages must answer 200 directly (no trailing-slash redirect) for
+  // third-party reviewers such as TikTok's app review.
+  for (const slug of ["terms", "privacy"]) {
+    for (const prefix of ["", "/en"]) {
+      app.get([`${prefix}/${slug}`, `${prefix}/${slug}/`], (_req, res) => {
+        res.sendFile(path.join(staticPath, ...prefix.split("/").filter(Boolean), slug, "index.html"));
+      });
+    }
+  }
   app.use(express.static(staticPath));
 
   // Anything that reaches here didn't match a static file or a
@@ -230,7 +239,7 @@ async function startServer() {
     "/community",
     "/community/",
   ]);
-  for (const route of ["/services", "/knowledge", "/about", "/contact", "/accessibility"]) {
+  for (const route of ["/services", "/knowledge", "/about", "/contact", "/accessibility", "/terms", "/privacy"]) {
     KNOWN_APP_ROUTES.add(route);
     KNOWN_APP_ROUTES.add(`${route}/`);
   }
