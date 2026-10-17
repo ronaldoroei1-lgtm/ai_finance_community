@@ -142,6 +142,8 @@ const STATIC_ROUTES = [
   "/blog",
   "/contact",
   "/accessibility",
+  "/terms",
+  "/privacy",
 ];
 
 const allUrls: string[] = [];
